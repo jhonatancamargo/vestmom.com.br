@@ -48,15 +48,38 @@
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1464290317747669&ev=PageView&noscript=1"/></noscript>
 
-  <!-- Google Analytics 4 (descomentar e colocar ID quando for ativar)
-  <script async src="https://www.googletagmanager.com/gtag/js?id=SEU_GA_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'SEU_GA_ID');
-  </script>
-  -->
+  <!-- Google Analytics 4 — vestmom + cross-domain Kiwify -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1DFMKE452Y', {
+    'linker': {
+      'domains': ['pay.kiwify.com.br', 'vestmom.com.br']
+    },
+    'allow_enhanced_conversions': true,
+    'send_page_view': true
+  });
+
+  // Evento custom: clique no CTA (vai pro checkout)
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a.cta').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        gtag('event', 'begin_checkout', {
+          'currency': 'BRL',
+          'value': 67.00,
+          'items': [{
+            'item_id': 'BBI_V1',
+            'item_name': 'Desafio Bumbum Invejado',
+            'price': 67.00,
+            'quantity': 1
+          }]
+        });
+      });
+    });
+  });
+</script>
 
   <!-- TikTok Pixel (opcional, descomentar se precisar)
   <script>
@@ -1835,16 +1858,3 @@
 </body>
 </html>
 
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y"
-></script>
-<script>
-  window.dataLayer = window.dataLayer || []
-  function gtag() {
-    dataLayer.push(arguments)
-  }
-  gtag('js', new Date())
-
-  gtag('config', 'G-1DFMKE452Y')
-</script>
