@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Última chance — Desafio Bumbum Invejado</title>
+  <link rel="icon" href="../assets/img/favicon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- 1) noback — se cliente apertar voltar de novo, manda pro downsell -->
+  <script type="text/javascript">
+    var downsell_link = '../downsell/' + location.search;
+    history.pushState({}, "", location.href);
+    history.pushState({}, "", location.href);
+    window.addEventListener('popstate', function (event) {
+      if (event.state) {
+        setTimeout(function () { location.href = downsell_link; }, 1);
+      }
+    }, false);
+  </script>
+
+  <!-- Meta Pixel placeholder (preencher SEU_PIXEL_ID quando ativar)
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'SEU_PIXEL_ID');
+  fbq('track', 'PageView');
+  fbq('track', 'RED-BBI');
+  fbq('track', 'ViewContent');
+  </script>
+  -->
+
+  <style>
+    :root{
+      --brand:#FF8404; --brand-hover:#ff6a00; --brand-soft:#fff4e6;
+      --danger:#dc2626; --warning:#facc15;
+      --success:#16a34a; --success-soft:#dcfce7;
+      --ink:#0b1a2c; --ink-2:#2c3e54; --ink-3:#5a6b7d;
+      --surface:#fafaf7; --surface-2:#f5f5f1;
+      --r-md:10px; --r-lg:14px; --r-xl:20px; --r-2xl:28px; --r-full:999px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',system-ui,sans-serif;
+      background:linear-gradient(180deg,#0b1a2c 0%,#112740 100%);
+      color:#fff;
+      min-height:100vh;
+      line-height:1.5;
+    }
+
+    /* ===== Banner topo amarelo de urgência ===== */
+    .urgency-banner{
+      background:linear-gradient(180deg,#facc15 0%,#eab308 100%);
+      color:#0b1a2c;
+      text-align:center;
+      padding:14px 20px;
+      font-size:.9375rem;
+      font-weight:600;
+      line-height:1.4;
+      border-bottom:3px solid #ca8a04;
+      animation:banner-pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes banner-pulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.08)}}
+    .urgency-banner strong{font-weight:900;letter-spacing:.02em;color:#7c1d12}
+    @media (min-width:640px){.urgency-banner{font-size:1rem;padding:18px 24px}}
+
+    /* ===== Container ===== */
+    .wrap{
+      max-width:760px;
+      margin:0 auto;
+      padding:32px 20px 64px;
+    }
+
+    /* ===== Hero ===== */
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,132,4,.16);
+      color:var(--brand);
+      font-size:.75rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      padding:8px 16px;
+      border-radius:var(--r-full);
+      text-transform:uppercase;
+      margin-bottom:16px;
+      border:1px solid rgba(255,132,4,.3);
+    }
+    h1{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(1.75rem,1.45rem+1.5vw,2.75rem);
+      font-weight:900;
+      line-height:1.1;
+      letter-spacing:-0.02em;
+      color:#fff;
+      margin-bottom:12px;
+    }
+    h1 .brand{color:var(--brand)}
+    h1 .danger{color:#fca5a5}
+    .sub{
+      font-size:1.0625rem;
+      color:rgba(255,255,255,.78);
+      margin-bottom:32px;
+      line-height:1.55;
+    }
+    .sub strong{color:#fff;font-weight:700}
+
+    /* ===== Card principal ===== */
+    .card{
+      background:#fff;
+      color:var(--ink);
+      border-radius:var(--r-2xl);
+      padding:32px 24px;
+      box-shadow:0 24px 48px -12px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.06);
+      text-align:center;
+      margin-bottom:24px;
+    }
+    @media (min-width:640px){.card{padding:48px 40px}}
+    .card-title{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(1.125rem,1.05rem+.5vw,1.375rem);
+      font-weight:800;
+      color:var(--ink);
+      margin-bottom:8px;
+      line-height:1.25;
+    }
+    .card-title .brand{color:var(--brand)}
+    .card-sub{
+      font-size:.9375rem;
+      color:var(--ink-3);
+      margin-bottom:24px;
+    }
+    .mockup{
+      max-width:280px;
+      width:100%;
+      display:block;
+      margin:0 auto 24px;
+      filter:drop-shadow(0 16px 32px rgba(0,0,0,.18));
+    }
+
+    /* ===== Countdown ===== */
+    .countdown{
+      background:linear-gradient(180deg,#fee2e2 0%,#fff4e6 100%);
+      border:2px dashed var(--danger);
+      border-radius:var(--r-xl);
+      padding:20px 16px;
+      margin:24px 0;
+    }
+    .countdown .label{
+      font-size:.75rem;
+      font-weight:700;
+      color:var(--danger);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+    .countdown .time{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(2.5rem,2rem+2vw,3.5rem);
+      font-weight:900;
+      color:var(--danger);
+      letter-spacing:-0.02em;
+      line-height:1;
+      font-variant-numeric:tabular-nums;
+    }
+
+    /* ===== CTA ===== */
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      width:100%;
+      max-width:480px;
+      justify-content:center;
+      padding:18px 32px;
+      background:linear-gradient(180deg,var(--brand) 0%,var(--brand-hover) 100%);
+      color:#fff;
+      font-size:1.0625rem;
+      font-weight:800;
+      text-decoration:none;
+      border-radius:var(--r-full);
+      box-shadow:0 12px 32px -8px rgba(255,132,4,.55),0 6px 16px -4px rgba(255,132,4,.4);
+      transition:transform .2s,box-shadow .2s;
+      animation:cta-pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes cta-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+    .cta:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 16px 40px -8px rgba(255,132,4,.7),0 8px 20px -4px rgba(255,132,4,.5)}
+
+    /* ===== Trust badges ===== */
+    .trust{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top:24px;
+      padding-top:24px;
+      border-top:1px solid rgba(11,26,44,.08);
+    }
+    @media (min-width:520px){.trust{flex-direction:row;justify-content:center;gap:24px}}
+    .trust span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.8125rem;
+      font-weight:700;
+      color:var(--ink-2);
+      letter-spacing:.04em;
+    }
+    .trust i{color:var(--success);font-size:1rem}
+
+    /* ===== Garantia card ===== */
+    .guarantee{
+      background:#fff;
+      color:var(--ink);
+      border-radius:var(--r-2xl);
+      padding:32px 24px;
+      box-shadow:0 16px 32px -8px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.06);
+      text-align:center;
+      margin-bottom:24px;
+    }
+    @media (min-width:640px){.guarantee{padding:40px 32px}}
+    .guarantee img{
+      width:128px;
+      height:auto;
+      display:block;
+      margin:0 auto 16px;
+    }
+    .guarantee h3{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:1.25rem;
+      font-weight:800;
+      color:var(--ink);
+      margin-bottom:12px;
+    }
+    .guarantee p{
+      font-size:.9375rem;
+      color:var(--ink-3);
+      line-height:1.55;
+      margin-bottom:12px;
+    }
+    .guarantee p strong{color:var(--ink);font-weight:700}
+    .guarantee p:last-child{margin-bottom:0}
+
+    /* ===== Footer ===== */
+    footer{
+      text-align:center;
+      padding:40px 20px;
+      color:rgba(255,255,255,.5);
+      font-size:.8125rem;
+    }
+    footer p{margin-bottom:8px}
+    footer .piracy{
+      font-size:.875rem;
+      font-weight:800;
+      color:rgba(255,255,255,.7);
+      letter-spacing:.08em;
+      margin-bottom:12px;
+    }
+    footer .links{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      margin-top:12px;
+    }
+    footer .links a{
+      color:var(--brand);
+      text-decoration:none;
+      font-size:.8125rem;
+      transition:color .2s;
+    }
+    footer .links a:hover{color:var(--brand-hover);text-decoration:underline}
+
+    /* anti-select */
+    body{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+  </style>
+</head>
+<body>
+
+  <!-- Banner topo amarelo -->
+  <div class="urgency-banner">
+    <strong>⚠ IMPORTANTE:</strong> Estamos com demanda muito alta. Este preço com desconto exclusivo expirará em breve. Só posso garantir esse desconto pelos próximos <strong>7 minutos</strong>. Aja imediatamente abaixo.
+  </div>
+
+  <div class="wrap">
+
+    <!-- Hero -->
+    <div style="text-align:center">
+      <span class="eyebrow"><i class="fas fa-fire"></i> Oferta por tempo limitado</span>
+    </div>
+
+    <h1 style="text-align:center">
+      Economize <span class="danger">R$ 1.233</span><br>
+      apenas nos próximos <span class="danger">7 minutos</span>
+    </h1>
+
+    <p class="sub" style="text-align:center">Adquira o <strong>Desafio Bumbum Invejado</strong> completo + <strong>4 bônus grátis</strong> com R$ 1.233 de economia. Aproveite agora — depois desse prazo o preço volta pro valor cheio.</p>
+
+    <!-- Card principal -->
+    <div class="card">
+      <h2 class="card-title"><span class="brand">Última chance</span> de garantir por R$ 67</h2>
+      <p class="card-sub">Acesso vitalício · Liberação em 5 min · Garantia 30 dias</p>
+
+      <img class="mockup" src="../assets/img/mokup-2.webp" alt="Desafio Bumbum Invejado">
+
+      <a href="https://pay.kiwify.com.br/fc0vgdO" class="cta" id="cta-top">
+        <i class="fas fa-bolt"></i>
+        Sim, quero garantir por R$ 67
+      </a>
+
+      <div class="countdown">
+        <div class="label">⏰ O desconto encerra em:</div>
+        <div class="time" data-countdown>07:00</div>
+      </div>
+
+      <div class="trust">
+        <span><i class="fas fa-bolt"></i> ACESSO IMEDIATO</span>
+        <span><i class="fas fa-lock"></i> PAGAMENTO SEGURO</span>
+        <span><i class="fas fa-shield-alt"></i> 30 DIAS GARANTIA</span>
+      </div>
+    </div>
+
+    <!-- Garantia card -->
+    <div class="guarantee">
+      <img src="../assets/img/guarantee.webp" alt="Garantia 30 dias">
+      <h3>Garantia Incondicional de 30 dias</h3>
+      <p>Seu pequeno investimento hoje é coberto por uma <strong>garantia de reembolso de 100%</strong> em 30 dias.</p>
+      <p>Se você não ficar 100% satisfeito com o seu corpo ao usar o Desafio Bumbum Invejado, envie-nos um <strong>e-mail dizendo isso</strong> e você receberá cada centavo de volta em 48 horas — <strong>sem perguntas</strong>.</p>
+      <p style="margin-top:16px"><strong>Você pode experimentar este programa por 30 dias completos.</strong></p>
+    </div>
+
+    <!-- CTA bottom -->
+    <div style="text-align:center">
+      <a href="https://pay.kiwify.com.br/fc0vgdO" class="cta" id="cta-bottom">
+        <i class="fas fa-bolt"></i>
+        Sim, quero começar agora
+      </a>
+
+      <div class="countdown" style="max-width:380px;margin:24px auto 0">
+        <div class="label">⏰ O desconto encerra em:</div>
+        <div class="time" data-countdown>07:00</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="piracy">PIRATARIA É CRIME</p>
+    <p>© 2026 · Desafio Bumbum Invejado ® · Todos os direitos reservados</p>
+    <div class="links">
+      <a href="../termos.html">Termos de Uso</a>
+      ·
+      <a href="../privacidade.html">Política de Privacidade</a>
+    </div>
+  </footer>
+
+  <script>
+    // ===== Countdown 7 minutos (persistido na sessão) =====
+    (function(){
+      var KEY = 'bbi_promo_start';
+      var DURATION = 7 * 60; // 7 min em segundos
+      var displays = document.querySelectorAll('[data-countdown]');
+      if(!displays.length) return;
+
+      var start = parseInt(sessionStorage.getItem(KEY), 10);
+      if(!start || isNaN(start)){
+        start = Math.floor(Date.now() / 1000);
+        try{ sessionStorage.setItem(KEY, String(start)); }catch(e){}
+      }
+
+      function tick(){
+        var now = Math.floor(Date.now() / 1000);
+        var remaining = Math.max(0, DURATION - (now - start));
+        var mm = Math.floor(remaining / 60);
+        var ss = remaining % 60;
+        var text = (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
+        displays.forEach(function(el){ el.textContent = text; });
+        if(remaining <= 0){
+          // mantém em 00:00 (não reseta no loop)
+          displays.forEach(function(el){ el.style.color = '#9ca3af'; });
+          return;
+        }
+        setTimeout(tick, 1000);
+      }
+      tick();
+    })();
+
+    // ===== Append UTM em todos os <a> =====
+    window.addEventListener('load', function () {
+      var links = document.getElementsByTagName('a');
+      var qs = document.location.search.replace('?', '').toString();
+      if(!qs) return;
+      for (var i = 0, n = links.length; i < n; i++) {
+        var orig = links[i].href.trim();
+        if(!orig || orig.indexOf('javascript:') === 0 || orig.indexOf('#') === 0) continue;
+        var sep = orig.indexOf("?") > 0 ? '&' : '?';
+        links[i].href = orig + sep + qs;
+      }
+    });
+
+    // ===== Anti pirataria (igual referência) =====
+    document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+    document.addEventListener('keydown', function(e){
+      var code = e.which || e.keyCode;
+      // F12, Ctrl+S, Ctrl+U
+      if(code === 123 || (e.ctrlKey && (code === 83 || code === 85))){
+        e.preventDefault();
+        return false;
+      }
+    });
+  </script>
+</body>
+</html>

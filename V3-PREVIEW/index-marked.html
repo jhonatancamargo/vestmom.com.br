@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio Bumbum Invejado — V3 (Refinada)</title>
+  <link rel="icon" href="assets/img/favicon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    :root{
+      --body-bg:#ffffff;
+      --cta-bg:#e67e22;
+      --cta-bg-hover:#d4691a;
+      --cta-color:#ffffff;
+      --footer-bg:#122433;
+      --dark-green:#075e54;
+      --green-cta:#3c6;
+      --hero-bg:#122433;
+      --hero-bg-2:#1a3a5c;
+      --banner-bg:#ff0000;
+      --headline-color:#ffffff;
+      --highlight:#ffd54f;
+      --text-color:#333;
+      --muted:#666;
+      --beige:#f8f4ec;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    body,html{
+      margin:0;
+      padding:0;
+      overflow-x:hidden;
+      font-family:'Montserrat',sans-serif;
+      background-color:var(--body-bg);
+      color:var(--text-color);
+      line-height:1.5;
+    }
+    img{max-width:100%;height:auto;display:block}
+    h1,h2,h3,h4{margin:0;line-height:1.2}
+    a{text-decoration:none}
+    section{padding:60px 0;overflow-x:hidden}
+    .container{max-width:1100px;margin:0 auto;padding:0 5%}
+    .center{text-align:center}
+    .strong{font-weight:700}
+
+    /* BANNER TOPO */
+    .banner-top{
+      background:var(--banner-bg);
+      color:#fff;
+      text-align:center;
+      padding:10px 12px;
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:0.4px;
+    }
+
+    /* HERO */
+    .hero{
+      background:linear-gradient(135deg,var(--hero-bg) 0%,var(--hero-bg-2) 100%);
+      color:#fff;
+      padding:30px 0 50px;
+      text-align:center;
+    }
+    .hero .container{max-width:850px}
+    .hero img.headline-img{
+      max-width:90%;
+      margin:0 auto 25px;
+      filter:drop-shadow(0 4px 16px rgba(0,0,0,.5));
+    }
+    .hero h1{
+      font-size:30px;
+      font-weight:800;
+      color:#fff;
+      margin-bottom:15px;
+      line-height:1.15;
+    }
+    .hero h1 .hl{color:var(--highlight)}
+    .hero .sub{
+      font-size:17px;
+      color:#c8d4e3;
+      margin-bottom:30px;
+      font-weight:400;
+      max-width:700px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    /* VSL PLAYER PLACEHOLDER */
+    .vsl-wrap{
+      max-width:680px;
+      margin:0 auto 30px;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 12px 40px rgba(0,0,0,.45);
+      background:#000;
+    }
+    .vsl-placeholder{
+      width:100%;
+      aspect-ratio:16/9;
+      background:radial-gradient(circle at center,rgba(230,126,34,0.25),#000 70%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      position:relative;
+    }
+    .vsl-placeholder::before{
+      content:"▶";
+      font-size:64px;
+      color:var(--cta-bg);
+      text-shadow:0 0 30px rgba(230,126,34,.7);
+    }
+    .vsl-placeholder::after{
+      content:"VSL V3 — clique pra reproduzir";
+      position:absolute;
+      bottom:20px;
+      color:#fff;
+      font-size:14px;
+      letter-spacing:.5px;
+      opacity:.8;
+    }
+    .audio-info{
+      font-size:13px;
+      color:#c8d4e3;
+      margin-top:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+    }
+    .audio-info img{display:inline-block;width:18px;height:18px}
+
+    /* CTA BUTTON */
+    .btn{
+      display:inline-block;
+      background:var(--cta-bg);
+      color:#fff;
+      padding:18px 36px;
+      font-size:18px;
+      font-weight:800;
+      border-radius:50px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+      box-shadow:0 6px 0 var(--cta-bg-hover),0 10px 30px rgba(230,126,34,.5);
+      transition:transform .15s ease,box-shadow .15s ease;
+      animation:pulse 1.8s infinite;
+      border:0;
+      cursor:pointer;
+    }
+    .btn:hover{
+      transform:translateY(2px);
+      box-shadow:0 4px 0 var(--cta-bg-hover),0 6px 18px rgba(230,126,34,.6);
+    }
+    @keyframes pulse{
+      0%,100%{box-shadow:0 6px 0 var(--cta-bg-hover),0 10px 30px rgba(230,126,34,.5)}
+      50%{box-shadow:0 6px 0 var(--cta-bg-hover),0 10px 45px rgba(230,126,34,.9)}
+    }
+    .btn-large{padding:22px 44px;font-size:20px}
+
+    /* SELOS */
+    .selos{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      margin-top:25px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:#c8d4e3;
+    }
+    .selos .selo{display:flex;align-items:center;gap:6px}
+    .selos .selo i{color:var(--highlight)}
+
+    /* BLOCO DOR */
+    .section-light{background:#fff;padding:70px 0}
+    h2.title{
+      font-size:30px;
+      font-weight:800;
+      margin-bottom:30px;
+      color:var(--hero-bg);
+      line-height:1.25;
+    }
+    h2.title .hl{color:var(--cta-bg)}
+    .dor-list{
+      list-style:none;
+      padding:0;
+      max-width:720px;
+      margin:0 auto;
+    }
+    .dor-list li{
+      padding:16px 0 16px 38px;
+      position:relative;
+      border-bottom:1px solid #eaeaea;
+      font-size:16px;
+      color:#444;
+    }
+    .dor-list li::before{
+      content:"✕";
+      position:absolute;
+      left:0;
+      top:18px;
+      color:var(--banner-bg);
+      font-weight:800;
+      font-size:18px;
+    }
+    .dor-cta{
+      margin-top:35px;
+      font-size:18px;
+      font-weight:700;
+      text-align:center;
+      color:var(--hero-bg);
+    }
+    .dor-cta .hl{color:var(--cta-bg)}
+
+    /* MANUELA / ROBERTO */
+    .section-beige{background:var(--beige);padding:70px 0}
+    .story{max-width:760px;margin:0 auto}
+    .story p{
+      font-size:17px;
+      color:#3a3a3a;
+      margin-bottom:18px;
+      line-height:1.65;
+    }
+    .story p .key{
+      background:#fff3cd;
+      padding:2px 8px;
+      border-radius:4px;
+      font-weight:600;
+      color:#1a1a1a;
+    }
+
+    /* MECANISMO 3 CAMADAS */
+    .section-dark{
+      background:var(--hero-bg);
+      color:#fff;
+      padding:80px 0;
+    }
+    .section-dark h2.title{color:#fff}
+    .section-dark p{color:#c8d4e3}
+    .quote-explain{
+      text-align:center;
+      font-style:italic;
+      font-size:17px;
+      max-width:680px;
+      margin:0 auto 50px;
+      color:#aabac9;
+    }
+    .camadas{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:25px;
+      margin-bottom:50px;
+    }
+    .camada{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      padding:30px 25px;
+      border-radius:14px;
+      border-left:4px solid var(--cta-bg);
+      transition:transform .2s,background .2s;
+    }
+    .camada:hover{transform:translateY(-4px);background:rgba(255,255,255,0.08)}
+    .camada h3{
+      font-size:20px;
+      color:var(--cta-bg);
+      margin-bottom:12px;
+      font-weight:800;
+    }
+    .camada p{font-size:15px;color:#d4dde6;line-height:1.6}
+
+    .checks-list{
+      text-align:center;
+      max-width:600px;
+      margin:0 auto;
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:center;
+      font-size:15px;
+      color:#fff;
+    }
+    .checks-list span::before{content:"✓ ";color:var(--highlight);font-weight:800;margin-right:4px}
+
+    /* DEPOIMENTOS */
+    .depo-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+      margin:40px 0;
+    }
+    .depo-card{
+      background:#fff;
+      border-radius:14px;
+      box-shadow:0 8px 30px rgba(0,0,0,.08);
+      overflow:hidden;
+      transition:transform .2s;
+    }
+    .depo-card:hover{transform:translateY(-6px)}
+    .depo-card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      display:block;
+    }
+    .depo-content{padding:25px}
+    .depo-content .nome{
+      font-weight:800;
+      color:var(--cta-bg);
+      font-size:17px;
+      margin-bottom:5px;
+    }
+    .depo-content .meta{
+      font-size:13px;
+      color:#888;
+      margin-bottom:15px;
+      font-weight:500;
+    }
+    .depo-content p{
+      font-style:italic;
+      font-size:14px;
+      color:#444;
+      line-height:1.6;
+    }
+    .stats-bar{
+      display:flex;
+      justify-content:space-around;
+      flex-wrap:wrap;
+      gap:20px;
+      background:linear-gradient(135deg,var(--cta-bg),var(--cta-bg-hover));
+      color:#fff;
+      padding:30px;
+      border-radius:14px;
+      margin:50px auto 0;
+      text-align:center;
+      font-weight:700;
+      max-width:900px;
+      box-shadow:0 8px 30px rgba(230,126,34,.4);
+    }
+    .stats-bar div{flex:1;min-width:180px;font-size:16px}
+    .stats-bar div strong{display:block;font-size:24px;margin-bottom:4px}
+
+    /* STACK DE VALOR */
+    .stack-wrap{max-width:820px;margin:40px auto 0}
+    .stack{
+      background:#fff;
+      border-radius:18px;
+      box-shadow:0 12px 40px rgba(0,0,0,.15);
+      overflow:hidden;
+      color:#1a1a1a;
+    }
+    .stack-header{
+      background:var(--hero-bg);
+      color:#fff;
+      padding:25px 30px;
+      text-align:center;
+    }
+    .stack-header h3{font-size:22px;font-weight:800}
+    .stack-body{padding:30px}
+    .stack-item{
+      display:flex;
+      align-items:flex-start;
+      gap:20px;
+      padding:20px 0;
+      border-bottom:1px dashed #e0e0e0;
+    }
+    .stack-item:last-child{border-bottom:none}
+    .stack-item .icon{
+      font-size:36px;
+      width:60px;
+      text-align:center;
+      flex-shrink:0;
+    }
+    .stack-item .info{flex:1}
+    .stack-item .info h4{
+      font-size:17px;
+      color:var(--hero-bg);
+      font-weight:800;
+      margin-bottom:6px;
+    }
+    .stack-item .info h4 .new-badge{
+      background:var(--highlight);
+      color:#000;
+      padding:2px 8px;
+      border-radius:4px;
+      font-size:11px;
+      font-weight:700;
+      margin-left:8px;
+      letter-spacing:.5px;
+    }
+    .stack-item .info p{font-size:14px;color:#666}
+    .stack-item .price{
+      font-weight:800;
+      color:var(--banner-bg);
+      font-size:18px;
+      flex-shrink:0;
+      white-space:nowrap;
+    }
+    .total-row{
+      background:linear-gradient(135deg,#f9f4ec,#fff7e6);
+      padding:35px 30px;
+      text-align:center;
+      border-top:3px solid var(--cta-bg);
+    }
+    .total-row .label{
+      font-size:14px;
+      color:#888;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      margin-bottom:6px;
+    }
+    .total-row .crossed{
+      text-decoration:line-through;
+      color:#999;
+      font-size:22px;
+      font-weight:600;
+    }
+    .total-row .now{
+      font-size:56px;
+      font-weight:900;
+      color:var(--cta-bg);
+      margin:8px 0;
+      line-height:1;
+    }
+    .total-row .parcelas{
+      font-size:18px;
+      color:#444;
+      margin-bottom:25px;
+    }
+    .total-row .parcelas strong{color:var(--cta-bg)}
+    .total-row .pay-options{
+      font-size:13px;
+      color:#666;
+      margin-top:15px;
+    }
+
+    /* GARANTIA */
+    .garantia{
+      background:#fff;
+      border:3px solid var(--green-cta);
+      border-radius:18px;
+      padding:50px 40px;
+      text-align:center;
+      max-width:780px;
+      margin:0 auto;
+      box-shadow:0 8px 30px rgba(60,200,100,0.2);
+    }
+    .garantia .selo-img{
+      width:140px;
+      margin:0 auto 20px;
+      filter:drop-shadow(0 4px 12px rgba(60,200,100,0.4));
+    }
+    .garantia h2{color:var(--green-cta);font-size:28px;font-weight:800;margin-bottom:20px}
+    .garantia p{font-size:16px;color:#444;margin-bottom:14px;line-height:1.65}
+    .garantia .destaque{color:var(--banner-bg);font-weight:700;margin-top:20px}
+
+    /* FAQ */
+    .faq-wrap{max-width:760px;margin:0 auto}
+    .faq-item{
+      background:#fff;
+      border:1px solid #e6e6e6;
+      border-radius:10px;
+      margin-bottom:14px;
+      transition:box-shadow .2s;
+    }
+    .faq-item:hover{box-shadow:0 4px 14px rgba(0,0,0,.06)}
+    .faq-item summary{
+      padding:20px 56px 20px 22px;
+      cursor:pointer;
+      font-weight:700;
+      color:var(--hero-bg);
+      list-style:none;
+      position:relative;
+      font-size:15px;
+    }
+    .faq-item summary::after{
+      content:"+";
+      position:absolute;
+      right:22px;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:24px;
+      color:var(--cta-bg);
+      font-weight:800;
+      transition:transform .2s;
+    }
+    .faq-item[open] summary::after{content:"−"}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item p{
+      padding:0 22px 22px;
+      color:#555;
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    /* URGÊNCIA */
+    .urgencia-wrap{
+      background:linear-gradient(135deg,#ffd54f 0%,#ff8a65 100%);
+      color:#1a1a1a;
+      padding:50px 40px;
+      border-radius:18px;
+      text-align:center;
+      max-width:820px;
+      margin:0 auto;
+      box-shadow:0 12px 40px rgba(255,138,101,.4);
+    }
+    .urgencia-wrap h2{color:var(--banner-bg);font-size:28px;font-weight:800;margin-bottom:20px}
+    .urgencia-wrap p{font-size:16px;margin-bottom:14px;color:#333}
+    .urgencia-wrap .destaque{font-size:18px;font-weight:700;margin:20px 0 30px}
+
+    /* COMENTÁRIOS estilo FB */
+    .comentarios{padding:60px 0;background:#f0f2f5}
+    .fb-box{
+      background:#fff;
+      border-radius:14px;
+      padding:25px;
+      max-width:680px;
+      margin:0 auto;
+      box-shadow:0 4px 20px rgba(0,0,0,.06);
+    }
+    .fb-box h3{
+      font-size:16px;
+      color:#1a1a1a;
+      margin-bottom:18px;
+      padding-bottom:14px;
+      border-bottom:1px solid #e9ebee;
+    }
+    .fb-comment{
+      display:flex;
+      gap:12px;
+      padding:14px 0;
+      border-bottom:1px solid #f0f2f5;
+    }
+    .fb-comment:last-child{border-bottom:none}
+    .fb-comment.reply{margin-left:48px}
+    .fb-comment img.avatar{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      object-fit:cover;
+      flex-shrink:0;
+    }
+    .fb-comment .fb-text{flex:1}
+    .fb-comment .fb-name{
+      font-weight:700;
+      color:#365899;
+      font-size:13px;
+      margin-bottom:4px;
+    }
+    .fb-comment .fb-content{
+      font-size:14px;
+      color:#050505;
+      background:#f0f2f5;
+      padding:10px 14px;
+      border-radius:18px;
+      line-height:1.45;
+    }
+    .fb-comment .fb-actions{
+      font-size:11px;
+      color:#888;
+      margin-top:4px;
+      display:flex;
+      gap:10px;
+    }
+    .fb-comment .fb-actions span:hover{cursor:pointer;text-decoration:underline}
+
+    /* FOOTER */
+    footer{
+      background:var(--footer-bg);
+      color:#a0adba;
+      text-align:center;
+      padding:40px 0;
+      font-size:13px;
+    }
+    footer p{margin-bottom:12px;color:#a0adba}
+    footer a{color:var(--cta-bg);margin:0 8px}
+    footer .copyright{font-weight:700;color:#fff}
+
+    /* RESPONSIVO */
+    @media (max-width:768px){
+      .hero h1{font-size:24px}
+      .hero .sub{font-size:15px}
+      h2.title{font-size:24px}
+      .btn{padding:16px 28px;font-size:16px}
+      .btn-large{padding:18px 32px;font-size:17px}
+      .stack-item{flex-direction:column;align-items:center;text-align:center}
+      .stack-item .price{margin-top:8px}
+      .stack-item .info h4 .new-badge{display:block;width:fit-content;margin:6px auto 0}
+      .total-row .now{font-size:42px}
+      .garantia{padding:40px 25px}
+      .urgencia-wrap{padding:40px 25px}
+      .vsl-placeholder::before{font-size:48px}
+      .vsl-placeholder::after{font-size:12px}
+    }
+
+    /* WHATSAPP FIXED */
+    .fixed-cta{
+      position:fixed;
+      bottom:24px;
+      right:24px;
+      background:var(--green-cta);
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:28px;
+      box-shadow:0 6px 20px rgba(60,200,100,.5);
+      z-index:998;
+      cursor:pointer;
+    }
+
+    /* === SISTEMA DE MARCADORES === */
+    .mark-point{position:absolute;top:12px;left:12px;width:42px;height:42px;background:#00d9ff;color:#000;font-weight:900;font-size:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:99999;box-shadow:0 0 0 3px #fff,0 4px 16px rgba(0,217,255,.7);cursor:pointer;font-family:'Montserrat',sans-serif;transition:transform .15s;animation:markPulse 2.2s infinite}
+    .mark-point:hover{transform:scale(1.3);background:#ffeb3b}
+    @keyframes markPulse{0%,100%{box-shadow:0 0 0 3px #fff,0 4px 16px rgba(0,217,255,.7)}50%{box-shadow:0 0 0 3px #fff,0 0 28px rgba(0,217,255,1),0 4px 24px rgba(0,217,255,.9)}}
+    section,.banner-top,footer{position:relative !important}
+    .mark-legend{position:fixed;top:74px;right:18px;background:#0a1929;color:#fff;padding:18px;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.5);z-index:100000;max-width:280px;font-family:'Montserrat',sans-serif;font-size:13px;max-height:75vh;overflow-y:auto}
+    .mark-legend h3{color:#00d9ff;font-size:13px;margin:0 0 12px;letter-spacing:.6px;text-transform:uppercase}
+    .mark-legend ol{list-style:none;padding:0;margin:0}
+    .mark-legend ol li{padding:8px 0 8px 36px;border-bottom:1px solid rgba(255,255,255,.08);position:relative;cursor:pointer;line-height:1.3;color:#d0d8e0}
+    .mark-legend ol li::before{content:attr(data-n);position:absolute;left:0;top:7px;width:26px;height:26px;background:#00d9ff;color:#000;font-weight:800;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px}
+    .mark-legend ol li:hover{background:rgba(0,217,255,.08);color:#fff}
+    .mark-toggle{position:fixed;top:18px;right:18px;background:#00d9ff;color:#000;padding:10px 18px;border-radius:50px;font-weight:800;font-size:11px;z-index:100001;box-shadow:0 4px 14px rgba(0,217,255,.5);cursor:pointer;border:0;font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:.6px}
+    body.no-marks .mark-point,body.no-marks .mark-legend{display:none}
+    body.no-marks .mark-toggle{background:#888;color:#fff}
+    /* ajuste pra não atrapalhar leitura */
+    body{padding-right:0 !important}
+
+  </style>
+</head>
+<body>
+
+  <!-- BANNER TOPO -->
+  <div class="banner-top"><div class="mark-point">1</div>
+    ⚠️ ATENÇÃO: ASSISTA O VÍDEO ANTES QUE SAIA DO AR!
+  </div>
+
+  <!-- HERO -->
+  <section class="hero"><div class="mark-point">2</div>
+    <div class="container">
+      <img src="assets/img/hed-1.webp" alt="Personal Trainer Revela Segredo de 15 Minutinhos" class="headline-img">
+      <h1>De bumbum murcho a <span class="hl">bumbum invejado</span> em 12 semanas — com 15 min/dia, em casa, sem academia e sem silicone.</h1>
+      <p class="sub">Descubra o <strong>Método das 3 Camadas do Desafio Bumbum Invejado</strong> que já transformou o corpo de <strong>mais de 3.000 mulheres acima de 35 anos</strong> — mesmo as que já tentaram academia, dieta e tudo que existe sem ver resultado.</p>
+
+      <div class="vsl-wrap">
+        <div class="vsl-placeholder"></div>
+      </div>
+      <p class="audio-info"><img src="assets/img/audio.webp" alt="audio">Verifique se o som está ligado.</p>
+
+      <div style="margin-top:30px">
+        <a href="#cta" class="btn btn-large">✅ SIM, QUERO O BUMBUM REDONDO POR R$ 67</a>
+      </div>
+
+      <div class="selos">
+        <div class="selo"><i class="fas fa-lock"></i> Compra Segura</div>
+        <div class="selo"><i class="fas fa-shield-alt"></i> Satisfação Garantida</div>
+        <div class="selo"><i class="fas fa-user-shield"></i> Privacidade Protegida</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO DOR -->
+  <section class="section-light"><div class="mark-point">3</div><div class="container"><h2 class="title center">Você se identifica com pelo menos <span class="hl">3 dessas situações?</span></h2>
+      <p class="center" style="font-size:16px;color:#666;margin-bottom:30px">Marque mentalmente quantas batem com você:</p>
+      <ul class="dor-list">
+        <li>Sua calça jeans está <strong>reta como uma tábua</strong> — sem volume, sem curva</li>
+        <li>A <strong>pochete</strong> marca por baixo da blusa e te trava na hora de comprar roupa</li>
+        <li>Você <strong>desvia o olhar</strong> das suas próprias fotos</li>
+        <li><strong>Pede pro seu marido apagar a luz</strong> ou inventa dor de cabeça nos momentos íntimos</li>
+        <li>Você treinou na academia <strong>5 vezes por semana</strong> e o bumbum continua igual</li>
+        <li>Médico te disse que <strong>"é normal na sua idade"</strong> — e isso te magoou</li>
+        <li>Você considera silicone, mas tem <strong>medo</strong> das complicações</li>
+        <li>Você sente <strong>inveja</strong> ao ver outras mulheres com o corpo que queria</li>
+      </ul>
+      <p class="dor-cta">Se 3 ou mais bateram, você está no lugar certo. O que você vai descobrir nos próximos minutos é <span class="hl">exatamente</span> o que faltava pra você.</p>
+    </div>
+  </section>
+
+  <!-- MANUELA / ROBERTO -->
+  <section class="section-beige"><div class="mark-point">4</div><div class="container"><h2 class="title center">Quem é a <span class="hl">Manuela Camargo</span></h2>
+      <div class="story">
+        <p>Sou Manuela Camargo, professora, mãe de família, <strong>mulher comum</strong> — assim como você.</p>
+        <p>Eu fui casada com o <span class="key">Roberto</span> por 11 anos. E aos 36 anos, depois dos meus filhos, eu não conseguia mais me olhar no espelho. Treinei na academia por <strong>um ano e meio</strong>, 5 vezes por semana, sem ver resultado nenhum no bumbum.</p>
+        <p>Procurei médicos, gastei com personal — e a resposta foi sempre a mesma: <em>"é quase normal na sua idade"</em>.</p>
+        <p>Uma noite, peguei o Roberto conversando com outra mulher dizendo que eu tinha <span class="key">"deixado de me cuidar"</span>. Eu não chorei. Eu surtei. Naquela hora eu tomei duas decisões: eu ia me divorciar — e eu ia ter o <strong>melhor corpo da minha vida</strong>. Não pra ele. <strong>Pra mim.</strong></p>
+        <p>Por sorte, um encontro de praia com uma amiga de infância mudou tudo. Ela me apresentou ao marido — o <strong>Luiz</strong>, personal trainer de atrizes de Hollywood e blogueiras famosas do Rio de Janeiro. Quem cobrava <strong>R$ 1.300 por mês</strong> pra atender uma cliente sozinho.</p>
+        <p>E foi com ele que eu aprendi o <strong>Método das 3 Camadas do Desafio Bumbum Invejado</strong> que mudou meu corpo em 12 semanas. Hoje, eu compartilho esse método com <strong>mais de 3.000 mulheres comuns como eu</strong> — em formato online, por uma fração do preço.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MECANISMO 3 CAMADAS -->
+  <section class="section-dark"><div class="mark-point">5</div>
+    <div class="container">
+      <h2 class="title center">O que ninguém te contou sobre <span class="hl">o seu bumbum</span></h2>
+      <p style="text-align:center;font-size:18px;max-width:700px;margin:0 auto 20px;color:#d4dde6">Seu glúteo é formado por <strong style="color:#fff">3 camadas musculares</strong>. E a academia comum trabalha <strong style="color:#fff">só uma delas</strong>.</p>
+      <p class="quote-explain">"É como pintar uma parede e deixar dois terços sem tinta. A parede nunca vai ficar com o aspecto certo."</p>
+      <div class="camadas">
+        <div class="camada">
+          <h3>📐 Glúteo MÁXIMO</h3>
+          <p>Camada superficial. Responsável pelo <strong>volume</strong> e pelo <strong>empinado</strong>. É o que a academia trabalha — e por isso seu bumbum até endurece, mas <strong>não cresce</strong>.</p>
+        </div>
+        <div class="camada">
+          <h3>📐 Glúteo MÉDIO</h3>
+          <p>Camada do meio. Responsável pelo <strong>formato de violão</strong> quando você olha de frente e atrás. <strong>Quase nunca</strong> é trabalhado no agachamento comum.</p>
+        </div>
+        <div class="camada">
+          <h3>📐 Glúteo MÍNIMO</h3>
+          <p>Camada profunda. Responsável pela <strong>firmeza</strong> e pela sustentação que dá aquele "durinho como rocha". <strong>Praticamente ignorado</strong>.</p>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:18px;max-width:700px;margin:0 auto 35px;color:#fff">Em <strong>15 minutos por dia, 3 vezes por semana, em casa</strong>, você ativa as três camadas em rotação científica — e em 12 semanas seu bumbum <strong>estufa, empinada e endurece</strong> de verdade.</p>
+      <div class="checks-list">
+        <span>Sem academia</span>
+        <span>Sem silicone</span>
+        <span>Sem dieta</span>
+        <span>Em casa</span>
+        <span>Sem equipamento</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section-light"><div class="mark-point">6</div><div class="container"><h2 class="title center">O que <span class="hl">as alunas</span> estão dizendo</h2>
+      <div class="depo-grid">
+        <div class="depo-card">
+          <img src="assets/img/d-(1).webp" alt="Marina Mota">
+          <div class="depo-content">
+            <div class="nome">💎 Marina Mota</div>
+            <div class="meta">35 anos · São Paulo · +11 cm em 4 meses</div>
+            <p>"Eu tava perdendo a esperança. Treinei 2 anos na academia, gastei rios de dinheiro e nada. Em 4 meses ganhei 11 centímetros de bumbum. Eu fotografei toda semana e posso provar."</p>
+          </div>
+        </div>
+        <div class="depo-card">
+          <img src="assets/img/d-(3).webp" alt="Rafaela Moraes">
+          <div class="depo-content">
+            <div class="nome">💎 Rafaela Moraes</div>
+            <div class="meta">28 anos · Rio de Janeiro · magra, 3 meses</div>
+            <p>"Eu sou magra, sempre fui. Achei que não ia funcionar comigo. Mas 15 minutinhos é fácil de manter. Em 3 meses, a diferença é absurda. Trabalho dia inteiro e ainda consigo."</p>
+          </div>
+        </div>
+        <div class="depo-card">
+          <img src="assets/img/d-(2).webp" alt="Patricia">
+          <div class="depo-content">
+            <div class="nome">💎 Patricia</div>
+            <div class="meta">42 anos · Goiânia · pós-parto, 6 meses</div>
+            <p>"Tive meu segundo filho aos 40. Achei que meu corpo nunca mais ia voltar. Em 6 meses eu tava melhor do que antes da gravidez. Tem foto. Tem testemunha."</p>
+          </div>
+        </div>
+      </div>
+      <div class="stats-bar">
+        <div><strong>+3.000</strong>alunas transformadas</div>
+        <div><strong>96%</strong>recomendam pra uma amiga</div>
+        <div><strong>4,9/5</strong>avaliação média</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK DE VALOR + CTA -->
+  <section class="section-light" id="cta"><div class="mark-point">7</div>style="background:#f9f4ec">
+    <div class="container">
+      <h2 class="title center">Tudo o que você leva pra casa <span class="hl">hoje</span></h2>
+      <div class="stack-wrap">
+        <div class="stack">
+          <div class="stack-header"><h3>📦 PROGRAMA + 4 BÔNUS EXCLUSIVOS</h3></div>
+          <div class="stack-body">
+            <div class="stack-item">
+              <div class="icon">🏋️</div>
+              <div class="info">
+                <h4>Programa Desafio Bumbum Invejado Completo</h4>
+                <p>12 semanas de treino estruturadas pra ativar as 3 camadas glúteas. Calendário pronto. Videoaulas no celular. Acesso vitalício.</p>
+              </div>
+              <div class="price">R$ 1.300</div>
+            </div>
+            <div class="stack-item">
+              <div class="icon">🥗</div>
+              <div class="info">
+                <h4>BÔNUS 1 — Guia das 21 Receitas Rápidas</h4>
+                <p>21 receitas rápidas e deliciosas que <strong>derretem gordura</strong> enquanto seu bumbum cresce.</p>
+              </div>
+              <div class="price">R$ 97</div>
+            </div>
+            <div class="stack-item">
+              <div class="icon">🧘</div>
+              <div class="info">
+                <h4>BÔNUS 2 — Guia dos Alongamentos Secretos <span class="new-badge">NOVO</span></h4>
+                <p>Alongamentos suaves mas potentes pra <strong>eliminar celulite</strong> e deixar suas pernas lisas.</p>
+              </div>
+              <div class="price">R$ 97</div>
+            </div>
+            <div class="stack-item">
+              <div class="icon">🍹</div>
+              <div class="info">
+                <h4>BÔNUS 3 — Sucos Secretos</h4>
+                <p>Receitas exclusivas pra <strong>reduzir inchaço e celulite</strong> em poucos dias.</p>
+              </div>
+              <div class="price">R$ 67</div>
+            </div>
+            <div class="stack-item">
+              <div class="icon">📋</div>
+              <div class="info">
+                <h4>BÔNUS 4 — Plano Alimentar 12 Semanas <span class="new-badge">NOVO</span></h4>
+                <p>Cronograma alimentar por <strong>nutricionista esportivo</strong>. Cardápio semana a semana com lista de compras.</p>
+              </div>
+              <div class="price">R$ 197</div>
+            </div>
+          </div>
+          <div class="total-row">
+            <div class="label">Valor total</div>
+            <div class="crossed">R$ 1.758</div>
+            <div class="label" style="margin-top:18px">Por apenas</div>
+            <div class="now">12x R$ 5,50</div>
+            <div class="parcelas">ou <strong>R$ 67 à vista</strong></div>
+            <div class="pay-options">💳 Cartão · PIX · Boleto · Cartão e Pix liberam em <strong>5 minutos</strong></div>
+            <div style="margin-top:30px">
+              <a href="https://go.perfectpay.com.br/PPU38CKCGLS" class="btn btn-large">📲 SIM, QUERO O BUMBUM REDONDO</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="section-light"><div class="mark-point">8</div><div class="container"><div class="garantia">
+        <img src="assets/img/guarantee.webp" alt="Garantia 30 dias" class="selo-img">
+        <h2>Garantia Incondicional de 30 dias</h2>
+        <p>Eu confio tanto no método que <strong>o risco é todo meu</strong>.</p>
+        <p>Você tem <strong>30 dias</strong> pra testar o programa por completo. Se em 30 dias você não estiver gostando — <strong>por qualquer motivo</strong> — você pede o reembolso e recebe <strong>100% do dinheiro de volta</strong>.</p>
+        <p style="font-size:14px;color:#888">Sem perguntas. Sem chatice. Sem letrinhas escondidas.</p>
+        <p class="destaque">Você só arrisca o seu bumbum continuar igual se NÃO testar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-beige"><div class="mark-point">9</div><div class="container"><h2 class="title center">Perguntas <span class="hl">Frequentes</span></h2>
+      <div class="faq-wrap">
+        <details class="faq-item"><summary>O pagamento é único?</summary><p>Sim. Você paga uma única vez R$ 67 (ou 12x R$ 5,50). Não tem mensalidade.</p></details>
+        <details class="faq-item"><summary>Quando eu recebo o acesso?</summary><p>No cartão ou Pix, libera em até 5 minutos no seu e-mail. No boleto, libera em até 2 dias úteis após o pagamento.</p></details>
+        <details class="faq-item"><summary>É um produto físico ou digital?</summary><p>100% digital. Você acessa pelo celular ou computador. Não vai chegar nada em casa.</p></details>
+        <details class="faq-item"><summary>E se eu não tiver tempo?</summary><p>15 minutinhos por dia, 3 vezes por semana — o tempo de scrollar Instagram numa fila de banco. Total: 45 minutos por semana.</p></details>
+        <details class="faq-item"><summary>E se eu não tiver disciplina pra terminar?</summary><p>Você tem <strong>acesso vitalício</strong>. Retoma quando quiser. E tem <strong>30 dias de garantia incondicional</strong> pra pedir reembolso.</p></details>
+        <details class="faq-item"><summary>Funciona pra quem tem mais de 40?</summary><p>Funciona. As alunas que apresentamos têm 28, 35 e 42 anos. O método trabalha as 3 camadas glúteas independente da idade.</p></details>
+        <details class="faq-item"><summary>Vou precisar de equipamento?</summary><p>Não. 100% em casa. Espaço de uma cama de solteiro basta. Sem peso, sem caneleira, sem academia.</p></details>
+        <details class="faq-item"><summary>Posso fazer estando em pós-parto?</summary><p>Pode — recomendamos esperar a liberação do médico (em geral 40 dias). Várias alunas começaram após o pós-parto e tiveram excelentes resultados.</p></details>
+        <details class="faq-item"><summary>Funciona pra mulheres magras?</summary><p>Sim. O método estimula crescimento muscular nas 3 camadas — independente do tipo físico.</p></details>
+        <details class="faq-item"><summary>E se eu não gostar?</summary><p>30 dias de garantia incondicional. Você manda um e-mail e recebe 100% de volta — sem perguntas.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMENTÁRIOS estilo FB -->
+  <section class="comentarios"><div class="mark-point">10</div>
+    <div class="container">
+      <div class="fb-box">
+        <h3>💬 32 comentários</h3>
+        <div class="fb-comment">
+          <img src="assets/img/p-14.webp" class="avatar" alt="">
+          <div class="fb-text">
+            <div class="fb-name">Márcia Vieira</div>
+            <div class="fb-content">Feliiiz demais!!! Manu, sempre fui na academia e nunca tive nenhum resultado. Fico feliz por ter aprendido sobre os treinos. Muito obrigada 😍</div>
+            <div class="fb-actions"><span>Curtir</span><span>Responder</span><span>31 curtidas</span><span>27 min</span></div>
+          </div>
+        </div>
+        <div class="fb-comment reply">
+          <img src="assets/img/p-1.webp" class="avatar" alt="">
+          <div class="fb-text">
+            <div class="fb-name">Luisa Marques</div>
+            <div class="fb-content"><strong>Márcia Vieira</strong> Impressionante como as técnicas são realmente simples. O bumbum aumenta mesmo!! Recomendo!</div>
+            <div class="fb-actions"><span>Curtir</span><span>Responder</span><span>2 curtidas</span><span>10 min</span></div>
+          </div>
+        </div>
+        <div class="fb-comment">
+          <img src="assets/img/p-3.webp" class="avatar" alt="">
+          <div class="fb-text">
+            <div class="fb-name">Renata Pinheiro</div>
+            <div class="fb-content">Pra mim essa história de método pra ganhar bumbum sempre foi papo furado, mas nossa… se soubesse disso antes eu estaria com um corpinho de adolescente a muito mais tempo 😂</div>
+            <div class="fb-actions"><span>Curtir</span><span>Responder</span><span>27 curtidas</span><span>53 min</span></div>
+          </div>
+        </div>
+        <div class="fb-comment">
+          <img src="assets/img/p-16.webp" class="avatar" alt="">
+          <div class="fb-text">
+            <div class="fb-name">Odilia Soares</div>
+            <div class="fb-content">Tô de cara com esse negócio! Não sabia que ia funcionar de verdade, mas resolvi tentar. Eu ganhei <strong>3 cm de bumbum já na segunda semana</strong>!! 🙀</div>
+            <div class="fb-actions"><span>Curtir</span><span>Responder</span><span>63 curtidas</span><span>2 h</span></div>
+          </div>
+        </div>
+        <div class="fb-comment">
+          <img src="assets/img/p11.webp" class="avatar" alt="">
+          <div class="fb-text">
+            <div class="fb-name">Edineia Lacerda</div>
+            <div class="fb-content">Amando os meus resultados em pouco tempo! Meu namorado não para de me elogiar 😂 Obrigada pelo método!</div>
+            <div class="fb-actions"><span>Curtir</span><span>Responder</span><span>11 curtidas</span><span>3 h</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- URGÊNCIA -->
+  <section class="section-light"><div class="mark-point">11</div><div class="container"><div class="urgencia-wrap">
+        <h2>⏰ Atenção: essa oferta tem prazo</h2>
+        <p>Por uma decisão estratégica, o <strong>Desafio Bumbum Invejado</strong> está com <strong>preço de relançamento</strong> somente até <strong>[DATA]</strong>.</p>
+        <p>Depois desse dia, o <strong>Bônus 4 (Plano Alimentar 12 Semanas)</strong> será removido, e o preço volta pro patamar normal (R$ 147).</p>
+        <p class="destaque">Não dependa de ver essa página de novo — ela pode ser tirada do ar a qualquer momento.</p>
+        <a href="#cta" class="btn btn-large">📲 GARANTIR MEU LUGAR POR R$ 67</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer><div class="mark-point">12</div>
+    <div class="container">
+      <p><strong>Disclaimer:</strong> Os resultados podem variar de pessoa pra pessoa. As transformações apresentadas refletem a experiência específica de cada aluna mencionada.</p>
+      <p class="copyright">Copyright 2026 — Desafio Bumbum Invejado ®</p>
+      <p>Todos os direitos reservados.</p>
+      <p style="margin-top:18px">
+        <a href="#">Termos de Uso</a> |
+        <a href="#">Políticas de Privacidade</a> |
+        <a href="#">Política de Reembolso</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Whatsapp fixo -->
+  <div class="fixed-cta" title="Suporte WhatsApp"><i class="fab fa-whatsapp"></i></div>
+
+
+  <button class="mark-toggle" onclick="document.body.classList.toggle('no-marks')">🎯 Marcadores</button>
+  <div class="mark-legend">
+    <h3>🎯 Pontos pra mudar</h3>
+    <ol>
+      <li data-n="1">Banner topo vermelho</li>
+      <li data-n="2">Hero (imagem + headline + VSL + CTA + selos)</li>
+      <li data-n="3">Bloco de Dor (8 itens checkbox)</li>
+      <li data-n="4">História Manuela + Roberto</li>
+      <li data-n="5">Mecanismo 3 Camadas (Máximo/Médio/Mínimo)</li>
+      <li data-n="6">Depoimentos (Marina/Rafaela/Patricia + stats)</li>
+      <li data-n="7">Stack de Valor + 4 Bônus + Preço</li>
+      <li data-n="8">Garantia 30 dias</li>
+      <li data-n="9">FAQ (10 perguntas)</li>
+      <li data-n="10">Comentários estilo Facebook</li>
+      <li data-n="11">Urgência (oferta limitada)</li>
+      <li data-n="12">Footer (disclaimer + legais)</li>
+    </ol>
+    <p style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.15);font-size:11px;color:#aab">💡 Me diga: "muda no ponto #X"</p>
+  </div>
+</body>
+</html>
