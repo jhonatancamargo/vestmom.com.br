@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Desafio Bumbum Invejado — Por apenas R$ 37</title>
+
+  <script type="text/javascript">
+    var back_redirect_back_link = 'promocao/' + location.search;
+    history.pushState({}, "", location.href);
+    history.pushState({}, "", location.href);
+    window.addEventListener('popstate', function (event) {
+      if (event.state) setTimeout(function () { location.href = back_redirect_back_link; }, 1);
+    }, false);
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1464290317747669');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1464290317747669&ev=PageView&noscript=1"/></noscript>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1DFMKE452Y', {
+      'linker': {'domains': ['pay.kiwify.com.br', 'vestmom.com.br']},
+      'allow_enhanced_conversions': true,
+      'send_page_view': true
+    });
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('a.cta').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          gtag('event', 'begin_checkout', {
+            'currency': 'BRL', 'value': 37.00,
+            'items': [{'item_id':'BBI_TSL_37','item_name':'Desafio Bumbum Invejado TSL','price':37.00,'quantity':1}]
+          });
+          if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', {value: 37.00, currency: 'BRL'});
+        });
+      });
+    });
+  </script>
+
+  <link rel="icon" href="https://vestmom.com.br/V3-PREVIEW/assets/img/favicon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    :root{
+      --brand:#FF8404; --brand-hover:#ff6a00; --brand-soft:#fff4e6; --brand-ring:rgba(255,132,4,.18);
+      --success:#16a34a; --success-soft:#dcfce7; --danger:#dc2626; --danger-soft:#fee2e2;
+      --surface-0:#ffffff; --surface-1:#fafaf7; --surface-2:#f5f5f1; --surface-3:#ecece6;
+      --surface-dark:#0b1a2c; --surface-dark-2:#112740;
+      --ink-1:#0b1a2c; --ink-2:#2c3e54; --ink-3:#5a6b7d; --ink-4:#94a3b8;
+      --ink-on-dark:#ffffff; --ink-on-dark-2:#b8c5d6;
+      --border-1:rgba(15,23,42,0.06); --border-2:rgba(15,23,42,0.10); --border-3:rgba(15,23,42,0.16);
+      --s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:20px;--s-6:24px;--s-7:32px;--s-8:40px;--s-9:56px;--s-10:72px;--s-11:96px;
+      --r-sm:6px;--r-md:10px;--r-lg:14px;--r-xl:20px;--r-2xl:28px;--r-full:999px;
+      --shadow-1:0 1px 2px rgba(15,23,42,.06),0 1px 3px rgba(15,23,42,.06);
+      --shadow-2:0 4px 8px -2px rgba(15,23,42,.08),0 2px 4px -1px rgba(15,23,42,.06);
+      --shadow-3:0 12px 24px -8px rgba(15,23,42,.12),0 6px 12px -4px rgba(15,23,42,.08);
+      --shadow-4:0 24px 48px -12px rgba(15,23,42,.18),0 12px 24px -8px rgba(15,23,42,.12);
+      --shadow-brand:0 12px 32px -8px rgba(255,132,4,.36),0 6px 16px -4px rgba(255,132,4,.24);
+      --fs-xs:clamp(0.6875rem,0.65rem + 0.2vw,0.8125rem);
+      --fs-sm:clamp(0.8125rem,0.78rem + 0.2vw,0.9375rem);
+      --fs-base:clamp(0.9375rem,0.9rem + 0.25vw,1.0625rem);
+      --fs-lg:clamp(1rem,0.96rem + 0.3vw,1.1875rem);
+      --fs-xl:clamp(1.125rem,1.05rem + 0.7vw,1.5rem);
+      --fs-2xl:clamp(1.25rem,1.15rem + 1vw,2rem);
+      --fs-3xl:clamp(1.5rem,1.32rem + 1.4vw,2.5rem);
+      --fs-4xl:clamp(1.75rem,1.45rem + 1.8vw,3.25rem);
+      --fs-5xl:clamp(2rem,1.6rem + 2.4vw,4rem);
+      --t-base:250ms cubic-bezier(0.4,0,0.2,1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--surface-0);color:var(--ink-2);line-height:1.65;font-size:var(--fs-base);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    img,svg{display:block;max-width:100%;height:auto}
+    h1,h2,h3,h4{font-family:'Plus Jakarta Sans','Inter',sans-serif;font-weight:800;color:var(--ink-1);letter-spacing:-0.02em;line-height:1.18;text-wrap:balance}
+    p{text-wrap:pretty}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:100%;max-width:760px;margin:0 auto;padding:0 var(--s-5)}
+    .wide{max-width:1080px}
+    section{padding:var(--s-8) 0}
+    @media(min-width:640px){section{padding:var(--s-10) 0}}
+
+    /* TOP BANNER */
+    .top-banner{background:linear-gradient(90deg,#dc2626 0%,#b91c1c 100%);color:#fff;text-align:center;padding:10px var(--s-4);font-size:.78rem;font-weight:700;letter-spacing:.01em;line-height:1.3}
+    @media(min-width:640px){.top-banner{padding:var(--s-3) var(--s-4);font-size:var(--fs-sm)}}
+
+    /* HERO */
+    .hero{background:linear-gradient(180deg,var(--surface-dark) 0%,var(--surface-dark-2) 100%);color:#fff;padding:var(--s-8) 0 var(--s-9);text-align:center;position:relative;overflow:hidden}
+    @media(min-width:640px){.hero{padding:var(--s-10) 0 var(--s-11)}}
+    .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top,rgba(255,132,4,.15),transparent 60%);pointer-events:none}
+    .hero .wrap{position:relative;z-index:1}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:var(--s-2);padding:6px var(--s-4);background:rgba(255,132,4,.15);border:1px solid rgba(255,132,4,.3);color:#ffb066;border-radius:var(--r-full);font-size:var(--fs-xs);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:var(--s-5)}
+    .eyebrow-pill .dot{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.22);animation:pulse 1.6s infinite}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(34,197,94,.22)}50%{box-shadow:0 0 0 7px rgba(34,197,94,0)}}
+    h1.headline{font-size:var(--fs-4xl);color:#fff;margin:0 auto var(--s-5);max-width:780px;line-height:1.12}
+    h1.headline .grad{background:linear-gradient(135deg,var(--brand),#ffb066);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .subhead{font-size:var(--fs-lg);color:var(--ink-on-dark-2);max-width:680px;margin:0 auto var(--s-7);line-height:1.55}
+    .subhead strong{color:#fff;font-weight:700}
+    .price-pill{display:inline-flex;align-items:center;gap:var(--s-3);padding:var(--s-3) var(--s-5);background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);border-radius:var(--r-full);color:#86efac;font-weight:700;margin-bottom:var(--s-5);font-size:var(--fs-sm)}
+    .price-pill .strike{color:#fca5a5;text-decoration:line-through;font-weight:600}
+
+    /* CTA */
+    .cta{display:inline-flex;align-items:center;justify-content:center;gap:var(--s-3);padding:var(--s-5) var(--s-8);background:linear-gradient(180deg,var(--brand),var(--brand-hover));color:#fff;font-weight:800;font-size:var(--fs-lg);border-radius:var(--r-full);box-shadow:var(--shadow-brand);transition:transform var(--t-base),box-shadow var(--t-base);position:relative;overflow:hidden;letter-spacing:.005em;text-align:center;max-width:100%}
+    .cta:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 18px 40px -8px rgba(255,132,4,.5)}
+    .cta::after{content:'';position:absolute;top:0;left:-100%;width:80px;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);transform:skewX(-20deg);animation:shine 3.5s infinite}
+    @keyframes shine{0%{left:-100%}50%,100%{left:200%}}
+
+    .trust{display:flex;justify-content:center;gap:var(--s-4);flex-wrap:wrap;margin-top:var(--s-5);color:var(--ink-on-dark-2);font-size:var(--fs-xs);font-weight:500}
+    @media(min-width:640px){.trust{gap:var(--s-6)}}
+    .trust span{display:inline-flex;align-items:center;gap:var(--s-2)}
+    .trust i{color:#22c55e}
+
+    /* Section base */
+    .eyebrow{display:inline-block;font-family:'Plus Jakarta Sans',sans-serif;font-size:var(--fs-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin-bottom:var(--s-3)}
+    .section-title{font-size:var(--fs-3xl);color:var(--ink-1);max-width:680px;margin:0 auto var(--s-4);text-align:center;line-height:1.2}
+    .section-sub{font-size:var(--fs-lg);color:var(--ink-3);max-width:600px;margin:0 auto var(--s-7);text-align:center;line-height:1.6}
+
+    /* LEAD - opening story */
+    .lead-section{background:var(--surface-1)}
+    .lead-block{max-width:680px;margin:0 auto}
+    .lead-block p{font-size:var(--fs-lg);color:var(--ink-2);line-height:1.75;margin-bottom:var(--s-4)}
+    .lead-block p:first-child::first-letter{font-size:3.2em;float:left;line-height:.9;margin:6px 8px 0 0;color:var(--brand);font-family:'Plus Jakarta Sans',sans-serif;font-weight:900}
+    .lead-block strong{color:var(--ink-1);font-weight:700}
+    .lead-block .key{background:linear-gradient(180deg,rgba(255,132,4,.18) 50%,transparent 50%);padding:0 4px;font-weight:700;color:var(--ink-1)}
+
+    /* PAIN */
+    .pain-section{background:var(--surface-0)}
+    .pain-list{max-width:680px;margin:0 auto;display:grid;gap:var(--s-3)}
+    .pain-item{display:flex;align-items:flex-start;gap:var(--s-4);padding:var(--s-5);background:var(--surface-1);border:1px solid var(--border-1);border-radius:var(--r-lg);transition:transform var(--t-base)}
+    .pain-item:hover{transform:translateX(4px)}
+    .pain-item .x{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--danger-soft);color:var(--danger);display:flex;align-items:center;justify-content:center;font-weight:800;margin-top:2px}
+    .pain-item p{font-size:var(--fs-base);color:var(--ink-2);line-height:1.55}
+    .pain-item strong{color:var(--ink-1)}
+    .pain-conclusion{margin-top:var(--s-7);text-align:center;font-size:var(--fs-xl);color:var(--ink-1);font-weight:700;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.4}
+    .pain-conclusion mark{background:var(--brand-soft);color:var(--brand-hover);padding:2px 8px;border-radius:var(--r-sm);font-weight:800}
+
+    /* STORY */
+    .story-section{background:linear-gradient(180deg,var(--surface-0),var(--surface-1))}
+    .story-card{background:var(--surface-0);border:1px solid var(--border-1);border-radius:var(--r-2xl);padding:var(--s-9) var(--s-7);max-width:740px;margin:0 auto;box-shadow:var(--shadow-2)}
+    .story-card p{font-size:var(--fs-base);color:var(--ink-2);line-height:1.85;margin-bottom:var(--s-4)}
+    .story-card p:last-child{margin-bottom:0}
+    .story-card strong{color:var(--ink-1);font-weight:700}
+    .story-card .key{background:linear-gradient(180deg,rgba(255,132,4,.16) 50%,transparent 50%);padding:0 4px;font-weight:700;color:var(--ink-1)}
+    @media (max-width:640px){.story-card{padding:var(--s-7) var(--s-5)}}
+
+    /* MECANISMO */
+    .mech-section{background:linear-gradient(180deg,var(--surface-dark),var(--surface-dark-2));color:var(--ink-on-dark);position:relative;overflow:hidden}
+    .mech-section .section-title{color:#fff}
+    .mech-section .eyebrow{color:#ffb066}
+    .mech-section .section-sub{color:var(--ink-on-dark-2)}
+    .mech-section .section-sub strong{color:#fff}
+    .quote-block{max-width:600px;margin:0 auto var(--s-8);padding:var(--s-5) var(--s-6);border-left:3px solid var(--brand);background:rgba(255,255,255,.03);border-radius:0 var(--r-md) var(--r-md) 0;font-style:italic;color:var(--ink-on-dark-2);font-size:var(--fs-base)}
+    .layers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-5);max-width:960px;margin:0 auto var(--s-7)}
+    @media(max-width:768px){.layers-grid{grid-template-columns:1fr;max-width:480px}}
+    .layer-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg);padding:var(--s-6);transition:transform var(--t-base),background var(--t-base)}
+    .layer-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.07);border-color:rgba(255,132,4,.4)}
+    .layer-card .layer-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:linear-gradient(135deg,var(--brand),#ffb066);color:#fff;border-radius:var(--r-sm);font-size:var(--fs-sm);font-weight:800;margin-bottom:var(--s-4);box-shadow:0 4px 12px -2px rgba(255,132,4,.32)}
+    .layer-card h3{color:#fff;font-size:var(--fs-xl);margin-bottom:var(--s-3)}
+    .layer-card p{color:var(--ink-on-dark-2);font-size:var(--fs-sm);line-height:1.6}
+    .layer-card p strong{color:#fff;font-weight:600}
+    .mech-final{text-align:center;font-size:var(--fs-lg);max-width:720px;margin:var(--s-7) auto 0;color:#fff;line-height:1.5}
+    .mech-final strong{font-weight:700}
+    .mech-bullets{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s-3) var(--s-5);margin-top:var(--s-7)}
+    .mech-bullets span{display:inline-flex;align-items:center;gap:var(--s-2);padding:8px var(--s-4);background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:var(--r-full);font-size:var(--fs-sm);color:#86efac;font-weight:600}
+    .mech-bullets span::before{content:'✓';font-weight:800}
+
+    /* FEATURED VIDEO (post-pain hero) */
+    .featured-video-section{
+      background:linear-gradient(180deg,#fff4e6 0%,#fff 100%);
+      padding:var(--s-9) 0
+    }
+    .featured-video-wrap{max-width:720px;margin:0 auto}
+    .featured-video-thumb{
+      position:relative;border-radius:var(--r-2xl);overflow:hidden;
+      cursor:pointer;aspect-ratio:16/9;background:#0a0a0a;
+      box-shadow:0 24px 64px -16px rgba(255,132,4,.45),0 0 0 2px rgba(255,132,4,.15);
+      transition:transform .3s,box-shadow .3s
+    }
+    .featured-video-thumb:hover{
+      transform:translateY(-4px) scale(1.015);
+      box-shadow:0 32px 80px -16px rgba(255,132,4,.6),0 0 0 2px rgba(255,132,4,.3)
+    }
+    .featured-video-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .featured-video-thumb .play-big{
+      position:absolute;top:50%;left:50%;
+      transform:translate(-50%,-50%);
+      width:96px;height:96px;
+      background:linear-gradient(135deg,var(--brand),var(--brand-hover));
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 16px 40px -8px rgba(255,132,4,.7),0 0 0 12px rgba(255,132,4,.2);
+      animation:pulseplay 2s infinite;pointer-events:none
+    }
+    @media(max-width:600px){.featured-video-thumb .play-big{width:72px;height:72px}}
+    .featured-video-thumb .play-big i{color:#fff;font-size:32px;margin-left:6px}
+    @media(max-width:600px){.featured-video-thumb .play-big i{font-size:24px}}
+    @keyframes pulseplay{
+      0%,100%{box-shadow:0 16px 40px -8px rgba(255,132,4,.7),0 0 0 12px rgba(255,132,4,.18)}
+      50%{box-shadow:0 16px 40px -8px rgba(255,132,4,.85),0 0 0 22px rgba(255,132,4,.04)}
+    }
+    .badge-real-big{
+      position:absolute;top:var(--s-4);left:var(--s-4);
+      background:linear-gradient(135deg,#dc2626,#b91c1c);
+      color:#fff;font-size:11px;font-weight:900;
+      padding:6px 12px;border-radius:var(--r-full);
+      letter-spacing:.06em;text-transform:uppercase;
+      box-shadow:0 6px 16px -2px rgba(220,38,38,.5);
+      display:inline-flex;align-items:center;gap:6px;z-index:2
+    }
+    .featured-video-note{
+      text-align:center;color:var(--ink-3);
+      font-size:.95rem;margin-top:var(--s-5);font-weight:600
+    }
+
+    /* VIDEO TESTIMONIALS */
+    .video-section{
+      background:linear-gradient(180deg,var(--surface-dark) 0%,var(--surface-dark-2) 100%);
+      color:#fff;position:relative;overflow:hidden
+    }
+    .video-section::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse at center,rgba(255,132,4,.08),transparent 60%);
+      pointer-events:none
+    }
+    .video-section .wrap{position:relative;z-index:1}
+    .video-section .eyebrow{color:#ffb066}
+    .video-section .section-title{color:#fff}
+    .video-section .section-sub{color:var(--ink-on-dark-2)}
+    .video-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:var(--s-5);max-width:980px;margin:0 auto
+    }
+    @media(max-width:900px){.video-grid{grid-template-columns:1fr;max-width:380px}}
+    .video-thumb{
+      position:relative;border-radius:var(--r-xl);overflow:hidden;
+      cursor:pointer;aspect-ratio:16/9;
+      background:#0a0a0a;
+      border:2px solid rgba(255,255,255,.08);
+      box-shadow:0 12px 24px -8px rgba(0,0,0,.5);
+      transition:transform .3s,border-color .3s,box-shadow .3s
+    }
+    .video-thumb:hover{
+      transform:translateY(-4px) scale(1.02);
+      border-color:rgba(255,132,4,.6);
+      box-shadow:0 20px 40px -12px rgba(255,132,4,.3)
+    }
+    .video-thumb img{
+      width:100%;height:100%;object-fit:cover;display:block;
+      transition:opacity .3s,transform .5s
+    }
+    .video-thumb:hover img{transform:scale(1.05);opacity:.8}
+    .video-thumb .play-icon{
+      position:absolute;top:50%;left:50%;
+      transform:translate(-50%,-50%);
+      width:64px;height:64px;
+      background:linear-gradient(135deg,var(--brand),var(--brand-hover));
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 8px 24px -4px rgba(255,132,4,.6),0 0 0 8px rgba(255,132,4,.15);
+      transition:transform .3s,box-shadow .3s;
+      pointer-events:none
+    }
+    .video-thumb:hover .play-icon{
+      transform:translate(-50%,-50%) scale(1.1);
+      box-shadow:0 12px 32px -4px rgba(255,132,4,.8),0 0 0 12px rgba(255,132,4,.2)
+    }
+    .video-thumb .play-icon i{
+      color:#fff;font-size:24px;margin-left:4px
+    }
+    .video-thumb .label{
+      position:absolute;bottom:0;left:0;right:0;
+      padding:var(--s-5) var(--s-4) var(--s-3);
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,.85));
+      color:#fff
+    }
+    .video-thumb .label .name{
+      font-weight:800;font-size:.95rem;
+      margin-bottom:2px;font-family:'Plus Jakarta Sans',sans-serif
+    }
+    .video-thumb .label .meta{
+      font-size:.72rem;color:#ffb066;font-weight:600
+    }
+    .video-thumb .badge-real{
+      position:absolute;top:var(--s-3);left:var(--s-3);
+      background:linear-gradient(135deg,#dc2626,#b91c1c);
+      color:#fff;font-size:9px;font-weight:900;
+      padding:4px 9px;border-radius:var(--r-full);
+      letter-spacing:.08em;text-transform:uppercase;
+      box-shadow:0 4px 8px -2px rgba(220,38,38,.5)
+    }
+
+    /* Lightbox Modal */
+    .vmodal{
+      position:fixed;inset:0;
+      background:rgba(0,0,0,.92);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      display:none;align-items:center;justify-content:center;
+      z-index:1000;padding:var(--s-5)
+    }
+    .vmodal.active{display:flex;animation:vfade .3s ease}
+    @keyframes vfade{from{opacity:0}to{opacity:1}}
+    .vmodal-inner{
+      max-width:900px;width:100%;position:relative
+    }
+    .vmodal-iframe-wrap{
+      position:relative;width:100%;aspect-ratio:16/9;
+      border-radius:var(--r-xl);overflow:hidden;
+      box-shadow:0 24px 64px -12px rgba(0,0,0,.8);
+      background:#000
+    }
+    .vmodal-iframe-wrap iframe{
+      position:absolute;inset:0;width:100%;height:100%;border:0
+    }
+    .vmodal-close{
+      position:absolute;top:-50px;right:0;
+      width:40px;height:40px;border-radius:50%;
+      background:rgba(255,255,255,.15);
+      color:#fff;display:flex;align-items:center;justify-content:center;
+      font-size:18px;cursor:pointer;
+      transition:background .2s,transform .2s;
+      border:none
+    }
+    .vmodal-close:hover{background:rgba(255,255,255,.25);transform:scale(1.1)}
+    @media(max-width:640px){
+      .vmodal-close{top:auto;bottom:-50px;right:50%;transform:translateX(50%)}
+      .vmodal-close:hover{transform:translateX(50%) scale(1.1)}
+    }
+
+    /* DEPOIMENTOS */
+    .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-5);max-width:980px;margin:0 auto}
+    @media(max-width:900px){.testimonials-grid{grid-template-columns:repeat(2,1fr);max-width:640px}}
+    @media(max-width:600px){.testimonials-grid{grid-template-columns:1fr;max-width:380px}}
+    .testimonial{background:var(--surface-0);border:1px solid var(--border-1);border-radius:var(--r-xl);padding:var(--s-6);transition:transform var(--t-base),box-shadow var(--t-base)}
+    .testimonial:hover{transform:translateY(-4px);box-shadow:var(--shadow-3)}
+    .testimonial-header{display:flex;align-items:center;gap:var(--s-4);margin-bottom:var(--s-4)}
+    .testimonial-avatar{width:56px;height:56px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--brand-soft)}
+    .testimonial-avatar img{width:100%;height:100%;object-fit:cover}
+    .testimonial-info h4{font-size:var(--fs-base);color:var(--ink-1);font-weight:700;margin-bottom:2px}
+    .testimonial-meta{font-size:var(--fs-xs);color:var(--ink-4);font-weight:500}
+    .testimonial-quote{font-size:var(--fs-sm);color:var(--ink-2);line-height:1.65}
+    .testimonial-result{margin-top:var(--s-4);padding-top:var(--s-4);border-top:1px dashed var(--border-2);display:flex;align-items:center;gap:var(--s-2);font-size:var(--fs-sm);color:var(--success);font-weight:700}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:760px;margin:var(--s-9) auto 0;background:linear-gradient(135deg,var(--brand),var(--brand-hover));border-radius:var(--r-xl);padding:var(--s-7);box-shadow:var(--shadow-brand);color:#fff;text-align:center}
+    @media(max-width:600px){.stats{grid-template-columns:1fr;gap:var(--s-5);padding:var(--s-6)}}
+    .stats .stat strong{display:block;font-size:var(--fs-3xl);font-weight:900;line-height:1;margin-bottom:var(--s-1)}
+    .stats .stat span{font-size:var(--fs-sm);opacity:.92;font-weight:500}
+    .stats .stat + .stat{border-left:1px solid rgba(255,255,255,.18)}
+    @media(max-width:600px){.stats .stat + .stat{border-left:0;border-top:1px solid rgba(255,255,255,.18);padding-top:var(--s-5)}}
+
+    /* OFERTA */
+    .offer-section{background:linear-gradient(180deg,var(--surface-1),var(--surface-2))}
+    .offer-card{max-width:760px;margin:0 auto;background:var(--surface-0);border-radius:var(--r-2xl);box-shadow:var(--shadow-4);overflow:hidden;border:1px solid var(--border-1)}
+    .offer-head{background:linear-gradient(135deg,var(--surface-dark),var(--surface-dark-2));color:#fff;padding:var(--s-7);text-align:center;position:relative;overflow:hidden}
+    .offer-head::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,132,4,.18),transparent 60%)}
+    .offer-head h3{color:#fff;font-size:var(--fs-xl);position:relative}
+    .offer-head p{font-size:var(--fs-sm);color:var(--ink-on-dark-2);margin-top:var(--s-2);position:relative}
+    .offer-body{padding:var(--s-7) var(--s-7) var(--s-3)}
+    .offer-item{display:grid;grid-template-columns:48px 1fr auto;gap:var(--s-4);align-items:flex-start;padding:var(--s-5) 0;border-bottom:1px dashed var(--border-2)}
+    .offer-item:last-child{border-bottom:none}
+    .offer-icon{width:48px;height:48px;background:var(--brand-soft);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+    .offer-content h4{font-size:var(--fs-base);color:var(--ink-1);margin-bottom:var(--s-1);display:flex;align-items:center;gap:var(--s-2);flex-wrap:wrap}
+    .badge-new{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:var(--r-sm);letter-spacing:.04em;text-transform:uppercase}
+    .offer-content p{font-size:var(--fs-sm);color:var(--ink-3);line-height:1.55}
+    .offer-price{font-size:var(--fs-base);color:var(--ink-1);font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap}
+    @media(max-width:600px){.offer-item{grid-template-columns:36px 1fr;gap:var(--s-3)}.offer-icon{width:36px;height:36px;font-size:18px}.offer-price{grid-column:1/-1;text-align:right;padding-top:var(--s-2)}}
+
+    .offer-total{background:linear-gradient(180deg,var(--brand-soft),#fff);padding:var(--s-8) var(--s-7);text-align:center;border-top:1px solid var(--border-1)}
+    .offer-total .label{font-size:var(--fs-xs);color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:var(--s-1)}
+    .offer-total .crossed{font-size:var(--fs-xl);color:var(--ink-3);text-decoration:line-through;text-decoration-color:var(--danger);text-decoration-thickness:2px;font-weight:600}
+    .offer-total .now{font-size:var(--fs-5xl);font-weight:900;color:var(--brand);line-height:1;margin:var(--s-3) 0 var(--s-2);font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.02em}
+    .offer-total .install{font-size:var(--fs-base);color:var(--ink-2);margin-bottom:var(--s-6)}
+    .offer-total .install strong{color:var(--brand);font-weight:700}
+    .offer-total .payment-methods{font-size:var(--fs-xs);color:var(--ink-3);margin-top:var(--s-4)}
+    .offer-total .payment-methods strong{color:var(--success);font-weight:700}
+
+    .market-anchor{background:linear-gradient(180deg,#fff,var(--surface-2));border:1px dashed var(--border-3);border-radius:var(--r-xl);padding:var(--s-5) var(--s-6);margin:0 auto var(--s-7);max-width:480px;position:relative}
+    .market-anchor::before{content:"PREÇO DE MERCADO";position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--ink-1);color:#fff;font-size:10px;letter-spacing:.12em;padding:3px 10px;border-radius:var(--r-full);font-weight:700}
+    .market-anchor .anchor-label{font-size:var(--fs-xs);color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:var(--s-2)}
+    .market-anchor .anchor-value{font-size:var(--fs-4xl);font-weight:900;color:var(--danger);text-decoration:line-through;text-decoration-color:var(--ink-1);text-decoration-thickness:3px;line-height:1;margin-bottom:var(--s-2);font-family:'Plus Jakarta Sans',sans-serif}
+    .market-anchor .anchor-note{font-size:var(--fs-xs);color:var(--ink-3);font-style:italic}
+
+    .savings-pill{display:inline-flex;align-items:center;gap:var(--s-2);background:var(--success-soft);color:var(--success);padding:var(--s-3) var(--s-5);border-radius:var(--r-full);font-weight:700;font-size:var(--fs-sm);margin:var(--s-4) auto;border:1px solid rgba(22,163,74,0.25)}
+    .savings-pill strong{color:var(--success);font-weight:900}
+
+    .bonus-pill{display:inline-flex;align-items:center;gap:var(--s-2);background:var(--brand-soft);color:var(--brand-hover);padding:var(--s-3) var(--s-5);border-radius:var(--r-full);font-weight:600;font-size:var(--fs-sm);margin:var(--s-3) auto var(--s-4);border:1px solid var(--brand-ring)}
+    .bonus-pill strong{color:var(--brand-hover);font-weight:900}
+
+    /* GARANTIA */
+    .guarantee-section{background:var(--surface-0)}
+    .guarantee-card{max-width:640px;margin:0 auto;background:linear-gradient(135deg,var(--success-soft),#f0fdf4);border:2px solid rgba(22,163,74,.18);border-radius:var(--r-2xl);padding:var(--s-9) var(--s-7);text-align:center;position:relative}
+    .guarantee-badge{width:96px;margin:0 auto var(--s-5);filter:drop-shadow(0 6px 12px rgba(22,163,74,.24))}
+    .guarantee-card h3{font-size:var(--fs-2xl);color:#15803d;margin-bottom:var(--s-4)}
+    .guarantee-card p{font-size:var(--fs-base);color:var(--ink-2);line-height:1.7;margin-bottom:var(--s-3)}
+    .guarantee-card strong{color:#15803d;font-weight:700}
+    .guarantee-card .small{font-size:var(--fs-sm);color:var(--ink-3);margin-top:var(--s-3)}
+
+    /* FAQ */
+    .faq-section{background:var(--surface-1)}
+    .faq-list{max-width:720px;margin:0 auto;display:grid;gap:var(--s-3)}
+    details.faq{background:var(--surface-0);border:1px solid var(--border-1);border-radius:var(--r-lg);overflow:hidden;transition:box-shadow var(--t-base)}
+    details.faq:hover{box-shadow:var(--shadow-1)}
+    details.faq[open]{box-shadow:var(--shadow-2);border-color:var(--border-2)}
+    details.faq summary{list-style:none;padding:var(--s-5) var(--s-6);font-size:var(--fs-base);font-weight:700;color:var(--ink-1);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:var(--s-4)}
+    details.faq summary::-webkit-details-marker{display:none}
+    details.faq summary::after{content:'+';width:24px;height:24px;flex-shrink:0;background:var(--brand-soft);color:var(--brand);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;transition:transform var(--t-base),background var(--t-base)}
+    details.faq[open] summary::after{content:'−';background:var(--brand);color:#fff;transform:rotate(180deg)}
+    details.faq .answer{padding:0 var(--s-6) var(--s-6);font-size:var(--fs-sm);color:var(--ink-2);line-height:1.65}
+    details.faq .answer strong{color:var(--ink-1)}
+
+    /* URGENCY */
+    .urgency-section{background:var(--surface-0)}
+    .urgency-card{max-width:720px;margin:0 auto;background:linear-gradient(135deg,#fff7ed,#fffbeb);border:2px solid #fdba74;border-radius:var(--r-2xl);padding:var(--s-9) var(--s-7);text-align:center;box-shadow:var(--shadow-3)}
+    .urgency-card h3{font-size:var(--fs-2xl);color:var(--danger);margin-bottom:var(--s-4)}
+    .urgency-card p{font-size:var(--fs-base);color:var(--ink-2);line-height:1.6;margin-bottom:var(--s-3)}
+    .urgency-card strong{color:var(--ink-1);font-weight:700}
+    .urgency-card .key-line{font-weight:700;color:var(--danger);margin:var(--s-5) 0}
+
+    /* INLINE CTA mid-page */
+    .cta-inline{text-align:center;margin:var(--s-8) auto;max-width:680px}
+    .cta-inline .cta{font-size:var(--fs-lg)}
+    .cta-inline-note{font-size:var(--fs-xs);color:var(--ink-4);margin-top:var(--s-3)}
+
+    /* FOOTER */
+    footer{background:var(--surface-dark);color:var(--ink-on-dark-2);padding:var(--s-8) 0;text-align:center;font-size:var(--fs-sm)}
+    footer .copyright{color:#fff;font-weight:700;margin-bottom:var(--s-2)}
+    footer .disclaimer{font-size:var(--fs-xs);max-width:600px;margin:0 auto var(--s-4);opacity:.7;line-height:1.6}
+    footer .links a{color:var(--brand);margin:0 var(--s-3);font-weight:500;font-size:var(--fs-xs)}
+
+    /* WhatsApp float */
+    .wa-float{position:fixed;bottom:20px;right:20px;width:52px;height:52px;background:#25d366;border-radius:50%;color:#fff;font-size:24px;text-align:center;line-height:52px;box-shadow:0 4px 12px rgba(37,211,102,.35);z-index:998}
+    @media(min-width:640px){.wa-float{width:58px;height:58px;line-height:58px;bottom:24px;right:24px;font-size:28px}}
+    .wa-float i{vertical-align:middle;line-height:1}
+
+    /* Reveal on scroll */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.in-view{opacity:1;transform:translateY(0)}
+
+    /* Live notification popup */
+    #notif-popup{
+      position:fixed;bottom:14px;left:14px;right:74px;
+      background:#fff;border:1px solid var(--border-2);
+      border-radius:var(--r-lg);
+      box-shadow:0 24px 48px -12px rgba(15,23,42,.25),0 12px 24px -8px rgba(15,23,42,.15);
+      padding:12px var(--s-4);max-width:320px;
+      z-index:997;display:none;
+      animation:notif-slide .4s cubic-bezier(0.34,1.56,0.64,1)
+    }
+    @media(min-width:640px){#notif-popup{bottom:24px;left:24px;right:auto}}
+    @keyframes notif-slide{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+    #notif-popup .notif-inner{display:flex;align-items:flex-start;gap:var(--s-3)}
+    #notif-popup .notif-avatar{
+      width:36px;height:36px;border-radius:50%;
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      color:#fff;display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;font-size:14px
+    }
+    #notif-popup .notif-text{font-size:.85rem;color:var(--ink-1);line-height:1.4}
+    #notif-popup .notif-text strong{display:block;color:var(--ink-1);font-weight:800;margin-bottom:2px;font-size:.92rem}
+    #notif-popup .notif-text span{color:var(--ink-3);font-size:.78rem;display:block}
+    #notif-popup .notif-text em{color:var(--ink-4);font-size:.7rem;font-style:normal;display:block;margin-top:3px}
+  </style>
+</head>
+<body>
+
+  <!-- TOP BANNER -->
+  <div class="top-banner">⚠️ ATENÇÃO: PROMOÇÃO RELÂMPAGO — SÓ HOJE POR R$ 37</div>
+
+  <!-- HERO / HEADLINE -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow-pill">
+        <span class="dot"></span>
+        Método validado por 3.000+ alunas
+      </div>
+
+      <h1 class="headline">A <span class="grad">descoberta acidental</span> de uma mãe de 35 anos que transformou seu bumbum em 12 semanas — sem academia, sem silicone, em casa.</h1>
+
+      <p class="subhead">Se você já tentou academia, dieta e tudo que existe sem ver seu bumbum crescer um centímetro — você precisa ler isso até o final. <strong>Vai mudar tudo.</strong></p>
+
+      <div class="price-pill">
+        🔥 Acesso completo: <span class="strike">R$ 297</span> &nbsp; <strong>HOJE R$ 37</strong>
+      </div>
+
+      <div style="margin-top:var(--s-2)">
+        <a href="https://pay.kiwify.com.br/q1aDdpV" class="cta">
+          <i class="fas fa-bolt"></i>
+          Quero meu bumbum redondo por R$ 37
+        </a>
+      </div>
+
+      <div class="trust">
+        <span><i class="fas fa-lock"></i> Compra Segura</span>
+        <span><i class="fas fa-shield-alt"></i> Garantia 15 dias</span>
+        <span><i class="fas fa-bolt"></i> Acesso imediato</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD / OPENING -->
+  <section class="lead-section">
+    <div class="wrap">
+      <div class="lead-block">
+        <p>Se você é como eu fui um dia, você provavelmente já tentou de TUDO pra aumentar o bumbum. Frequentou a academia <span class="key">5 vezes por semana</span>, fez dieta, gastou rios de dinheiro com personal trainer, e mesmo assim o seu bumbum continua <strong>reto, murcho e cheio de celulite</strong>.</p>
+
+        <p>Você está cansada de se sentir mal toda vez que olha no espelho. Cansada de ver as outras mulheres usando aqueles jeans que você não conseguiria nem fechar. Cansada de pedir pro seu marido apagar a luz quando você quer se sentir desejada.</p>
+
+        <p>Eu sei exatamente como é. Porque eu vivi isso por anos — até <strong>uma manhã na praia</strong>, quando uma amiga de infância me revelou um segredo que mudou tudo.</p>
+
+        <p>Esse segredo é o que <span class="key">+3.000 mulheres comuns</span> já usaram pra crescer 11 centímetros de bumbum em 4 meses — em casa, com apenas 15 minutos por dia.</p>
+
+        <p>E hoje, eu vou compartilhar esse segredo com você. Por uma fração do que custaria normalmente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA INLINE 1 -->
+  <div class="cta-inline">
+    <a href="https://pay.kiwify.com.br/q1aDdpV" class="cta">
+      <i class="fas fa-bolt"></i>
+      Sim, quero descobrir o método
+    </a>
+    <div class="cta-inline-note">Acesso imediato · 15 dias de garantia incondicional</div>
+  </div>
+
+  <!-- PAIN -->
+  <section class="pain-section">
+    <div class="wrap">
+      <div style="text-align:center"><span class="eyebrow">Reconhecimento</span></div>
+      <h2 class="section-title">Você se identifica com pelo menos<br>3 dessas situações?</h2>
+      <ul class="pain-list">
+        <li class="pain-item reveal"><div class="x">✕</div><p>Sua calça jeans está <strong>reta como uma tábua</strong> — sem volume, sem curva</p></li>
+        <li class="pain-item reveal"><div class="x">✕</div><p>A <strong>pochete marca</strong> por baixo da blusa e te trava na hora de comprar roupa</p></li>
+        <li class="pain-item reveal"><div class="x">✕</div><p>Você <strong>desvia o olhar</strong> das suas próprias fotos no celular</p></li>
+        <li class="pain-item reveal"><div class="x">✕</div><p><strong>Pede pro marido apagar a luz</strong> ou inventa dor de cabeça nos momentos íntimos</p></li>
+        <li class="pain-item reveal"><div class="x">✕</div><p>Treinou na academia <strong>5 vezes por semana</strong> e o bumbum continua igual</p></li>
+        <li class="pain-item reveal"><div class="x">✕</div><p>Médico te disse que <strong>"é normal na sua idade"</strong> — e isso te magoou</p></li>
+        <li class="pain-item reveal"><div class="x">✕</div><p>Você considera silicone, mas tem <strong>medo</strong> das complicações</p></li>
+        <li class="pain-item reveal"><div class="x">✕</div><p>Sente <strong>inveja</strong> ao ver outras mulheres com o corpo que queria</p></li>
+      </ul>
+      <p class="pain-conclusion">Se 3 ou mais bateram, você está no lugar certo. O que vem a seguir é <mark>exatamente</mark> o que faltava pra você.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED VIDEO TESTIMONIAL (depois da Pain — quebra ceticismo no momento certo) -->
+  <section class="featured-video-section">
+    <div class="wrap">
+      <div style="text-align:center"><span class="eyebrow">🎥 Depoimento real</span></div>
+      <h2 class="section-title">Você se reconheceu nas dores acima?<br>Olha quem passou pelo mesmo:</h2>
+
+      <div class="featured-video-wrap">
+        <div class="featured-video-thumb" data-video="JRIUkePeP5U">
+          <span class="badge-real-big"><i class="fas fa-circle" style="font-size:8px"></i> 100% real · não é atriz</span>
+          <img src="https://i.ytimg.com/vi/JRIUkePeP5U/maxresdefault.jpg" alt="Depoimento real de aluna" loading="lazy">
+          <div class="play-big"><i class="fas fa-play"></i></div>
+        </div>
+        <p class="featured-video-note">▶ Toque pra assistir o depoimento completo (37 segundos)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story-section">
+    <div class="wrap">
+      <div style="text-align:center"><span class="eyebrow">A história</span></div>
+      <h2 class="section-title">Quem é a Manuela Camargo</h2>
+      <div class="story-card">
+        <p>Sou Manuela Camargo, professora, mãe de família, <strong>mulher comum</strong> — assim como você.</p>
+
+        <p>Aos 36 anos, depois dos meus filhos, eu não conseguia mais me olhar no espelho. Treinei na academia por <strong>um ano e meio</strong>, 5 vezes por semana, sem ver resultado nenhum no bumbum.</p>
+
+        <p>Procurei médicos. Gastei com personal trainer. E a resposta foi sempre a mesma: <em>"é quase normal na sua idade"</em>. Cada vez que eu ouvia isso, era como um <span class="key">soco no estômago</span>.</p>
+
+        <p>Uma noite, peguei o meu marido conversando com outra mulher dizendo que eu tinha <span class="key">"deixado de me cuidar"</span>. Eu não chorei. Eu surtei. Naquela hora eu tomei duas decisões: eu ia me divorciar — e eu ia ter o <strong>melhor corpo da minha vida</strong>. Não pra ele. <strong>Pra mim.</strong></p>
+
+        <p>Por sorte, um encontro de praia com uma amiga de infância mudou tudo. Ela me apresentou ao marido — o <strong>Luiz</strong>, personal trainer de atrizes de Hollywood e blogueiras famosas do Rio. Quem cobrava <strong>R$ 1.300 por mês</strong> pra atender uma cliente.</p>
+
+        <p>Foi com ele que aprendi o <strong>Método das 3 Camadas do Desafio Bumbum Invejado</strong> — que mudou meu corpo em 12 semanas. Hoje, compartilho esse método com <strong>+3.000 mulheres comuns</strong>, em formato 100% online, por uma fração do preço original.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA INLINE 2 -->
+  <div class="cta-inline">
+    <a href="https://pay.kiwify.com.br/q1aDdpV" class="cta">
+      <i class="fas fa-bolt"></i>
+      Quero o método das 3 camadas
+    </a>
+    <div class="cta-inline-note">Por apenas R$ 37 hoje · Liberação em 5 minutos</div>
+  </div>
+
+  <!-- MECANISMO -->
+  <section class="mech-section">
+    <div class="wrap">
+      <div style="text-align:center"><span class="eyebrow">O método</span></div>
+      <h2 class="section-title">O que ninguém te contou<br>sobre o seu bumbum</h2>
+      <p class="section-sub">Seu glúteo é formado por <strong>3 camadas musculares</strong>. E a academia comum trabalha <strong>só uma delas</strong>.</p>
+      <div class="quote-block">"É como pintar uma parede e deixar dois terços sem tinta. A parede nunca vai ficar com o aspecto certo."</div>
+      <div class="layers-grid">
+        <div class="layer-card reveal">
+          <div class="layer-num">01</div>
+          <h3>Glúteo Máximo</h3>
+          <p>Camada superficial. Responsável pelo <strong>volume</strong> e pelo <strong>empinado</strong>. É o que a academia trabalha — e por isso seu bumbum endurece, mas <strong>não cresce</strong>.</p>
+        </div>
+        <div class="layer-card reveal">
+          <div class="layer-num">02</div>
+          <h3>Glúteo Médio</h3>
+          <p>Camada do meio. Responsável pelo <strong>formato de violão</strong>. <strong>Quase nunca</strong> é trabalhado no agachamento comum.</p>
+        </div>
+        <div class="layer-card reveal">
+          <div class="layer-num">03</div>
+          <h3>Glúteo Mínimo</h3>
+          <p>Camada profunda. Responsável pela <strong>firmeza</strong> e pela sustentação que dá aquele "durinho como rocha". <strong>Praticamente ignorado</strong>.</p>
+        </div>
+      </div>
+      <p class="mech-final">Em <strong>15 minutos por dia, 3 vezes por semana, em casa</strong>, você ativa as 3 camadas em rotação científica — e em 12 semanas seu bumbum <strong>estufa, empina e endurece</strong> de verdade.</p>
+      <div class="mech-bullets">
+        <span>Sem academia</span>
+        <span>Sem silicone</span>
+        <span>Sem dieta</span>
+        <span>Em casa</span>
+        <span>Sem equipamento</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS (texto) -->
+  <section style="background:var(--surface-0)">
+    <div class="wrap wide">
+      <div style="text-align:center"><span class="eyebrow">Prova social</span></div>
+      <h2 class="section-title">O que as alunas estão dizendo</h2>
+      <div class="testimonials-grid">
+        <article class="testimonial reveal">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar"><img src="https://vestmom.com.br/V3-PREVIEW/assets/img/d-(1).webp" alt="Marina Mota"></div>
+            <div class="testimonial-info">
+              <h4>Marina Mota</h4>
+              <div class="testimonial-meta">35 anos · São Paulo</div>
+            </div>
+          </div>
+          <p class="testimonial-quote">"Eu tava perdendo a esperança. Treinei 2 anos na academia, gastei rios de dinheiro e nada. Em 4 meses ganhei <strong>11 cm de bumbum</strong>."</p>
+          <div class="testimonial-result"><i class="fas fa-arrow-up"></i> +11 cm em 4 meses</div>
+        </article>
+        <article class="testimonial reveal">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar"><img src="https://vestmom.com.br/V3-PREVIEW/assets/img/d-(3).webp" alt="Rafaela Moraes"></div>
+            <div class="testimonial-info">
+              <h4>Rafaela Moraes</h4>
+              <div class="testimonial-meta">28 anos · Rio de Janeiro</div>
+            </div>
+          </div>
+          <p class="testimonial-quote">"Eu sou magra, sempre fui. Achei que não ia funcionar comigo. Em 3 meses, a diferença é <strong>absurda</strong>. Trabalho dia inteiro e ainda consigo."</p>
+          <div class="testimonial-result"><i class="fas fa-arrow-up"></i> Resultado em 3 meses</div>
+        </article>
+        <article class="testimonial reveal">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar"><img src="https://vestmom.com.br/V3-PREVIEW/assets/img/ana-maria.jpg" alt="Ana Maria"></div>
+            <div class="testimonial-info">
+              <h4>Ana Maria</h4>
+              <div class="testimonial-meta">32 anos · Macapá-AP</div>
+            </div>
+          </div>
+          <p class="testimonial-quote">"Pós-parto e morando no interior, eu não tinha tempo nem dinheiro pra academia. <strong>15 minutos por dia em casa</strong> e o resultado apareceu."</p>
+          <div class="testimonial-result"><i class="fas fa-arrow-up"></i> Pós-parto · em casa</div>
+        </article>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>+3.000</strong><span>alunas transformadas</span></div>
+        <div class="stat"><strong>96%</strong><span>recomendam</span></div>
+        <div class="stat"><strong>4.9/5</strong><span>avaliação média</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO GALLERY (decisão de compra — última prova antes da oferta) -->
+  <section class="video-section">
+    <div class="wrap wide">
+      <div style="text-align:center"><span class="eyebrow">🎥 Mais resultados reais</span></div>
+      <h2 class="section-title">Mais alunas reais.<br>Não-atriz. Não-contratada.</h2>
+      <p class="section-sub">Antes de você fechar essa página, <strong style="color:#fff">olha mais 3 mulheres que enviaram depoimentos via WhatsApp</strong>:</p>
+
+      <div class="video-grid">
+        <div class="video-thumb" data-video="JRIUkePeP5U">
+          <span class="badge-real"><i class="fas fa-circle" style="font-size:7px"></i> Real</span>
+          <img src="https://i.ytimg.com/vi/JRIUkePeP5U/maxresdefault.jpg" alt="Depoimento 1" loading="lazy">
+          <div class="play-icon"><i class="fas fa-play"></i></div>
+          <div class="label">
+            <div class="name">Aluna real</div>
+            <div class="meta">▶ 37 segundos</div>
+          </div>
+        </div>
+        <div class="video-thumb" data-video="ujss1kqzsKU">
+          <span class="badge-real"><i class="fas fa-circle" style="font-size:7px"></i> Real</span>
+          <img src="https://i.ytimg.com/vi/ujss1kqzsKU/maxresdefault.jpg" alt="Depoimento 2" loading="lazy">
+          <div class="play-icon"><i class="fas fa-play"></i></div>
+          <div class="label">
+            <div class="name">Aluna real</div>
+            <div class="meta">▶ 37 segundos</div>
+          </div>
+        </div>
+        <div class="video-thumb" data-video="Vn3TJQspUS4">
+          <span class="badge-real"><i class="fas fa-circle" style="font-size:7px"></i> Real</span>
+          <img src="https://i.ytimg.com/vi/Vn3TJQspUS4/maxresdefault.jpg" alt="Depoimento 3" loading="lazy">
+          <div class="play-icon"><i class="fas fa-play"></i></div>
+          <div class="label">
+            <div class="name">Aluna real</div>
+            <div class="meta">▶ 32 segundos</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align:center;color:var(--ink-on-dark-2);font-size:.85rem;margin-top:var(--s-7);max-width:560px;margin-left:auto;margin-right:auto">⚠️ Esses vídeos foram enviados pelas próprias alunas. <strong style="color:#fff">Nenhuma atriz, nenhum roteiro</strong> — só transformação real.</p>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="offer-section" id="offer">
+    <div class="wrap">
+      <div style="text-align:center"><span class="eyebrow">A oferta</span></div>
+      <h2 class="section-title">Tudo o que você leva pra casa<br>por apenas R$ 37</h2>
+      <div class="offer-card">
+        <div class="offer-head">
+          <h3>📦 Programa + 4 Bônus Exclusivos</h3>
+          <p>Acesso vitalício · Liberação imediata</p>
+        </div>
+        <div class="offer-body">
+          <div class="offer-item">
+            <div class="offer-icon">🏋️</div>
+            <div class="offer-content">
+              <h4>Programa Desafio Bumbum Invejado</h4>
+              <p>12 semanas de treino estruturadas pra ativar as 3 camadas glúteas. Calendário, videoaulas, acesso vitalício.</p>
+            </div>
+            <div class="offer-price">R$ 1.300</div>
+          </div>
+          <div class="offer-item">
+            <div class="offer-icon">🥗</div>
+            <div class="offer-content">
+              <h4>Bônus 1 — 21 Receitas Rápidas</h4>
+              <p>Receitas rápidas que <strong>derretem gordura</strong> enquanto seu bumbum cresce.</p>
+            </div>
+            <div class="offer-price">R$ 97</div>
+          </div>
+          <div class="offer-item">
+            <div class="offer-icon">🧘</div>
+            <div class="offer-content">
+              <h4>Bônus 2 — Alongamentos Secretos <span class="badge-new">Novo</span></h4>
+              <p>Alongamentos pra <strong>eliminar celulite</strong> e deixar pernas lisas e torneadas.</p>
+            </div>
+            <div class="offer-price">R$ 97</div>
+          </div>
+          <div class="offer-item">
+            <div class="offer-icon">🍹</div>
+            <div class="offer-content">
+              <h4>Bônus 3 — Sucos Secretos</h4>
+              <p>Receitas exclusivas pra <strong>reduzir inchaço e celulite</strong> em poucos dias.</p>
+            </div>
+            <div class="offer-price">R$ 67</div>
+          </div>
+          <div class="offer-item">
+            <div class="offer-icon">📋</div>
+            <div class="offer-content">
+              <h4>Bônus 4 — Plano Alimentar 12 Semanas <span class="badge-new">Novo</span></h4>
+              <p>Cronograma por <strong>nutricionista esportivo</strong>. Cardápio com lista de compras semanal.</p>
+            </div>
+            <div class="offer-price">R$ 197</div>
+          </div>
+        </div>
+        <div class="offer-total">
+          <div class="market-anchor">
+            <div class="anchor-label">Procedimento estético equivalente custa</div>
+            <div class="anchor-value">R$ 8.000</div>
+            <div class="anchor-note">em consultório · sem garantia · com risco de complicações</div>
+          </div>
+          <div class="label">Valor total real</div>
+          <div class="crossed">R$ 1.758</div>
+          <div class="bonus-pill">
+            <i class="fas fa-gift"></i> + R$ 458 em bônus <strong>HOJE GRÁTIS</strong>
+          </div>
+          <div class="label" style="margin-top:var(--s-4)">Por apenas</div>
+          <div class="now">R$ 37</div>
+          <div class="install">à vista · pagamento único · acesso vitalício</div>
+          <div class="savings-pill">
+            <i class="fas fa-piggy-bank"></i> Você economiza <strong>R$ 1.721</strong>
+          </div>
+          <a href="https://pay.kiwify.com.br/q1aDdpV" class="cta">
+            <i class="fas fa-bolt"></i>
+            Quero meu bumbum redondo por R$ 37
+          </a>
+          <div class="payment-methods">💳 Cartão · PIX · Boleto · Acesso liberado em <strong>5 minutos</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="guarantee-section">
+    <div class="wrap">
+      <div class="guarantee-card">
+        <img src="https://vestmom.com.br/V3-PREVIEW/assets/img/guarantee.webp" alt="Garantia 15 dias" class="guarantee-badge">
+        <h3>Garantia Incondicional de 15 dias</h3>
+        <p>Eu confio tanto no método que <strong>o risco é todo meu</strong>.</p>
+        <p>Você tem 15 dias pra testar o programa por completo. Se não estiver gostando — <strong>por qualquer motivo</strong> — você pede o reembolso e recebe <strong>100% do dinheiro de volta</strong>.</p>
+        <p class="small">Sem perguntas. Sem chatice. Sem letrinhas escondidas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- URGENCY -->
+  <section class="urgency-section">
+    <div class="wrap">
+      <div class="urgency-card">
+        <h3>⏰ Essa oferta tem prazo</h3>
+        <p>Por uma decisão estratégica, o <strong>Desafio Bumbum Invejado</strong> está com <strong>preço promocional de R$ 37</strong> apenas até <strong id="urgency-date">esta meia-noite</strong>.</p>
+        <p>Depois desse dia, o <strong>Bônus 4 (Plano Alimentar 12 Semanas)</strong> será removido, e o preço volta pro patamar normal (R$ 297).</p>
+        <p class="key-line">Não dependa de ver essa página de novo — ela pode ser tirada do ar a qualquer momento.</p>
+        <a href="https://pay.kiwify.com.br/q1aDdpV" class="cta">
+          <i class="fas fa-bolt"></i>
+          Garantir meu lugar por R$ 37
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="wrap">
+      <div style="text-align:center"><span class="eyebrow">Dúvidas</span></div>
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <div class="faq-list">
+        <details class="faq"><summary>O pagamento é único?</summary><div class="answer">Sim. Você paga uma única vez <strong>R$ 37</strong>. Não tem mensalidade, nem cobrança recorrente.</div></details>
+        <details class="faq"><summary>Quando eu recebo o acesso?</summary><div class="answer">No cartão ou Pix, libera em até <strong>5 minutos</strong> no seu e-mail. No boleto, em até 2 dias úteis após o pagamento.</div></details>
+        <details class="faq"><summary>É um produto físico ou digital?</summary><div class="answer">100% digital. Você acessa pelo celular ou computador. Não chega nada em casa.</div></details>
+        <details class="faq"><summary>E se eu não tiver tempo?</summary><div class="answer"><strong>15 minutos por dia</strong>, 3 vezes por semana — o tempo de scrollar Instagram numa fila de banco.</div></details>
+        <details class="faq"><summary>E se eu não tiver disciplina?</summary><div class="answer">Você tem <strong>acesso vitalício</strong>. Retoma quando quiser. E tem <strong>15 dias de garantia incondicional</strong>.</div></details>
+        <details class="faq"><summary>Funciona pra quem tem mais de 40?</summary><div class="answer">Funciona. As alunas têm 28, 35, 42 anos. O método trabalha as 3 camadas glúteas independente da idade.</div></details>
+        <details class="faq"><summary>Preciso de equipamento?</summary><div class="answer">Não. 100% em casa. Espaço de uma cama de solteiro basta. Sem peso, sem caneleira, sem academia.</div></details>
+        <details class="faq"><summary>Posso fazer em pós-parto?</summary><div class="answer">Pode — após liberação médica (geralmente 40 dias). Várias alunas começaram após o pós-parto com excelentes resultados.</div></details>
+        <details class="faq"><summary>Funciona pra mulheres magras?</summary><div class="answer">Sim. O método estimula crescimento muscular nas 3 camadas — independente do tipo físico.</div></details>
+        <details class="faq"><summary>E se eu não gostar?</summary><div class="answer"><strong>15 dias de garantia incondicional.</strong> Manda um e-mail e recebe 100% de volta — sem perguntas.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="background:linear-gradient(135deg,var(--surface-dark),var(--surface-dark-2));color:#fff;text-align:center">
+    <div class="wrap">
+      <div style="text-align:center"><span class="eyebrow" style="color:#ffb066">Última chance</span></div>
+      <h2 class="section-title" style="color:#fff">Sua decisão agora<br>vale R$ 1.721</h2>
+      <p style="font-size:var(--fs-lg);color:var(--ink-on-dark-2);max-width:600px;margin:0 auto var(--s-7);line-height:1.55">Em 30 dias você pode estar <strong style="color:#fff">olhando no espelho com sorriso</strong> — ou na mesma situação de hoje. <strong style="color:#fff">A escolha é sua.</strong></p>
+      <a href="https://pay.kiwify.com.br/q1aDdpV" class="cta">
+        <i class="fas fa-bolt"></i>
+        Sim, eu quero por R$ 37
+      </a>
+      <p style="font-size:var(--fs-xs);color:var(--ink-on-dark-2);margin-top:var(--s-4)">Pagamento 100% seguro · Acesso vitalício · Garantia 15 dias</p>
+    </div>
+  </section>
+
+  <!-- Video Lightbox Modal (YouTube embed) -->
+  <div class="vmodal" id="vmodal">
+    <div class="vmodal-inner">
+      <button class="vmodal-close" aria-label="Fechar"><i class="fas fa-times"></i></button>
+      <div class="vmodal-iframe-wrap" id="vmodal-iframe-wrap"></div>
+    </div>
+  </div>
+
+  <!-- Live Notification Popup -->
+  <div id="notif-popup">
+    <div class="notif-inner">
+      <div class="notif-avatar"><i class="fas fa-check"></i></div>
+      <div class="notif-text">
+        <strong id="notif-name"></strong>
+        <span id="notif-action"></span>
+        <em id="notif-time"></em>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <p class="copyright">Desafio Bumbum Invejado ®</p>
+      <p style="margin-bottom:var(--s-4);font-size:var(--fs-xs);opacity:.5">© 2026 · Todos os direitos reservados</p>
+      <p class="disclaimer"><strong>Disclaimer:</strong> Os resultados podem variar de pessoa pra pessoa. As transformações apresentadas refletem a experiência específica de cada aluna mencionada. Resultados dependem de aplicação correta do método.</p>
+      <div class="links">
+        <a href="#">Termos de Uso</a>·<a href="#">Privacidade</a>·<a href="#">Política de Reembolso</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float -->
+  <a href="#" class="wa-float" title="Suporte WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script>
+    // Urgency date — sempre amanhã
+    (function(){
+      const el = document.getElementById('urgency-date');
+      if(!el) return;
+      const t = new Date();
+      t.setDate(t.getDate() + 1);
+      const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+      el.innerText = `${t.getDate()} de ${meses[t.getMonth()]} (amanhã, 23h59)`;
+    })();
+
+    // Append UTM em todos os <a>
+    window.addEventListener('load', function () {
+      const links = document.getElementsByTagName("a");
+      const qs = document.location.search.replace('?','');
+      if(!qs) return;
+      for (let i = 0; i < links.length; i++) {
+        const orig = links[i].href.trim();
+        if(!orig || orig.indexOf('javascript:')===0 || orig.indexOf('#')===0) continue;
+        const sep = orig.indexOf("?") > 0 ? '&' : '?';
+        links[i].href = orig + sep + qs;
+      }
+    });
+
+    // Live notification popup (fake social proof — "Maria de SP acabou de comprar...")
+    (function(){
+      const nomes = ['Maria','Ana','Joana','Isabela','Laura','Gabriela','Carolina','Amanda','Sophia','Larissa','Mariana','Valentina','Juliana','Renata','Fernanda','Patricia','Camila','Bruna','Letícia','Beatriz','Vanessa','Cláudia','Priscila','Tatiana','Mônica','Adriana','Luciana','Daniela','Roberta','Cristina'];
+      const sobrenomes = ['de SP','do RJ','de BH','de Curitiba','de Salvador','de Recife','de Fortaleza','de Brasília','de POA','de Goiânia','de Manaus','de Belém','do interior de SP','de Vitória','de Florianópolis','do ABC','de Campinas','de Santos'];
+      const acoes = ['acabou de comprar','garantiu sua vaga','acabou de adquirir','iniciou o desafio'];
+      const tempos = ['agora mesmo','há 1 minuto','há 2 minutos','há 5 minutos','há 8 minutos','há 12 minutos','há 18 minutos'];
+
+      const popup = document.getElementById('notif-popup');
+      const nameEl = document.getElementById('notif-name');
+      const actEl = document.getElementById('notif-action');
+      const timeEl = document.getElementById('notif-time');
+      const rand = a => a[Math.floor(Math.random()*a.length)];
+
+      function show(){
+        if(!popup) return;
+        nameEl.innerText = rand(nomes) + ' ' + rand(sobrenomes);
+        actEl.innerText = rand(acoes) + ' o Desafio Bumbum Invejado';
+        timeEl.innerText = '⏱ ' + rand(tempos);
+        popup.style.display = 'block';
+        popup.style.animation = 'notif-slide .4s cubic-bezier(0.34,1.56,0.64,1)';
+        setTimeout(()=>{
+          popup.style.animation = 'notif-slide .4s reverse';
+          setTimeout(()=>{
+            popup.style.display = 'none';
+            setTimeout(show, 6000 + Math.random()*10000); // re-aparece em 6-16s
+          }, 400);
+        }, 4500);
+      }
+      // Primeira aparição depois de 8s
+      setTimeout(show, 8000);
+    })();
+
+    // Video lightbox modal (YouTube embed)
+    (function(){
+      const modal = document.getElementById('vmodal');
+      const wrap = document.getElementById('vmodal-iframe-wrap');
+      const closeBtn = modal.querySelector('.vmodal-close');
+      const thumbs = document.querySelectorAll('.video-thumb, .featured-video-thumb');
+
+      function openVideo(videoId){
+        // Cria iframe YouTube com autoplay, sem sugestões, sem branding
+        wrap.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1&playsinline=1&fs=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (typeof gtag === 'function') gtag('event', 'video_play', {'video_id': videoId});
+        if (typeof fbq === 'function') fbq('trackCustom', 'VideoPlay', {video_id: videoId});
+      }
+      function closeVideo(){
+        wrap.innerHTML = ''; // remove iframe (para o vídeo)
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      thumbs.forEach(t => t.addEventListener('click', () => openVideo(t.dataset.video)));
+      closeBtn.addEventListener('click', closeVideo);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeVideo(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('active')) closeVideo(); });
+    })();
+
+    // Reveal on scroll
+    (function(){
+      const els = document.querySelectorAll('.reveal');
+      if(!('IntersectionObserver' in window)){ els.forEach(e=>e.classList.add('in-view')); return; }
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in-view'); io.unobserve(en.target); }});
+      }, {threshold:0.15, rootMargin:'0px 0px -50px 0px'});
+      els.forEach(e=>io.observe(e));
+    })();
+  </script>
+</body>
+</html>
