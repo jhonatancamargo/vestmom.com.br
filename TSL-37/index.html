@@ -177,39 +177,60 @@
     .mech-bullets span{display:inline-flex;align-items:center;gap:var(--s-2);padding:8px var(--s-4);background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:var(--r-full);font-size:var(--fs-sm);color:#86efac;font-weight:600}
     .mech-bullets span::before{content:'✓';font-weight:800}
 
-    /* FEATURED VIDEO (post-pain hero) */
+    /* FEATURED VIDEO (post-pain hero — autoplay muted + click pra som) */
     .featured-video-section{
       background:linear-gradient(180deg,#fff4e6 0%,#fff 100%);
       padding:var(--s-9) 0
     }
     .featured-video-wrap{max-width:720px;margin:0 auto}
-    .featured-video-thumb{
+    .featured-video-player{
       position:relative;border-radius:var(--r-2xl);overflow:hidden;
-      cursor:pointer;aspect-ratio:16/9;background:#0a0a0a;
+      aspect-ratio:16/9;background:#0a0a0a;
       box-shadow:0 24px 64px -16px rgba(255,132,4,.45),0 0 0 2px rgba(255,132,4,.15);
+      cursor:pointer;
       transition:transform .3s,box-shadow .3s
     }
-    .featured-video-thumb:hover{
+    .featured-video-player:hover{
       transform:translateY(-4px) scale(1.015);
       box-shadow:0 32px 80px -16px rgba(255,132,4,.6),0 0 0 2px rgba(255,132,4,.3)
     }
-    .featured-video-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-    .featured-video-thumb .play-big{
-      position:absolute;top:50%;left:50%;
-      transform:translate(-50%,-50%);
-      width:96px;height:96px;
-      background:linear-gradient(135deg,var(--brand),var(--brand-hover));
-      border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      box-shadow:0 16px 40px -8px rgba(255,132,4,.7),0 0 0 12px rgba(255,132,4,.2);
-      animation:pulseplay 2s infinite;pointer-events:none
+    .featured-video-player iframe{
+      position:absolute;inset:0;width:100%;height:100%;border:0;
+      pointer-events:none /* impede clicks no iframe — clicks vão pro overlay */
     }
-    @media(max-width:600px){.featured-video-thumb .play-big{width:72px;height:72px}}
-    .featured-video-thumb .play-big i{color:#fff;font-size:32px;margin-left:6px}
-    @media(max-width:600px){.featured-video-thumb .play-big i{font-size:24px}}
+    /* Overlay invisível bloqueia clicks no YouTube UI residual */
+    .featured-video-player .block-overlay{
+      position:absolute;inset:0;z-index:5;
+      cursor:pointer
+    }
+    /* Faixas escuras pra cobrir UI residual do YouTube (topo + canto inferior direito) */
+    .featured-video-player .yt-mask-top{
+      position:absolute;top:0;left:0;right:0;height:60px;
+      background:linear-gradient(180deg,rgba(0,0,0,.4) 0%,transparent 100%);
+      pointer-events:none;z-index:3
+    }
+    .featured-video-player .yt-mask-br{
+      position:absolute;bottom:0;right:0;width:120px;height:50px;
+      background:#0a0a0a;
+      pointer-events:none;z-index:3
+    }
+    /* Tap-to-unmute CTA */
+    .featured-video-player .sound-cta{
+      position:absolute;bottom:var(--s-4);left:50%;
+      transform:translateX(-50%);z-index:6;
+      background:linear-gradient(135deg,var(--brand),var(--brand-hover));
+      color:#fff;font-weight:800;font-size:.95rem;
+      padding:var(--s-3) var(--s-5);
+      border-radius:var(--r-full);
+      box-shadow:0 8px 24px -4px rgba(255,132,4,.6),0 0 0 8px rgba(255,132,4,.15);
+      display:inline-flex;align-items:center;gap:var(--s-2);
+      animation:pulseplay 2s infinite;pointer-events:none;
+      letter-spacing:.02em
+    }
+    .featured-video-player .sound-cta i{font-size:18px}
     @keyframes pulseplay{
-      0%,100%{box-shadow:0 16px 40px -8px rgba(255,132,4,.7),0 0 0 12px rgba(255,132,4,.18)}
-      50%{box-shadow:0 16px 40px -8px rgba(255,132,4,.85),0 0 0 22px rgba(255,132,4,.04)}
+      0%,100%{box-shadow:0 8px 24px -4px rgba(255,132,4,.6),0 0 0 8px rgba(255,132,4,.18)}
+      50%{box-shadow:0 8px 24px -4px rgba(255,132,4,.85),0 0 0 14px rgba(255,132,4,.04)}
     }
     .badge-real-big{
       position:absolute;top:var(--s-4);left:var(--s-4);
@@ -218,7 +239,7 @@
       padding:6px 12px;border-radius:var(--r-full);
       letter-spacing:.06em;text-transform:uppercase;
       box-shadow:0 6px 16px -2px rgba(220,38,38,.5);
-      display:inline-flex;align-items:center;gap:6px;z-index:2
+      display:inline-flex;align-items:center;gap:6px;z-index:7;pointer-events:none
     }
     .featured-video-note{
       text-align:center;color:var(--ink-3);
@@ -257,34 +278,39 @@
       border-color:rgba(255,132,4,.6);
       box-shadow:0 20px 40px -12px rgba(255,132,4,.3)
     }
-    .video-thumb img{
-      width:100%;height:100%;object-fit:cover;display:block;
-      transition:opacity .3s,transform .5s
-    }
-    .video-thumb:hover img{transform:scale(1.05);opacity:.8}
-    .video-thumb .play-icon{
-      position:absolute;top:50%;left:50%;
-      transform:translate(-50%,-50%);
-      width:64px;height:64px;
-      background:linear-gradient(135deg,var(--brand),var(--brand-hover));
-      border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      box-shadow:0 8px 24px -4px rgba(255,132,4,.6),0 0 0 8px rgba(255,132,4,.15);
-      transition:transform .3s,box-shadow .3s;
+    .video-thumb iframe{
+      position:absolute;inset:0;width:100%;height:100%;border:0;
       pointer-events:none
     }
-    .video-thumb:hover .play-icon{
-      transform:translate(-50%,-50%) scale(1.1);
-      box-shadow:0 12px 32px -4px rgba(255,132,4,.8),0 0 0 12px rgba(255,132,4,.2)
+    .video-thumb .block-overlay{
+      position:absolute;inset:0;z-index:5;cursor:pointer
     }
-    .video-thumb .play-icon i{
-      color:#fff;font-size:24px;margin-left:4px
+    .video-thumb .yt-mask-top{
+      position:absolute;top:0;left:0;right:0;height:40px;
+      background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,transparent 100%);
+      pointer-events:none;z-index:3
     }
+    .video-thumb .yt-mask-br{
+      position:absolute;bottom:0;right:0;width:90px;height:36px;
+      background:#0a0a0a;
+      pointer-events:none;z-index:3
+    }
+    .video-thumb .sound-cta-small{
+      position:absolute;top:var(--s-3);right:var(--s-3);z-index:7;
+      background:linear-gradient(135deg,var(--brand),var(--brand-hover));
+      color:#fff;font-weight:800;font-size:.72rem;
+      padding:5px 10px;border-radius:var(--r-full);
+      box-shadow:0 4px 12px -2px rgba(255,132,4,.5),0 0 0 4px rgba(255,132,4,.15);
+      display:inline-flex;align-items:center;gap:5px;
+      animation:pulseplay 2s infinite;pointer-events:none;
+      letter-spacing:.02em
+    }
+    .video-thumb .sound-cta-small i{font-size:11px}
     .video-thumb .label{
       position:absolute;bottom:0;left:0;right:0;
       padding:var(--s-5) var(--s-4) var(--s-3);
-      background:linear-gradient(180deg,transparent,rgba(0,0,0,.85));
-      color:#fff
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,.95) 60%);
+      color:#fff;z-index:4;pointer-events:none
     }
     .video-thumb .label .name{
       font-weight:800;font-size:.95rem;
@@ -294,12 +320,13 @@
       font-size:.72rem;color:#ffb066;font-weight:600
     }
     .video-thumb .badge-real{
-      position:absolute;top:var(--s-3);left:var(--s-3);
+      position:absolute;top:var(--s-3);left:var(--s-3);z-index:7;
       background:linear-gradient(135deg,#dc2626,#b91c1c);
       color:#fff;font-size:9px;font-weight:900;
       padding:4px 9px;border-radius:var(--r-full);
       letter-spacing:.08em;text-transform:uppercase;
-      box-shadow:0 4px 8px -2px rgba(220,38,38,.5)
+      box-shadow:0 4px 8px -2px rgba(220,38,38,.5);
+      pointer-events:none
     }
 
     /* Lightbox Modal */
@@ -561,12 +588,23 @@
       <h2 class="section-title">Você se reconheceu nas dores acima?<br>Olha quem passou pelo mesmo:</h2>
 
       <div class="featured-video-wrap">
-        <div class="featured-video-thumb" data-video="JRIUkePeP5U">
+        <div class="featured-video-player" data-video="JRIUkePeP5U">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/JRIUkePeP5U?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&showinfo=0&playsinline=1&cc_load_policy=0&loop=1&playlist=JRIUkePeP5U&fs=0"
+            allow="autoplay; encrypted-media"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Depoimento real"
+            loading="lazy"></iframe>
+          <div class="yt-mask-top"></div>
+          <div class="yt-mask-br"></div>
           <span class="badge-real-big"><i class="fas fa-circle" style="font-size:8px"></i> 100% real · não é atriz</span>
-          <img src="https://i.ytimg.com/vi/JRIUkePeP5U/maxresdefault.jpg" alt="Depoimento real de aluna" loading="lazy">
-          <div class="play-big"><i class="fas fa-play"></i></div>
+          <div class="sound-cta">
+            <i class="fas fa-volume-up"></i>
+            Toque pra ativar o som
+          </div>
+          <div class="block-overlay" title="Toque pra assistir com som"></div>
         </div>
-        <p class="featured-video-note">▶ Toque pra assistir o depoimento completo (37 segundos)</p>
+        <p class="featured-video-note">▶ O vídeo está tocando sem som — toque pra ouvir o depoimento completo (37s)</p>
       </div>
     </div>
   </section>
@@ -693,31 +731,55 @@
 
       <div class="video-grid">
         <div class="video-thumb" data-video="JRIUkePeP5U">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/JRIUkePeP5U?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&showinfo=0&playsinline=1&cc_load_policy=0&loop=1&playlist=JRIUkePeP5U&fs=0"
+            allow="autoplay; encrypted-media"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Depoimento 1"
+            loading="lazy"></iframe>
+          <div class="yt-mask-top"></div>
+          <div class="yt-mask-br"></div>
           <span class="badge-real"><i class="fas fa-circle" style="font-size:7px"></i> Real</span>
-          <img src="https://i.ytimg.com/vi/JRIUkePeP5U/maxresdefault.jpg" alt="Depoimento 1" loading="lazy">
-          <div class="play-icon"><i class="fas fa-play"></i></div>
+          <span class="sound-cta-small"><i class="fas fa-volume-up"></i> Som</span>
           <div class="label">
             <div class="name">Aluna real</div>
             <div class="meta">▶ 37 segundos</div>
           </div>
+          <div class="block-overlay" title="Toque pra assistir com som"></div>
         </div>
         <div class="video-thumb" data-video="ujss1kqzsKU">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ujss1kqzsKU?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&showinfo=0&playsinline=1&cc_load_policy=0&loop=1&playlist=ujss1kqzsKU&fs=0"
+            allow="autoplay; encrypted-media"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Depoimento 2"
+            loading="lazy"></iframe>
+          <div class="yt-mask-top"></div>
+          <div class="yt-mask-br"></div>
           <span class="badge-real"><i class="fas fa-circle" style="font-size:7px"></i> Real</span>
-          <img src="https://i.ytimg.com/vi/ujss1kqzsKU/maxresdefault.jpg" alt="Depoimento 2" loading="lazy">
-          <div class="play-icon"><i class="fas fa-play"></i></div>
+          <span class="sound-cta-small"><i class="fas fa-volume-up"></i> Som</span>
           <div class="label">
             <div class="name">Aluna real</div>
             <div class="meta">▶ 37 segundos</div>
           </div>
+          <div class="block-overlay" title="Toque pra assistir com som"></div>
         </div>
         <div class="video-thumb" data-video="Vn3TJQspUS4">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/Vn3TJQspUS4?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&showinfo=0&playsinline=1&cc_load_policy=0&loop=1&playlist=Vn3TJQspUS4&fs=0"
+            allow="autoplay; encrypted-media"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Depoimento 3"
+            loading="lazy"></iframe>
+          <div class="yt-mask-top"></div>
+          <div class="yt-mask-br"></div>
           <span class="badge-real"><i class="fas fa-circle" style="font-size:7px"></i> Real</span>
-          <img src="https://i.ytimg.com/vi/Vn3TJQspUS4/maxresdefault.jpg" alt="Depoimento 3" loading="lazy">
-          <div class="play-icon"><i class="fas fa-play"></i></div>
+          <span class="sound-cta-small"><i class="fas fa-volume-up"></i> Som</span>
           <div class="label">
             <div class="name">Aluna real</div>
             <div class="meta">▶ 32 segundos</div>
           </div>
+          <div class="block-overlay" title="Toque pra assistir com som"></div>
         </div>
       </div>
 
@@ -958,16 +1020,19 @@
       setTimeout(show, 8000);
     })();
 
-    // Video lightbox modal (YouTube embed)
+    // Video lightbox modal (YouTube embed VTurb-style — sem UI YouTube)
     (function(){
       const modal = document.getElementById('vmodal');
       const wrap = document.getElementById('vmodal-iframe-wrap');
       const closeBtn = modal.querySelector('.vmodal-close');
-      const thumbs = document.querySelectorAll('.video-thumb, .featured-video-thumb');
+      const thumbs = document.querySelectorAll('.video-thumb, .featured-video-player');
 
       function openVideo(videoId){
-        // Cria iframe YouTube com autoplay, sem sugestões, sem branding
-        wrap.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1&playsinline=1&fs=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+        // Player limpo: sem controles, sem sugestões, sem branding, sem teclado, com som ligado
+        wrap.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId
+          + '?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&showinfo=0&playsinline=1&cc_load_policy=0&fs=1" '
+          + 'allow="autoplay; encrypted-media; fullscreen" allowfullscreen '
+          + 'referrerpolicy="strict-origin-when-cross-origin"></iframe>';
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
         if (typeof gtag === 'function') gtag('event', 'video_play', {'video_id': videoId});
@@ -980,6 +1045,14 @@
       }
 
       thumbs.forEach(t => t.addEventListener('click', () => openVideo(t.dataset.video)));
+      // Block overlays (featured + galeria) — captura click antes do iframe
+      document.querySelectorAll('.block-overlay').forEach(ov => {
+        ov.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const player = ov.closest('[data-video]');
+          if (player) openVideo(player.dataset.video);
+        });
+      });
       closeBtn.addEventListener('click', closeVideo);
       modal.addEventListener('click', (e) => { if (e.target === modal) closeVideo(); });
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('active')) closeVideo(); });
