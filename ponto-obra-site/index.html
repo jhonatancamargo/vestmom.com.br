@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ponto da Obra — controle de ponto e pagamento da equipe pelo celular</title>
+<meta name="description" content="Pare de calcular hora de funcionário na mão. Cada um marca do próprio celular e a quinzena fecha sozinha, já com o lucro de cada serviço. Teste 1 mês grátis.">
+<meta property="og:title" content="Ponto da Obra — a quinzena que se fecha sozinha">
+<meta property="og:description" content="Controle de ponto, horas e pagamento da sua equipe pelo celular. Teste o 1º mês grátis.">
+<meta property="og:image" content="painel.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ouro:#E2C078; --ouro-d:#9A7634; --preto:#0E0D0B; --preto2:#16140F;
+  --card:#1B1913; --bd:#3a3322; --txt:#F4EFE4; --mut:#A79C8A; --verde:#25D366; --verde-d:#06351c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',system-ui,Arial,sans-serif;background:var(--preto);color:var(--txt);
+  line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:680px;margin:0 auto;padding:0 22px}
+section{padding:54px 0}
+h1,h2,h3{line-height:1.12;letter-spacing:-.5px;font-weight:800}
+h1{font-size:34px}
+h2{font-size:27px;margin-bottom:14px}
+.ouro{color:var(--ouro)}
+.mut{color:var(--mut)}
+p{margin-bottom:14px;font-size:17px}
+.kick{color:var(--ouro);font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+/* topo / marca */
+.bar{position:sticky;top:0;z-index:40;background:rgba(14,13,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid #221f17}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:13px;padding-bottom:13px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px}
+.mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(150deg,var(--ouro),var(--ouro-d));display:grid;place-items:center}
+.mark svg{width:22px;height:22px}
+.bar .mini{font-size:13px;font-weight:700;color:var(--verde);border:1px solid #1c5635;border-radius:99px;padding:6px 13px;background:#0c2417;text-decoration:none;white-space:nowrap}
+/* hero */
+.hero{padding-top:38px;text-align:center;background:radial-gradient(120% 60% at 50% 0,#221d14 0%,#0E0D0B 60%)}
+.hero h1{font-size:38px;margin-bottom:16px}
+.hero .sub{font-size:18px;color:#CFC7B6;max-width:560px;margin:0 auto 26px}
+.video{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--bd);box-shadow:0 24px 60px rgba(0,0,0,.5);margin:0 auto 14px;aspect-ratio:16/9;background:#000}
+.video iframe{width:100%;height:100%;border:0;display:block}
+.microcopy{font-size:13.5px;color:var(--mut);margin-top:14px}
+.microcopy b{color:var(--ouro)}
+/* CTA */
+.cta{display:inline-flex;align-items:center;gap:13px;background:var(--verde);color:var(--verde-d);font-weight:800;
+  font-size:19px;padding:19px 30px;border-radius:16px;text-decoration:none;box-shadow:0 16px 38px rgba(37,211,102,.34);
+  border:0;cursor:pointer;transition:transform .12s ease;max-width:100%}
+.cta:active{transform:scale(.98)}
+.cta svg{width:26px;height:26px;flex:0 0 26px}
+.cta-wrap{text-align:center;margin-top:8px}
+/* listas dor */
+.pain{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:8px 22px;margin-top:18px}
+.pain div{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #261f15;font-size:16.5px}
+.pain div:last-child{border-bottom:0}
+.pain .x{color:#E2705A;font-weight:900;flex:0 0 auto;font-size:20px;line-height:1.3}
+/* passos */
+.passos{display:grid;gap:16px;margin-top:8px}
+.passo{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:22px 24px;display:flex;gap:18px;align-items:flex-start}
+.passo .n{width:46px;height:46px;flex:0 0 46px;border-radius:12px;background:#2a2416;color:var(--ouro);font-weight:900;font-size:22px;display:grid;place-items:center}
+.passo b{font-size:18px;display:block;margin-bottom:3px}
+.passo span{color:var(--mut);font-size:15.5px}
+/* prova */
+.prova{background:linear-gradient(180deg,#16140F,#0E0D0B);border-top:1px solid #221f17;border-bottom:1px solid #221f17}
+.prova .quote{font-size:22px;font-weight:700;line-height:1.4}
+.prova img{width:100%;border-radius:16px;border:1px solid var(--bd);margin-top:22px}
+/* nichos */
+.nichos{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:8px}
+.nicho{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px 16px;display:flex;align-items:center;gap:13px;font-weight:700;font-size:16px}
+.nicho .ic{font-size:28px;flex:0 0 auto}
+.nicho.full{grid-column:1/-1;justify-content:center;color:var(--ouro);background:#19160e}
+/* oferta */
+.oferta{text-align:center}
+.stack{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:28px 24px;margin:0 auto;max-width:480px;text-align:left}
+.stack .it{display:flex;gap:12px;align-items:flex-start;padding:11px 0;font-size:16px}
+.stack .it .c{color:var(--verde);font-weight:900;flex:0 0 auto}
+.price{margin-top:22px;text-align:center}
+.price .anchor{color:var(--mut);text-decoration:line-through;font-size:18px}
+.price .now{font-size:46px;font-weight:900;color:var(--ouro);line-height:1.1;margin-top:4px}
+.price .now small{font-size:20px;font-weight:700}
+.price .free{display:inline-block;margin-top:12px;background:#0c2417;color:var(--verde);border:1px solid #1c5635;
+  border-radius:99px;padding:8px 18px;font-weight:800;font-size:15px}
+/* garantia */
+.garantia{background:#19160e;border:1px solid var(--bd);border-radius:20px;padding:28px 26px;text-align:center;max-width:520px;margin:0 auto}
+.garantia .sh{width:62px;height:62px;margin:0 auto 14px;border-radius:50%;background:#2a2416;display:grid;place-items:center}
+.garantia .sh svg{width:34px;height:34px;stroke:var(--ouro)}
+/* faq */
+.faq{max-width:580px;margin:0 auto}
+details{background:var(--card);border:1px solid var(--bd);border-radius:14px;margin-bottom:12px;overflow:hidden}
+summary{padding:18px 22px;font-weight:700;font-size:16.5px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--ouro);font-size:24px;font-weight:700;flex:0 0 auto}
+details[open] summary::after{content:"–"}
+details p{padding:0 22px 20px;margin:0;color:var(--mut);font-size:15.5px}
+/* cta final */
+.final{text-align:center;background:radial-gradient(120% 70% at 50% 100%,#221d14 0%,#0E0D0B 60%)}
+.final h2{font-size:30px}
+/* barra fixa mobile */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(14,13,11,.95);backdrop-filter:blur(8px);
+  border-top:1px solid #221f17;padding:11px 16px;display:none}
+.sticky .cta{display:flex;width:100%;justify-content:center;font-size:17px;padding:15px}
+.foot{text-align:center;color:#5a5446;font-size:12.5px;padding:30px 0 110px}
+@media(max-width:560px){
+  .hero h1{font-size:31px} h1{font-size:29px} h2{font-size:24px}
+  .nichos{grid-template-columns:1fr 1fr}
+  .sticky{display:block}
+  .final{padding-bottom:30px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+  <div class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#0E0D0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-5h6v5"/></svg></span>Ponto da Obra</div>
+  <a class="mini" href="#cta">Testar grátis</a>
+</div></div>
+
+<section class="hero"><div class="wrap">
+  <div class="kick">Pra quem paga gente por hora ou diária</div>
+  <h1>Pare de calcular hora de funcionário <span class="ouro">na mão</span>.</h1>
+  <p class="sub">Cada um marca as horas do próprio celular e a quinzena fecha sozinha — já com o vale descontado e o <b class="ouro">lucro de cada serviço</b> calculado.</p>
+  <div class="video">
+    <iframe src="https://play.tynk.ai/p/c0d1bf77-419c-4b15-80da-6d3e56afa012" style="width:100%;height:100%;border:0;display:block" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Ponto da Obra — veja funcionando"></iframe>
+  </div>
+  <div class="cta-wrap">
+    <a class="cta" href="#cta" onclick="return go()">
+      <svg viewBox="0 0 32 32" fill="#06351c"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3z"/></svg>
+      Quero testar grátis no WhatsApp</a>
+    <div class="microcopy">Sem instalar nada · Sem fidelidade · <b>1º mês grátis</b></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Você conhece esse fim de quinzena:</h2>
+  <div class="pain">
+    <div><span class="x">✕</span><span>Somando hora no caderno, na calculadora, de cabeça</span></div>
+    <div><span class="x">✕</span><span>Tentando lembrar quem faltou e quem pegou vale</span></div>
+    <div><span class="x">✕</span><span>Na dúvida se pagou certo — e às vezes pagando errado</span></div>
+    <div><span class="x">✕</span><span>Terminando o serviço sem saber se lucrou ou trabalhou de graça</span></div>
+  </div>
+  <p class="mut" style="margin-top:18px">Cada errinho desses é dinheiro saindo do seu bolso. Toda semana.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="kick">A virada</div>
+  <h2>E se a quinzena se fechasse <span class="ouro">sozinha</span>?</h2>
+  <p>O <b>Ponto da Obra</b> dá pra cada funcionário um botão no celular. Ele marca a própria hora — mais fácil que mandar áudio no zap. O sistema soma tudo, desconta o vale e te mostra <b class="ouro">quanto pagar e quanto você lucrou em cada serviço</b>. Você só confere.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Como funciona</h2>
+  <div class="passos">
+    <div class="passo"><span class="n">1</span><div><b>O trabalhador marca</b><span>Do celular dele, um toque. Sem instalar nada.</span></div></div>
+    <div class="passo"><span class="n">2</span><div><b>Você acompanha</b><span>Horas de cada obra ou serviço, em tempo real, no seu celular.</span></div></div>
+    <div class="passo"><span class="n">3</span><div><b>A quinzena fecha</b><span>Pagamento calculado, vale descontado, PDF pronto pro cliente.</span></div></div>
+  </div>
+</div></section>
+
+<section class="prova"><div class="wrap">
+  <div class="kick">Prova real</div>
+  <div class="quote">Não é promessa de vendedor. É a ferramenta que eu uso na <span class="ouro">minha própria obra, todo dia.</span></div>
+  <p class="mut" style="margin-top:14px">Acabou o caderno. Acabou pagar errado. Acabou a dúvida no fim do mês.</p>
+  <img src="painel.png" alt="Painel do Ponto da Obra mostrando horas, pagamento e lucro por obra">
+</div></section>
+
+<section><div class="wrap">
+  <div class="kick">Pra quem é</div>
+  <h2>Se você paga gente por <span class="ouro">hora ou diária</span>, é pra você:</h2>
+  <div class="nichos">
+    <div class="nicho"><span class="ic">🧱</span>Construtoras e empreiteiros</div>
+    <div class="nicho"><span class="ic">🪚</span>Marcenaria e serralheria</div>
+    <div class="nicho"><span class="ic">🔧</span>Oficina mecânica</div>
+    <div class="nicho"><span class="ic">🧹</span>Limpeza e diaristas</div>
+    <div class="nicho"><span class="ic">🌳</span>Jardinagem e paisagismo</div>
+    <div class="nicho"><span class="ic">🎨</span>Pintura e montagem</div>
+    <div class="nicho full">…e qualquer equipe paga por hora</div>
+  </div>
+</div></section>
+
+<section class="oferta"><div class="wrap">
+  <div class="kick">O que você leva</div>
+  <div class="stack">
+    <div class="it"><span class="c">✓</span>O app completo (seu painel + o app dos trabalhadores)</div>
+    <div class="it"><span class="c">✓</span><b>Configuração feita pra você</b> — a gente monta seus funcionários e obras</div>
+    <div class="it"><span class="c">✓</span><b>A sua logo</b> no app e nos PDFs (parece feito sob medida)</div>
+    <div class="it"><span class="c">✓</span>PDF de fechamento profissional pra mostrar ao cliente</div>
+    <div class="it"><span class="c">✓</span>Suporte direto com quem desenvolve</div>
+    <div class="it"><span class="c">✓</span>Atualizações incluídas</div>
+  </div>
+  <div class="price">
+    <div class="anchor">Sistemas assim cobram R$ 300+/mês</div>
+    <div class="now">R$ 99<small>/mês</small></div>
+    <div class="free">✓ E o primeiro mês é grátis</div>
+  </div>
+  <div class="cta-wrap" style="margin-top:24px">
+    <a class="cta" href="#cta" onclick="return go()">
+      <svg viewBox="0 0 32 32" fill="#06351c"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3z"/></svg>
+      Quero meu 1º mês grátis</a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="garantia">
+    <div class="sh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+    <h2 style="font-size:23px">Risco zero</h2>
+    <p style="margin-bottom:0" class="mut">Teste 30 dias de graça, sem cartão, sem fidelidade. Gostou, continua. Não gostou, cancela com um toque e não paga nada. <b style="color:var(--txt)">O risco é todo meu.</b></p>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2 style="text-align:center;margin-bottom:24px">Perguntas que todo patrão faz</h2>
+  <div class="faq">
+    <details><summary>Não entendo de tecnologia.</summary><p>Funciona no celular, sem instalar nada — e a gente configura tudo pra você. Você só usa.</p></details>
+    <details><summary>Meu funcionário não vai saber usar.</summary><p>É um botão. Mais simples que mandar áudio no WhatsApp.</p></details>
+    <details><summary>É caro?</summary><p>Dá menos de R$ 3,30 por dia. Se evitar um único erro de folha, já se pagou.</p></details>
+    <details><summary>Vou ter que mudar meu jeito de trabalhar?</summary><p>Não. Só troca o caderno pelo celular. O resto continua igual.</p></details>
+    <details><summary>Funciona mesmo?</summary><p>Eu uso na minha obra todo dia. E você testa 1 mês grátis pra ver com os seus próprios serviços.</p></details>
+  </div>
+</div></section>
+
+<section class="final" id="cta"><div class="wrap">
+  <h2>Hoje você controla no caderno.<br><span class="ouro">Semana que vem, no automático.</span></h2>
+  <p class="sub mut" style="max-width:480px;margin:0 auto 24px">Manda "Ponto da Obra" no nosso WhatsApp que eu te mostro funcionando — de graça.</p>
+  <div class="cta-wrap">
+    <a class="cta" href="#" onclick="return go()">
+      <svg viewBox="0 0 32 32" fill="#06351c"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3z"/></svg>
+      Falar no WhatsApp agora</a>
+    <div class="microcopy">Resposta na hora · 1º mês grátis · Sem fidelidade</div>
+  </div>
+</div></section>
+
+<div class="foot"><div class="wrap">Ponto da Obra · Controle de ponto e pagamento para equipes · Feito por quem vive de obra.</div></div>
+
+<div class="sticky">
+  <a class="cta" href="#" onclick="return go()">
+    <svg viewBox="0 0 32 32" fill="#06351c"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3z"/></svg>
+    Testar grátis no WhatsApp</a>
+</div>
+
+<script>
+var WA = "https://wa.me/554791468833?text=" + encodeURIComponent("Quero saber como funciona o Ponto da Obra 👷");
+function go(){ window.open(WA, "_blank"); return false; }
+</script>
+</body>
+</html>
