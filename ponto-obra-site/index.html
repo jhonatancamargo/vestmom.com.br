@@ -250,7 +250,19 @@ function go(){
 
 <!-- ===== Cloudflare Web Analytics (mede as visitas) ===== -->
 <!-- Pegue seu token em: Cloudflare > Web Analytics > Add a site, e cole no lugar de COLE_SEU_TOKEN_AQUI -->
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "G-1DFMKE452Y"}'></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag('js', new Date())
+
+  gtag('config', 'G-1DFMKE452Y')
+</script>
 <!-- ===== Fim do analytics ===== -->
 </body>
 </html>
