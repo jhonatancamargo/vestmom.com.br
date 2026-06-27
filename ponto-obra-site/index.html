@@ -242,7 +242,15 @@ details p{padding:0 22px 20px;margin:0;color:var(--mut);font-size:15.5px}
 
 <script>
 var WA = "https://wa.me/554791468833?text=" + encodeURIComponent("Quero saber como funciona o Ponto da Obra 👷");
-function go(){ window.open(WA, "_blank"); return false; }
+function go(){
+  try{ if(window.gtag) gtag('event','clique_whatsapp'); }catch(e){}
+  window.open(WA, "_blank"); return false;
+}
 </script>
+
+<!-- ===== Cloudflare Web Analytics (mede as visitas) ===== -->
+<!-- Pegue seu token em: Cloudflare > Web Analytics > Add a site, e cole no lugar de COLE_SEU_TOKEN_AQUI -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "COLE_SEU_TOKEN_AQUI"}'></script>
+<!-- ===== Fim do analytics ===== -->
 </body>
 </html>
