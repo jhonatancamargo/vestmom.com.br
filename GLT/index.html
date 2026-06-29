@@ -9,6 +9,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://vsl-player-8d6.pages.dev/css/embed.css">
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1585943086262376');
+fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a.cta'):null;if(a&&/pay\.kiwify/.test(a.href||'')){fbq('track','InitiateCheckout');}});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1585943086262376&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 <style>
   :root{
     --green-900:#0a3324; --green-800:#0e4d33; --green:#16794e; --green-300:#5cc78f;
@@ -200,7 +209,7 @@
     <span class="badge rv"><span class="dot"></span> Protocolo da Gelatina Noturna</span>
     <h1 class="rv">A gelatina que as brasileiras tomam<br>antes de dormir pra <span class="mark">secar a barriga</span></h1>
     <p class="sub rv">Um ritual de <b>30 segundos</b> que desliga a fome da noite, o vil√£o que sabota qualquer dieta. Sem corte radical, sem academia, sem rem√©dio.</p>
-    <!-- Player VSL prÛprio (vsl-player.pages.dev) ó autoplay mudo + ativar som + tracking -->
+    <!-- Player VSL prÔøΩprio (vsl-player.pages.dev) ÔøΩ autoplay mudo + ativar som + tracking -->
     <div class="vsl rv">
       <div id="vsl-wrapper">
         <video id="vsl-video"></video>
@@ -403,10 +412,25 @@
 })();
 </script>
 
-<!-- Player VSL: carrega a config (modo, barra, selo, etc.) e os dados pelo nome do vÌdeo -->
+<!-- Player VSL: carrega a config (modo, barra, selo, etc.) e os dados pelo nome do vÔøΩdeo -->
 <script>window.VSL={video:"glt-tst",api:"https://vsl-player-8d6.pages.dev/api/track"};</script>
 <script src="https://vsl-player-8d6.pages.dev/js/player.js"></script>
 </body>
 </html>
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag('js', new Date())
+
+  gtag('config', 'G-1DFMKE452Y')
+
+</script>
 
 
