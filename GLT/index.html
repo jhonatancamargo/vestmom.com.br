@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gelatina Que Seca â€” O Protocolo da Gelatina Noturna</title>
+<meta name="description" content="O ritual de 30 segundos antes de dormir que desliga a fome da noite, o vilÃ£o que sabota qualquer dieta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-900:#0a3324; --green-800:#0e4d33; --green:#16794e; --green-300:#5cc78f;
+    --green-100:#e7f5ee; --green-50:#f1f8f3;
+    --ink:#11201a; --ink-soft:#394b42; --muted:#5c6f64;
+    --cta:#ff5a3c; --cta-d:#e8482b; --cta-glow:rgba(255,90,60,.45);
+    --gold:#e7b53c; --gold-d:#b9881f;
+    --bg:#ffffff; --line:#e1ebe5;
+    --maxw:680px;
+    --r:16px;
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:'Montserrat',system-ui,Arial,sans-serif;color:var(--ink);background:var(--bg);
+    line-height:1.55;font-size:17px;overflow-x:hidden}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  h1,h2,h3{line-height:1.12;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+  h1{font-size:clamp(2rem,7.5vw,3rem);font-weight:900;letter-spacing:-.03em}
+  h2{font-size:clamp(1.5rem,5.2vw,2.1rem);margin-bottom:14px}
+  h3{font-size:1.15rem}
+  p{margin-bottom:14px;text-wrap:pretty}
+  section{padding:clamp(44px,8vw,72px) 0}
+  .hl{color:var(--green)}
+  .hl-c{color:var(--cta)}
+  .center{text-align:center}
+  .mark{background:linear-gradient(180deg,transparent 58%,rgba(231,181,60,.55) 58%);padding:0 .08em}
+
+  /* ---------- URGENCY BAR ---------- */
+  .ubar{position:sticky;top:0;z-index:60;background:linear-gradient(90deg,var(--green-900),var(--green-800));
+    color:#fff;text-align:center;font-size:.82rem;font-weight:700;padding:9px 14px;letter-spacing:.01em;
+    display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.12)}
+  .ubar b{color:var(--gold)}
+  .ubar .clock{font-variant-numeric:tabular-nums;background:rgba(0,0,0,.28);padding:3px 9px;border-radius:8px;font-weight:800}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;color:#eafff3;text-align:center;
+    background:radial-gradient(120% 90% at 50% 0%,#13614180 0%,transparent 60%),linear-gradient(165deg,#0a3324 0%,#0e4d33 55%,#13614a 100%);
+    padding:clamp(28px,6vw,52px) 0 clamp(40px,7vw,64px)}
+  .hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:60px;
+    background:linear-gradient(180deg,transparent,var(--bg))}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(231,181,60,.14);color:var(--gold);
+    border:1px solid rgba(231,181,60,.4);font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
+    padding:8px 15px;border-radius:999px;margin-bottom:18px}
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(231,181,60,.7);animation:pulseDot 2s infinite}
+  .hero h1{color:#fff;margin-bottom:14px}
+  .hero .sub{color:#bfe6d1;font-size:1.06rem;max-width:30ch;margin:0 auto 22px}
+  .hero .sub b{color:#fff}
+  /* video */
+  .vsl{position:relative;border-radius:18px;overflow:hidden;background:#000;margin:0 auto 22px;max-width:340px;
+    box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.1)}
+  .vsl video{display:block;width:100%;height:auto}
+  .vsl:before{content:"";position:absolute;inset:-2px;border-radius:18px;
+    background:linear-gradient(130deg,var(--green-300),transparent 40%);opacity:.4;pointer-events:none;z-index:1}
+
+  /* ---------- CTA ---------- */
+  .cta{display:flex;flex-direction:column;align-items:center;gap:3px;width:100%;max-width:480px;margin:0 auto;
+    background:linear-gradient(180deg,#ff6a4d,var(--cta));color:#fff;text-decoration:none;text-align:center;
+    font-weight:900;font-size:1.16rem;padding:17px 22px;border-radius:14px;letter-spacing:.01em;
+    box-shadow:0 12px 30px var(--cta-glow);position:relative;text-transform:uppercase;
+    transition:transform .18s var(--ease),box-shadow .18s var(--ease);animation:ctaPulse 2.6s infinite}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 18px 40px var(--cta-glow)}
+  .cta small{font-size:.74rem;font-weight:600;opacity:.95;text-transform:none;letter-spacing:.02em}
+  @keyframes ctaPulse{0%,100%{box-shadow:0 12px 30px var(--cta-glow)}50%{box-shadow:0 12px 38px var(--cta-glow),0 0 0 6px rgba(255,90,60,.12)}}
+  @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(231,181,60,.7)}70%{box-shadow:0 0 0 8px rgba(231,181,60,0)}100%{box-shadow:0 0 0 0 rgba(231,181,60,0)}}
+
+  /* trust row */
+  .trust{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:16px;font-size:.8rem;font-weight:600}
+  .trust .t{display:inline-flex;align-items:center;gap:6px;color:#9fd9ba}
+  .trust svg{width:16px;height:16px;flex:0 0 auto}
+  .on-light .trust .t{color:var(--muted)}
+
+  /* ---------- generic blocks ---------- */
+  .soft{background:var(--green-50)}
+  .eyebrow{display:inline-block;color:var(--green);font-weight:800;font-size:.85rem;letter-spacing:.02em;margin-bottom:10px}
+  .lead{font-size:1.05rem;color:var(--ink-soft)}
+  /* pain / benefit list */
+  .list{list-style:none;margin:8px 0}
+  .list li{display:flex;gap:13px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line);font-weight:600;color:var(--ink-soft)}
+  .list li svg{flex:0 0 auto;width:26px;height:26px;margin-top:1px}
+  .list.pain li svg circle{fill:#fdeae6}.list.pain li svg path{stroke:var(--cta)}
+  .list.good li svg circle{fill:var(--green-100)}.list.good li svg path{stroke:var(--green)}
+
+  /* virada visual */
+  .windowviz{display:flex;align-items:flex-end;gap:6px;height:120px;margin:18px 0;padding:0 4px}
+  .windowviz .bar{flex:1;background:var(--green-100);border-radius:6px 6px 0 0;position:relative}
+  .windowviz .bar.peak{background:linear-gradient(180deg,var(--cta),#ffb4a3)}
+  .windowviz .bar span{position:absolute;bottom:-22px;left:0;right:0;text-align:center;font-size:.62rem;color:var(--muted);font-weight:700}
+
+  /* mechanism dark */
+  .dark{background:radial-gradient(100% 80% at 50% 0%,#13614a55,transparent),linear-gradient(170deg,#0a3324,#0e4d33);color:#eafff3}
+  .dark h2{color:#fff}.dark .lead{color:#bfe6d1}
+  .steps{display:grid;gap:14px;margin-top:22px}
+  .step{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+    border-radius:14px;padding:18px 18px}
+  .step .n{flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:linear-gradient(180deg,var(--green-300),var(--green));
+    color:#06281a;font-weight:900;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step b{color:#fff;display:block;margin-bottom:3px;font-size:1.05rem}
+  .step span{color:#a9d6bd;font-weight:500;font-size:.95rem}
+
+  /* trust cards (fundadoras) */
+  .tcards{display:grid;gap:14px;margin-top:20px}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;
+    box-shadow:0 6px 18px rgba(16,121,78,.05)}
+  .tcard .ic{width:40px;height:40px;border-radius:11px;background:var(--green-100);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+  .tcard .ic svg{width:22px;height:22px}
+  .tcard b{display:block;margin-bottom:4px}
+  .tcard p{color:var(--muted);font-weight:500;font-size:.94rem;margin:0}
+  .statbar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+  .stat{flex:1;min-width:120px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:15px;text-align:center}
+  .stat b{display:block;font-size:1.8rem;font-weight:900;color:var(--green);line-height:1}
+  .stat span{font-size:.78rem;color:var(--muted);font-weight:600}
+
+  /* OFFER */
+  .offer{background:#fff;border-radius:22px;padding:6px;max-width:540px;margin:0 auto;
+    box-shadow:0 24px 60px rgba(10,51,36,.16);border:1px solid var(--line)}
+  .offer-top{background:linear-gradient(165deg,#0e4d33,#16794e);color:#fff;border-radius:18px 18px 0 0;padding:22px 22px 18px;text-align:center}
+  .offer-top .kbadge{display:inline-block;background:var(--gold);color:#3a2a00;font-weight:900;font-size:.72rem;letter-spacing:.08em;
+    text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:12px}
+  .offer-top h3{color:#fff;font-size:1.3rem;margin-bottom:4px}
+  .offer-body{padding:22px}
+  .stack{list-style:none;margin:0 0 16px}
+  .stack li{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line);font-weight:600;font-size:.96rem}
+  .stack li .v{color:var(--muted);white-space:nowrap;font-weight:700}
+  .stack li.free .v{color:var(--green);font-weight:900}
+  .stack li .tag{display:inline-block;background:var(--green-100);color:var(--green);font-size:.62rem;font-weight:900;
+    padding:2px 7px;border-radius:6px;margin-left:7px;vertical-align:middle;letter-spacing:.04em}
+  .pricebox{text-align:center;background:var(--green-50);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
+  .pricebox .old{color:var(--muted);text-decoration:line-through;font-weight:700;font-size:1rem}
+  .pricebox .now{font-size:3rem;font-weight:900;color:var(--ink);line-height:.95;letter-spacing:-.03em}
+  .pricebox .now sup{font-size:1.2rem;top:-1.1em;font-weight:800;color:var(--green)}
+  .pricebox .pay{font-size:.85rem;color:var(--muted);font-weight:600;margin-top:4px}
+  .pricebox .save{display:inline-block;background:#fdeae6;color:var(--cta-d);font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:999px;margin-top:8px}
+  .secrow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px;font-size:.74rem;color:var(--muted);font-weight:600}
+  .secrow .s{display:inline-flex;align-items:center;gap:5px}
+  .secrow svg{width:14px;height:14px}
+
+  /* GUARANTEE */
+  .guar{display:flex;gap:20px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+  .seal{flex:0 0 auto;width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 50% 35%,#fff7e6,#fff);border:3px solid var(--gold);color:var(--gold-d);text-align:center;line-height:1;
+    box-shadow:0 8px 22px rgba(231,181,60,.25)}
+  .seal b{font-size:2rem;font-weight:900;display:block}
+  .seal span{font-size:.62rem;font-weight:800;letter-spacing:.1em}
+
+  /* FAQ */
+  details{background:#fff;border:1px solid var(--line);border-radius:13px;padding:2px 18px;margin-bottom:10px;transition:border-color .2s}
+  details[open]{border-color:var(--green-300)}
+  summary{cursor:pointer;font-weight:800;padding:15px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";color:var(--green);font-size:1.5rem;font-weight:900;line-height:1;transition:transform .2s}
+  details[open] summary:after{content:"â€“"}
+  details p{padding-bottom:15px;color:var(--muted);font-weight:500;margin:0}
+
+  /* FINAL CTA */
+  .final{background:radial-gradient(100% 80% at 50% 0%,#13614a55,transparent),linear-gradient(170deg,#0e4d33,#0a3324);color:#eafff3;text-align:center}
+  .final h2{color:#fff}.final p{color:#bfe6d1;max-width:34ch;margin-left:auto;margin-right:auto}
+
+  footer{font-size:.78rem;color:var(--muted);text-align:center;padding:32px 20px 120px;background:#fff}
+  footer p{margin-bottom:8px;max-width:60ch;margin-left:auto;margin-right:auto}
+
+  /* sticky mobile cta */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:55;background:#fff;border-top:1px solid var(--line);
+    padding:9px 14px;box-shadow:0 -8px 24px rgba(0,0,0,.1)}
+  .sticky .cta{animation:none;font-size:1.04rem;padding:14px;max-width:560px}
+
+  /* reveal */
+  .rv{opacity:1;transform:none}
+  body.anim .rv{opacity:0;transform:translateY(22px)}
+  body.anim .rv.in{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  @media (prefers-reduced-motion:reduce){
+    body.anim .rv{opacity:1!important;transform:none!important}
+    .cta,.badge .dot{animation:none!important}
+  }
+  @media(min-width:560px){.vsl{max-width:360px}}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="ubar">
+  <span>âš¡ Oferta de lanÃ§amento: <b>R$ 19,90</b> (de R$ 97)</span>
+  <span>encerra em <span class="clock" id="clock">15:00</span></span>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="badge rv"><span class="dot"></span> Protocolo da Gelatina Noturna</span>
+    <h1 class="rv">A gelatina que as brasileiras tomam<br>antes de dormir pra <span class="mark">secar a barriga</span></h1>
+    <p class="sub rv">Um ritual de <b>30 segundos</b> que desliga a fome da noite, o vilÃ£o que sabota qualquer dieta. Sem corte radical, sem academia, sem remÃ©dio.</p>
+    <!-- SUBSTITUA por seu player hospedado (VTurb/Panda) ao publicar. Preview usa a VSL local. -->
+    <div class="vsl rv"><video controls playsinline preload="metadata" src="vsl.mp4"></video></div>
+    <a class="cta rv" href="#oferta">Quero meu protocolo<small>Acesso imediato no celular â€¢ R$ 19,90</small></a>
+    <div class="trust rv">
+      <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="#9fd9ba" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Compra segura</span>
+      <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="#9fd9ba" stroke-width="2"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg> Garantia 7 dias</span>
+      <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="#9fd9ba" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Acesso na hora</span>
+    </div>
+  </div>
+</header>
+
+<!-- DOR -->
+<section class="on-light">
+  <div class="wrap">
+    <span class="eyebrow rv">Talvez vocÃª se reconheÃ§aâ€¦</span>
+    <h2 class="rv">VocÃª faz tudo certo o dia todo. E estraga tudo de noite.</h2>
+    <p class="lead rv">Se isso acontece com vocÃª, o problema nÃ£o Ã© falta de esforÃ§o. Ã‰ a <b>hora</b>:</p>
+    <ul class="list pain rv">
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11"/><path d="M8 8l8 8M16 8l-8 8" fill="none" stroke-width="2.4" stroke-linecap="round"/></svg> Segura a dieta o dia inteiro, mas Ã  noite bate aquela fome que nÃ£o Ã© fome de verdade</li>
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11"/><path d="M8 8l8 8M16 8l-8 8" fill="none" stroke-width="2.4" stroke-linecap="round"/></svg> A casa fica quieta e vem o beliscar: doce, bolacha, o que tiver na geladeira</li>
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11"/><path d="M8 8l8 8M16 8l-8 8" fill="none" stroke-width="2.4" stroke-linecap="round"/></svg> No dia seguinte, a culpa. E a balanÃ§a que nunca anda</li>
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11"/><path d="M8 8l8 8M16 8l-8 8" fill="none" stroke-width="2.4" stroke-linecap="round"/></svg> JÃ¡ tentou de tudo: salada, chÃ¡, academia. E sempre desiste na primeira semana</li>
+    </ul>
+  </div>
+</section>
+
+<!-- VIRADA -->
+<section class="soft on-light">
+  <div class="wrap">
+    <span class="eyebrow rv">O que ninguÃ©m te contou</span>
+    <h2 class="rv">Depois das 20h, seu corpo abre uma <span class="hl">janela</span> onde a fome descontrola</h2>
+    <div class="windowviz rv" aria-hidden="true">
+      <div class="bar" style="height:30%"><span>8h</span></div>
+      <div class="bar" style="height:36%"><span>12h</span></div>
+      <div class="bar" style="height:42%"><span>15h</span></div>
+      <div class="bar" style="height:55%"><span>18h</span></div>
+      <div class="bar peak" style="height:92%"><span>20h+</span></div>
+      <div class="bar peak" style="height:100%"><span>23h</span></div>
+    </div>
+    <p class="lead rv" style="margin-top:30px">NÃ£o Ã© falta de forÃ§a de vontade. Ã‰ <b>quÃ­mica</b>. Toda dieta briga contra o seu dia e ignora a noite, que Ã© justamente onde o estrago acontece. Por isso elas falham.</p>
+    <p class="rv">A soluÃ§Ã£o Ã© absurda de simples: uma <b>gelatina especÃ­fica</b>, tomada na hora certa, fecha essa janela.</p>
+  </div>
+</section>
+
+<!-- MECANISMO -->
+<section class="dark">
+  <div class="wrap center">
+    <span class="eyebrow rv" style="color:var(--green-300)">A Trava Noturna da Fome</span>
+    <h2 class="rv">Como funciona, em 3 passos</h2>
+    <div class="steps" style="text-align:left">
+      <div class="step rv"><div class="n">1</div><div><b>Prepare a gelatina certa</b><span>30 segundos, com ingredientes que vocÃª acha em qualquer mercado.</span></div></div>
+      <div class="step rv"><div class="n">2</div><div><b>Tome antes de dormir</b><span>Ela preenche o estÃ´mago, desliga a fome noturna e entrega proteÃ­na de colÃ¡geno pro corpo durante o sono.</span></div></div>
+      <div class="step rv"><div class="n">3</div><div><b>Acorde mais leve</b><span>Menos inchaÃ§o, sem aquela culpa. Repita por 21 dias e sinta a diferenÃ§a.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="on-light">
+  <div class="wrap">
+    <h2 class="rv">O que muda quando vocÃª fecha a janela da noite</h2>
+    <ul class="list good rv">
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Para de beliscar de madrugada, o sabotador nÃºmero 1 da sua dieta</li>
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Desincha e acorda mais leve, com a roupa fechando melhor</li>
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Dorme melhor e sente que finalmente tem <b>controle</b></li>
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Sem cortar tudo, sem passar fome, sem remÃ©dio</li>
+    </ul>
+    <a class="cta rv" href="#oferta" style="margin-top:24px">Quero comeÃ§ar hoje Ã  noite<small>Protocolo completo por R$ 19,90</small></a>
+  </div>
+</section>
+
+<!-- CONFIANCA / FUNDADORAS -->
+<section class="soft on-light">
+  <div class="wrap">
+    <span class="eyebrow rv">LanÃ§amento</span>
+    <h2 class="rv">Por que vocÃª pode testar sem medo</h2>
+    <p class="lead rv">Em vez de te mostrar o resultado dos outros, eu prefiro te dar algo melhor: <b>risco zero</b> pra vocÃª ser uma das primeiras.</p>
+    <div class="tcards">
+      <div class="tcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#16794e" stroke-width="2"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <b>VocÃª nÃ£o arrisca nada</b><p>Teste por 7 dias. NÃ£o gostou? Devolvo 100%, sem pergunta nenhuma. O risco Ã© meu, nÃ£o seu.</p></div>
+      <div class="tcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#16794e" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></div>
+        <b>Faz sentido, nÃ£o Ã© mÃ¡gica</b><p>Atua na compulsÃ£o da noite, com a saciedade da proteÃ­na de colÃ¡geno. Alimento comum, nada de remÃ©dio.</p></div>
+      <div class="tcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#16794e" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></div>
+        <b>DÃ¡ pra manter</b><p>30 segundos por dia, com o que vocÃª acha no mercado. Sem cortar tudo, sem academia. Por isso vocÃª nÃ£o desiste.</p></div>
+    </div>
+    <div class="statbar">
+      <div class="stat rv"><b>30s</b><span>por dia, antes de dormir</span></div>
+      <div class="stat rv"><b>21</b><span>dias de protocolo</span></div>
+      <div class="stat rv"><b>7</b><span>dias de garantia</span></div>
+    </div>
+    <!-- DEPOIMENTOS REAIS: cole aqui os prints/fotos autorizados das primeiras alunas conforme as vendas entrarem. -->
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section id="oferta" class="on-light">
+  <div class="wrap">
+    <h2 class="center rv" style="margin-bottom:20px">Garanta o seu <span class="hl">Gelatina Que Seca</span> hoje</h2>
+    <div class="offer rv">
+      <div class="offer-top">
+        <span class="kbadge">Oferta de lanÃ§amento</span>
+        <h3>Tudo o que vocÃª recebe agora</h3>
+      </div>
+      <div class="offer-body">
+        <ul class="stack">
+          <li><span>Protocolo Gelatina Que Seca (21 dias)</span><span class="v">R$ 97</span></li>
+          <li><span>Guia: qual gelatina usar + horÃ¡rios certos</span><span class="v">incluso</span></li>
+          <li><span>CombinaÃ§Ãµes que potencializam o efeito</span><span class="v">incluso</span></li>
+          <li class="free"><span>BÃ´nus: CardÃ¡pio Anti-InchaÃ§o de 7 Dias <span class="tag">GRÃTIS</span></span><span class="v">R$ 47</span></li>
+          <li><span>Acesso imediato no celular, pra sempre</span><span class="v">incluso</span></li>
+        </ul>
+        <div class="pricebox">
+          <div class="old">Tudo isso valeria R$ 144</div>
+          <div class="now"><sup>R$</sup>19<span style="font-size:1.4rem;font-weight:800">,90</span></div>
+          <div class="pay">Ã  vista no Pix ou em atÃ© 12x no cartÃ£o</div>
+          <span class="save">VocÃª economiza R$ 124 hoje</span>
+        </div>
+        <a class="cta" href="COLE_AQUI_O_LINK_DO_CHECKOUT">Quero meu protocolo agora<small>Pagamento Ãºnico â€¢ acesso na hora</small></a>
+        <div class="secrow">
+          <span class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Ambiente seguro</span>
+          <span class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6z"/></svg> Garantia 7 dias</span>
+          <span class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Acesso imediato</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="soft on-light">
+  <div class="wrap">
+    <div class="guar rv">
+      <div class="seal"><b>7</b><span>DIAS</span></div>
+      <div><h3 style="margin-bottom:6px">O risco Ã© todo meu</h3>
+        <p style="margin:0;color:var(--muted)">Teste o protocolo por 7 dias. Se vocÃª nÃ£o sentir a diferenÃ§a logo na primeira semana, Ã© sÃ³ pedir: devolvo 100% do seu dinheiro, sem perguntas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="on-light">
+  <div class="wrap">
+    <h2 class="center rv">Perguntas frequentes</h2>
+    <div style="margin-top:18px">
+      <details class="rv"><summary>Funciona pra mim, que jÃ¡ tentei de tudo?</summary><p>Sim, porque ataca exatamente a noite, o momento em que vocÃª desistia. NÃ£o Ã© mais uma dieta pra brigar o dia inteiro.</p></details>
+      <details class="rv"><summary>Preciso cortar comida ou fazer academia?</summary><p>NÃ£o. Ã‰ um ritual Ã  noite somado Ã  sua rotina normal. Sem corte radical, sem treino.</p></details>
+      <details class="rv"><summary>Qualquer gelatina serve?</summary><p>NÃ£o. O protocolo mostra exatamente qual usar, a quantidade e o horÃ¡rio certo pra fazer efeito.</p></details>
+      <details class="rv"><summary>Como eu recebo?</summary><p>Na hora. Assim que o pagamento Ã© aprovado, o acesso chega no seu e-mail e celular.</p></details>
+      <details class="rv"><summary>Ã‰ seguro?</summary><p>SÃ£o alimentos comuns. NÃ£o Ã© remÃ©dio e nÃ£o substitui orientaÃ§Ã£o mÃ©dica ou nutricional. Em caso de condiÃ§Ã£o de saÃºde, consulte seu mÃ©dico.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2 class="rv">Hoje Ã  noite, em vez de beliscar,<br>dÃª o primeiro passo</h2>
+    <p class="rv" style="margin-bottom:24px">VocÃª pode fechar essa pÃ¡gina e continuar no mesmo ciclo de sempre. Ou comeÃ§ar agora a virar essa histÃ³ria, com risco zero.</p>
+    <a class="cta rv" href="#oferta">Quero acordar mais leve<small>R$ 19,90 â€¢ garantia de 7 dias</small></a>
+  </div>
+</section>
+
+<footer>
+  <p><b>Gelatina Que Seca</b> â€” O Protocolo da Gelatina Noturna</p>
+  <p>Este produto nÃ£o substitui acompanhamento mÃ©dico ou nutricional. Resultados podem variar de pessoa para pessoa. Este site nÃ£o Ã© afiliado ao Facebook/Meta nem ao Google.</p>
+  <p>Â© 2026 â€” Todos os direitos reservados.</p>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky"><a class="cta" href="#oferta">Quero meu protocolo â€” R$ 19,90</a></div>
+
+<script>
+(function(){
+  // contador de lanÃ§amento (sessÃ£o de 15 min, persiste pra nao resetar a cada scroll)
+  var KEY='gqs_deadline', now=Date.now(), dl=+localStorage.getItem(KEY);
+  if(!dl || dl < now){ dl = now + 15*60*1000; localStorage.setItem(KEY, dl); }
+  var el=document.getElementById('clock');
+  function tick(){
+    var s=Math.max(0,Math.floor((dl-Date.now())/1000));
+    var m=String(Math.floor(s/60)).padStart(2,'0'), ss=String(s%60).padStart(2,'0');
+    if(el) el.textContent=m+':'+ss;
+  }
+  tick(); setInterval(tick,1000);
+
+  // reveal on scroll (default ja visivel; so anima se JS + sem reduced-motion)
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    document.body.classList.add('anim');
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(n){io.observe(n);});
+    // failsafe: revela tudo apos 1.6s (evita secao em branco se IO nao disparar)
+    setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(n){n.classList.add('in');});},1600);
+  }
+})();
+</script>
+</body>
+</html>
+
