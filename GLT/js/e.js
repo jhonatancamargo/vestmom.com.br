@@ -45,48 +45,36 @@ function _0xc21c(){const _0x16d169=['call','6311976dMmNDt','forEach','jDrIk','14
 
 
 
-  // meucodigo.js
+  // === REVEAL DA OFERTA — sincronizado com o NOSSO player (vsl-player.pages.dev) ===
+  // Substitui o antigo meucodigo.js, que dependia do smartplayer/ConverteAI (removido).
+  // O nosso player da AUTOPLAY MUDO, entao nao da pra amarrar no evento "play" (dispara cedo).
+  // Sinal de engajamento real = video correndo COM O SOM LIGADO (depois do "ativar som").
+document.addEventListener("DOMContentLoaded", function () {
+  /* SEGUNDOS de video (com som) ate a oferta aparecer. Defina em window.VSL.revealAt na pagina. */
+  var REVEAL = (window.VSL && +window.VSL.revealAt) || (typeof d !== 'undefined' ? d : 150);
+  var KEY = 'glt_oferta_liberada';
+  var done = false;
 
-document.addEventListener("DOMContentLoaded", function() {
-  /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
-  var SECONDS_TO_DISPLAY = 164;
-  var CLASS_TO_DISPLAY = ".esconder";
-  
-  /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
-  var attempts = 0;
-  var elsHiddenList = [];
-  var elsDisplayed = false;
-  var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
-  var alreadyDisplayedKey = `alreadyElsDisplayed${SECONDS_TO_DISPLAY}`;
-  var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
-  
-  setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
-  
-  var showHiddenElements = function () {
-    elsDisplayed = true;
-    elsHiddenList.forEach((e) => e.style.display = "block");
-    localStorage.setItem(alreadyDisplayedKey, true);
+  function reveal() {
+    if (done) return; done = true;
+    document.querySelectorAll('.esconder').forEach(function (e) { e.style.display = 'block'; });   // .esconder = display:none no CSS
+    Array.prototype.forEach.call(document.getElementsByClassName('hide-before'), function (e) { e.classList.remove('d-none'); });
+    Array.prototype.forEach.call(document.getElementsByClassName('hide-after'),  function (e) { e.classList.add('d-none'); });
+    try { localStorage.setItem(KEY, '1'); } catch (x) {}
   }
-  
-  var startWatchVideoProgress = function () {
-    if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
-      if (attempts >= 10) return;
-      attempts += 1;
-      return setTimeout(function () { startWatchVideoProgress(); }, 1000);
-    }
-  
-    smartplayer.instances[0].on('timeupdate', () => {
-      if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
-      if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
-      showHiddenElements();
-    });
-  }
-  
-  if (alreadyElsDisplayed === 'true') {
-    setTimeout(function () { showHiddenElements(); }, 100);
-  } else {
-    startWatchVideoProgress();
-  }
+
+  // Quem ja assistiu antes ve a oferta na hora (nao espera de novo).
+  try { if (localStorage.getItem(KEY) === '1') { setTimeout(reveal, 100); return; } } catch (x) {}
+
+  var v = document.getElementById('vsl-video');            // <video> do nosso player
+  if (!v) { setTimeout(reveal, 6000); return; }            // sem player carregado: nunca trava
+  v.addEventListener('timeupdate', function () {
+    if (!v.muted && v.duration && v.currentTime >= REVEAL) reveal();   // som ligado = engajamento real
+  });
+  v.addEventListener('volumechange', function () {
+    if (!v.muted) setTimeout(reveal, (REVEAL + 20) * 1000);            // backstop ao ligar o som
+  });
+  setTimeout(reveal, 6 * 60 * 1000);                       // rede de seguranca absoluta: nunca trava
 });
 
    // Função para obter um item aleatório de uma lista
@@ -121,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var nomes = ["Maria", "Ana", "Leandro", "Isabela", "Laura", "Gabriel", "Carolina", "Amanda", "Paulo", "Larissa", "Mariana", "Valentina", "Juliana", "Renata", "Fernanda"];
 
         // Lista de palavras após o nome
-        var palavras = ["Se inscreveu no gelatina que seca®", "Também adquiriu o gelatina que seca®", "Acabou de efetuar sua compra"];
+        var palavras = ["Acabou de garantir o protocolo", "Também garantiu o Gelatina Que Seca", "Acabou de efetuar sua compra"];
 
         // Agendar o primeiro pop-up para o próximo segundo
         setTimeout(exibirPopup, 1000);

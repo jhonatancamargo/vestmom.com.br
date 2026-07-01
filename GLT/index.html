@@ -1,467 +1,209 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gelatina Que Seca · bariátrica</title>
-<meta name="description" content="A gelatina que aciona a saciedade antes das refeições — você come menos sem passar fome, sem cirurgia e sem cortar o que ama.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<!-- Meta Pixel -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelatina Que Seca · O Protocolo da Gelatina Noturna</title>
+     <script type="text/javascript">
+        var back_redirect_back_link = 'https://pay.kiwify.com.br/s0ghGIa' + location.search;
+        // Não altere daqui para baixo
+        history.pushState({}, "", location.href);
+        history.pushState({}, "", location.href);
+
+        window.addEventListener('popstate', function (event) {
+            if (event.state) {
+                setTimeout(function () {
+                    location.href = back_redirect_back_link;
+                }, 1);
+            }
+        }, false);
+    </script>
+    <link rel="icon" href="assets/img/favicon.webp" type="image/webp">
+     <meta http-equiv="x-ua-compatible" content="ie=edge" />
+   
+    <!-- preconnect: player.js, config, URL assinada e o VIDEO vem todos deste dominio -->
+    <link rel="preconnect" href="https://vsl-player-8d6.pages.dev" crossorigin />
+     <link rel="stylesheet" href="css/s.css" />
+    <link rel="stylesheet" href="https://vsl-player-8d6.pages.dev/css/embed.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.onload=null;this.removeAttribute('media');">
+ <!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1585943086262376');fbq('track','PageView');
-document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a.cta'):null;if(a&&/pay\.kiwify/.test(a.href||'')){fbq('track','InitiateCheckout');}});
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1585943086262376');
+fbq('track', 'PageView');
+fbq('track', 'PV-GLT');
+fbq('track', 'ViewContent');
+// Avisa o Meta quando alguem clica pra ir ao checkout (sinal de intencao pra otimizacao)
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a'):null;if(a&&/pay\.kiwify/.test(a.href||'')){fbq('track','InitiateCheckout');}});
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1585943086262376&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel -->
-<style>
-  :root{
-    --bg:#f4f8f3; --surface:#ffffff; --surface-2:#eef4ec;
-    --ink:#15241c; --ink-soft:#3f5247; --muted:#6c7d73; --line:#dfe8dc;
-    --emerald:#1b6347; --emerald-d:#0d3527; --emerald-l:#2f8761;
-    --cream:#f6efe1; --cream-soft:#d9e2d2;
-    --coral:#ec5a3a; --coral-d:#d44827; --coral-soft:#ffe9e2;
-    --gold:#c08a32; --gold-l:#e2b25a;
-    --maxw:720px; --measure:64ch;
-    --e-out:cubic-bezier(.16,1,.3,1);
-    --z-sticky:40; --z-bar:50;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{font-family:'Hanken Grotesk',system-ui,Arial,sans-serif;color:var(--ink);background:var(--bg);
-    line-height:1.62;font-size:18px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
-  .narrow{max-width:var(--measure)}
-  h1,h2,h3{font-family:'Spectral',Georgia,serif;line-height:1.1;font-weight:700;letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
-  h1{font-size:clamp(2.1rem,6.4vw,3.3rem);font-weight:800;letter-spacing:-.025em}
-  h2{font-size:clamp(1.6rem,4.8vw,2.4rem);margin-bottom:18px}
-  h3{font-size:1.2rem;font-weight:700}
-  p{margin-bottom:17px;text-wrap:pretty}
-  .lead-p{font-size:1.12rem;color:var(--ink-soft)}
-  section{padding:clamp(48px,8vw,88px) 0}
-  .hl{color:var(--emerald);font-style:normal}
-  .underline{background:linear-gradient(180deg,transparent 62%,rgba(226,178,90,.5) 62%);padding:0 .06em}
-  .center{text-align:center}
-  .big{font-family:'Spectral',Georgia,serif;font-size:clamp(1.35rem,3.6vw,1.7rem);line-height:1.3;color:var(--ink);font-weight:600;letter-spacing:-.01em;margin:6px 0 18px}
-  em{font-style:italic;color:var(--emerald)}
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1585943086262376&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
-  /* URGENCY BAR */
-  .ubar{position:sticky;top:0;z-index:var(--z-bar);background:var(--emerald-d);color:var(--cream);
-    text-align:center;font-size:.84rem;font-weight:600;padding:10px 16px;
-    display:flex;gap:8px 12px;align-items:center;justify-content:center;flex-wrap:wrap}
-  .ubar b{color:#fff}
-  .ubar .clock{font-variant-numeric:tabular-nums;font-weight:800;color:var(--gold-l);
-    background:rgba(0,0,0,.28);padding:3px 9px;border-radius:7px;letter-spacing:.03em}
-
-  /* HERO — drench esmeralda */
-  .hero{position:relative;color:var(--cream);overflow:hidden;
-    background:
-      radial-gradient(130% 90% at 80% -10%, #2a8a63 0%, transparent 55%),
-      radial-gradient(120% 100% at 0% 110%, #0a2c20 0%, transparent 60%),
-      linear-gradient(160deg,#15543c,#0c3526);
-    padding:clamp(34px,6vw,60px) 0 clamp(40px,7vw,72px)}
-  .hero:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
-    background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:22px 22px}
-  .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,48px);align-items:center}
-  .hero h1{color:#fff}
-  .hero h1 .mark{color:var(--gold-l)}
-  .hero .sub{color:var(--cream-soft);font-size:1.1rem;margin:18px 0 26px;max-width:36ch}
-  .hero .sub b{color:#fff;font-weight:700}
-  .kicker{display:inline-flex;align-items:center;gap:9px;font-size:.74rem;font-weight:700;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--gold-l);margin-bottom:20px}
-  .kicker .ln{width:26px;height:1px;background:var(--gold)}
-  .htrust{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:.82rem;font-weight:600;color:var(--cream-soft)}
-  .htrust span{display:inline-flex;align-items:center;gap:7px}
-  .htrust svg{width:17px;height:17px;stroke:var(--gold-l);fill:none;flex:0 0 auto}
-  /* gelatina SVG */
-  .jar{width:100%;max-width:300px;margin:0 auto;filter:drop-shadow(0 24px 34px rgba(0,0,0,.35))}
-  .jelly{transform-origin:50% 80%;animation:wobble 4.2s var(--e-out) infinite}
-  @keyframes wobble{0%,100%{transform:scaleY(1) skewX(0deg)}30%{transform:scaleY(.97) skewX(-1.4deg)}60%{transform:scaleY(1.02) skewX(1deg)}}
-
-  /* CTA */
-  .cta{display:flex;flex-direction:column;align-items:center;gap:2px;width:100%;max-width:480px;
-    background:linear-gradient(180deg,#f56a4a,var(--coral));color:#fff;text-decoration:none;text-align:center;
-    font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:1.14rem;padding:18px 24px;border-radius:16px;
-    box-shadow:0 14px 30px -8px rgba(214,72,39,.55);letter-spacing:.005em;
-    transition:transform .25s var(--e-out),box-shadow .25s var(--e-out);position:relative;overflow:hidden}
-  .cta:hover{transform:translateY(-2px);box-shadow:0 20px 40px -8px rgba(214,72,39,.6)}
-  .cta:active{transform:translateY(0)}
-  .cta small{font-size:.76rem;font-weight:500;opacity:.95;letter-spacing:0}
-  .cta.solo{margin-inline:auto}
-  .cta .shine{position:absolute;top:0;left:-60%;width:40%;height:100%;
-    background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);
-    transform:skewX(-18deg);animation:shine 4.5s var(--e-out) 1.5s infinite}
-  @keyframes shine{0%{left:-60%}22%,100%{left:130%}}
-
-  /* listas */
-  .pains{margin:8px 0;display:grid;gap:2px}
-  .pain{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
-  .pain:last-child{border-bottom:0}
-  .pain .ic{flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:var(--coral-soft);
-    display:flex;align-items:center;justify-content:center;color:var(--coral-d);font-weight:800;margin-top:1px}
-  .pain p{margin:0;font-weight:500;color:var(--ink-soft)}
-  .pain b{color:var(--ink)}
-  .goods{display:grid;gap:14px;margin:8px 0}
-  .good{display:flex;gap:13px;align-items:flex-start;font-weight:500;color:var(--ink-soft)}
-  .good .ic{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--emerald);color:#fff;
-    display:flex;align-items:center;justify-content:center;margin-top:2px}
-  .good .ic svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:3}
-  .good b{color:var(--ink)}
-
-  /* comparativo */
-  .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0 4px}
-  .ccard{border-radius:18px;padding:22px}
-  .ccard.cold{background:var(--surface-2);border:1px solid var(--line)}
-  .ccard.win{background:var(--emerald);color:var(--cream);box-shadow:0 18px 40px -14px rgba(13,53,39,.5)}
-  .ccard h4{font-family:'Hanken Grotesk',sans-serif;font-size:.96rem;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-  .ccard.cold h4{color:var(--ink)} .ccard.win h4{color:#fff}
-  .ccard ul{list-style:none;font-size:.9rem;font-weight:500;line-height:1.4}
-  .ccard li{padding:7px 0;display:flex;gap:9px;align-items:flex-start}
-  .ccard.cold li{color:var(--ink-soft)} .ccard.win li{color:var(--cream-soft)}
-  .ccard .m{flex:0 0 auto;font-weight:900;width:18px}
-  .ccard.cold .m{color:var(--coral-d)} .ccard.win .m{color:var(--gold-l)}
-
-  /* passos */
-  .steps{display:grid;gap:0;margin-top:26px;max-width:560px;margin-inline:auto;text-align:left}
-  .step{display:flex;gap:18px;align-items:flex-start;padding:20px 0;position:relative}
-  .step:not(:last-child){border-bottom:1px solid var(--line)}
-  .step .n{flex:0 0 auto;width:48px;height:48px;border-radius:14px;
-    background:linear-gradient(165deg,var(--emerald-l),var(--emerald));color:#fff;
-    font-family:'Spectral',serif;font-weight:700;font-size:1.4rem;display:flex;align-items:center;justify-content:center;
-    box-shadow:0 8px 18px -6px rgba(27,99,71,.5)}
-  .step b{display:block;margin-bottom:4px;font-size:1.08rem;color:var(--ink);font-weight:700}
-  .step span{color:var(--ink-soft);font-weight:500;font-size:.97rem}
-
-  /* depoimento */
-  .quote{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:20px;
-    padding:30px 28px 26px;margin:8px 0;box-shadow:0 16px 40px -22px rgba(13,53,39,.35)}
-  .quote:before{content:"\201C";font-family:'Spectral',serif;position:absolute;top:-6px;left:20px;
-    font-size:4.5rem;color:var(--cream-soft);line-height:1}
-  .quote p{font-family:'Spectral',serif;font-size:1.18rem;font-style:italic;color:var(--ink);line-height:1.45;margin:6px 0 14px}
-  .quote .by{font-size:.84rem;color:var(--muted);font-weight:600;font-style:normal}
-
-  /* stats */
-  .statbar{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px}
-  .stat{flex:1 1 92px;min-width:92px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 12px;text-align:center}
-  .stat b{display:block;font-family:'Spectral',serif;font-size:2rem;font-weight:800;color:var(--emerald);line-height:1}
-  .stat span{font-size:.78rem;color:var(--muted);font-weight:600;margin-top:4px;display:block}
-
-  /* oferta */
-  .offer-sec{background:var(--surface-2)}
-  .offer{background:var(--surface);border:1px solid var(--line);border-radius:24px;overflow:hidden;max-width:540px;margin:0 auto;
-    box-shadow:0 30px 70px -30px rgba(13,53,39,.4)}
-  .offer-top{background:linear-gradient(165deg,var(--emerald),var(--emerald-d));color:var(--cream);padding:26px 26px 22px;text-align:center}
-  .offer-top .kb{display:inline-block;background:var(--gold-l);color:#3a2a06;font-weight:800;font-size:.72rem;
-    letter-spacing:.06em;text-transform:uppercase;padding:5px 13px;border-radius:999px;margin-bottom:12px}
-  .offer-top h3{color:#fff;font-size:1.35rem}
-  .offer-body{padding:26px}
-  .stack{list-style:none;margin:0 0 18px}
-  .stack li{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 0;
-    border-bottom:1px solid var(--line);font-weight:600;font-size:.96rem;color:var(--ink-soft)}
-  .stack li:last-child{border-bottom:0}
-  .stack li .v{color:var(--muted);white-space:nowrap;font-weight:700;font-size:.88rem}
-  .stack li.free{color:var(--ink)} .stack li.free .v{color:var(--emerald);font-weight:800}
-  .stack .tag{display:inline-block;background:var(--emerald);color:#fff;font-size:.6rem;font-weight:800;
-    padding:2px 7px;border-radius:5px;margin-left:7px;letter-spacing:.04em;vertical-align:middle}
-  .pricebox{text-align:center;background:var(--surface-2);border-radius:16px;padding:22px;margin-bottom:18px}
-  .pricebox .old{color:var(--muted);text-decoration:line-through;font-weight:600;font-size:.95rem}
-  .pricebox .now{font-family:'Spectral',serif;font-size:3.2rem;font-weight:800;color:var(--ink);line-height:.95;letter-spacing:-.03em;margin:2px 0}
-  .pricebox .now sup{font-size:1.2rem;top:-1.2em;color:var(--emerald);font-weight:700}
-  .pricebox .pay{font-size:.86rem;color:var(--muted);font-weight:500;margin-top:6px}
-  .pricebox .save{display:inline-block;background:var(--coral-soft);color:var(--coral-d);font-weight:700;
-    font-size:.78rem;padding:5px 12px;border-radius:999px;margin-top:10px}
-  .secrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:.74rem;color:var(--muted);font-weight:600}
-  .secrow .s{display:inline-flex;align-items:center;gap:5px}
-  .secrow svg{width:14px;height:14px;stroke:var(--emerald);fill:none}
-
-  /* garantia */
-  .guar{display:flex;gap:22px;align-items:center;background:var(--surface);border:1px solid var(--line);
-    border-radius:20px;padding:26px;box-shadow:0 16px 40px -26px rgba(13,53,39,.35)}
-  .seal{flex:0 0 auto;width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    background:radial-gradient(circle at 50% 32%,#fff6e2,var(--surface));border:3px solid var(--gold-l);color:var(--gold);text-align:center;line-height:1}
-  .seal b{font-family:'Spectral',serif;font-size:2.1rem;font-weight:800;display:block}
-  .seal span{font-size:.6rem;font-weight:800;letter-spacing:.12em;color:var(--gold)}
-  .guar h3{margin-bottom:6px}.guar p{color:var(--ink-soft);margin:0;font-size:.96rem}
-
-  /* faq */
-  details{border-bottom:1px solid var(--line)}
-  summary{cursor:pointer;font-weight:700;padding:19px 0;list-style:none;display:flex;justify-content:space-between;
-    align-items:center;gap:14px;color:var(--ink);font-size:1.04rem}
-  summary::-webkit-details-marker{display:none}
-  summary .pl{flex:0 0 auto;width:24px;height:24px;position:relative;transition:transform .3s var(--e-out)}
-  summary .pl:before,summary .pl:after{content:"";position:absolute;background:var(--emerald);border-radius:2px}
-  summary .pl:before{top:11px;left:4px;width:16px;height:2px}
-  summary .pl:after{top:4px;left:11px;width:2px;height:16px;transition:opacity .3s}
-  details[open] summary .pl{transform:rotate(90deg)} details[open] summary .pl:after{opacity:0}
-  details p{padding:0 0 19px;color:var(--ink-soft);font-weight:500;margin:0;font-size:.98rem;max-width:60ch}
-
-  /* final */
-  .final{position:relative;color:var(--cream);overflow:hidden;text-align:center;
-    background:radial-gradient(120% 100% at 50% 0%,#1f6e4f,#0c3526)}
-  .final h2{color:#fff}
-  .final p{color:var(--cream-soft);max-width:40ch;margin:0 auto 26px}
-  .final .cta{margin-inline:auto}
-  .sig{font-family:'Spectral',serif;font-style:italic;color:var(--cream-soft);margin-top:22px;font-size:1.02rem}
-
-  footer{font-size:.78rem;color:var(--muted);text-align:center;padding:36px 22px 110px;background:var(--surface-2)}
-  footer p{margin-bottom:9px;max-width:64ch;margin-inline:auto;line-height:1.55}
-  footer b{color:var(--ink-soft)}
-
-  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:var(--z-sticky);
-    background:rgba(244,248,243,.9);backdrop-filter:blur(10px);border-top:1px solid var(--line);
-    padding:10px 16px;box-shadow:0 -8px 24px -12px rgba(13,53,39,.3)}
-  .sticky .cta{max-width:560px;margin-inline:auto;font-size:1.04rem;padding:15px;flex-direction:row;gap:8px}
-  .sticky .cta small{display:none}
-
-  a.cta:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-  #oferta{scroll-margin-top:70px}
-
-  @media(max-width:680px){
-    .hero .wrap{grid-template-columns:1fr;text-align:center}
-    .hero .sub{margin-inline:auto} .htrust{justify-content:center}
-    .hero .jar{max-width:230px;order:-1;margin-bottom:8px}
-    .kicker{justify-content:center}
-    .compare{grid-template-columns:1fr}
-    .cta{margin-inline:auto}
-  }
-  @media(prefers-reduced-motion:reduce){
-    .jelly,.cta .shine{animation:none}
-    *{scroll-behavior:auto}
-  }
-</style>
 </head>
 <body>
+    <div class="banner py-lg-1 py-sm-1 px-sm-1 center">
+       ATENÇÃO: ASSISTA O VÍDEO ANTES QUE SAIA DO AR!
+    </div>
+    <section class="hero py-lg-2 py-sm-2 right px-lg-15 px-sm-1">
+      <div class="center px-lg-15">
+        <h2 id="headline" class="mt-lg-3 mt-sm-1" style="color:#fff;font-weight:900;line-height:1.12;font-size:clamp(22px,6.4vw,40px);padding:0 4%">
+           A gelatina que as brasileiras tomam antes de dormir para <span style="color:#ffd400">secar a barriga</span>
+        </h2>
+    </div>
+   
+      <div class="mt-lg-5 mt-sm-3 mx-auto center max-w-lg-60">
+        <div id="vsl-wrapper" style="max-width:340px;margin:0 auto;border-radius:10px;overflow:hidden">
+          <video id="vsl-video" poster="assets/poster.jpg"></video>
+          <div id="mute-overlay"><h2>Clique aqui Para</h2><img src="https://vsl-player-8d6.pages.dev/assets/audio.webp" alt="Ativar som"><h2>Ativar som</h2></div>
+        </div>
 
-<div class="ubar">
-  <span>Oferta de lançamento: <b>R$ 19,90</b> <span style="opacity:.7">(de R$ 97)</span> · encerra em</span>
-  <span class="clock" id="clock">15:00</span>
+        
+
+        <div class="mt-lg- mt-sm-2 hide-after">
+          <p class="audio strong">
+            <img src="assets/img/audio.webp" alt="audio" />
+           Por favor, verifique se o som está ligado.
+          </p>
+        </div>
+      </div>
+     
+        <div class="mt-lg-1 mt-sm-1"></div>
+        <div
+          class="hide-before d-none esconder mt-lg-2 d-block center"
+        >
+          <br /> 
+          <a
+            href="https://pay.kiwify.com.br/s0ghGIa"
+            class="btn pulse max-w-lg-50 mx-auto"
+          >
+            SIM! QUERO APRENDER AGORA >>
+          </a>
+        </div>
+      <center class="c-segura">
+        <img
+          class="hide-before d-none esconder mx-auto d-"
+          height="42px"
+          src="assets/img/secure.webp"
+          alt="compra segura privacidade protegida"
+        />
+      </center>
+       </div> 
+      <div class="hide-before d-none esconder mt-2"></div>
+    </section>
+    <main>
+       </div> 
+      <div class="hide-before d-none esconder  mt-2"></div>
+    </section>
+         <!--garantia-->
+<div class="hide-before d-none esconder ">
+  <section class="container four-section">
+   <div class="image-card">
+       <img src="assets/img/guarantee.webp" alt="Imagem 1">
+   </div>
+   <div class="content-card">
+       <h2>Garantia <br>Gelatina Que Seca</h2>
+       <p>O código de defesa do consumidor (Art. 49) garante 7 dias para solicitar reembolso em caso de insatisfação com o produto. E eu confio tanto no meu protocolo que te dou 30 dias de garantia incondicional: não gostou, devolvo cada centavo.</p>
+   </div>
+</section>
 </div>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="wrap">
-    <div>
-      <span class="kicker"><span class="ln"></span> Saciedade de bariátrica, sem cirurgia</span>
-      <h1>A “gelatina bariátrica” que faz seu estômago <span class="mark">pedir menos comida</span></h1>
-      <p class="sub">O mesmo princípio de <b>saciedade</b> de quem operou, numa gelatina de 30 segundos antes das refeições. Você come menos sem passar fome, porque a vontade diminui sozinha.</p>
-      <a class="cta" href="https://pay.kiwify.com.br/s0ghGIa"><span class="shine"></span>Quero comer menos sem sofrer<small>Acesso imediato no celular · R$ 19,90</small></a>
-      <div class="htrust">
-        <span><svg viewBox="0 0 24 24" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Compra segura</span>
-        <span><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg> Garantia 7 dias</span>
-        <span><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Acesso na hora</span>
-      </div>
-    </div>
-    <div>
-      <!-- ilustração: gelatina na taça -->
-      <svg class="jar" viewBox="0 0 220 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Taça com gelatina">
-        <ellipse cx="110" cy="222" rx="74" ry="12" fill="#000" opacity=".18"/>
-        <path d="M44 96c0-6 4-10 10-10h112c6 0 10 4 10 10 0 44-20 86-66 86S44 140 44 96Z" fill="#ffffff" opacity=".14"/>
-        <g class="jelly">
-          <path d="M52 100c0-4 3-7 7-7h102c4 0 7 3 7 7 0 40-18 78-58 78S52 140 52 100Z" fill="#2f8761"/>
-          <path d="M52 100c0-4 3-7 7-7h102c4 0 7 3 7 7 0 8-2 16-5 24-28 10-78 10-106 0-3-8-5-16-5-24Z" fill="#48a87c"/>
-          <ellipse cx="110" cy="100" rx="58" ry="10" fill="#7ed3a6"/>
-          <ellipse cx="92" cy="96" rx="14" ry="4.5" fill="#ffffff" opacity=".5"/>
-          <circle cx="84" cy="132" r="5" fill="#ffffff" opacity=".22"/>
-          <circle cx="128" cy="150" r="4" fill="#ffffff" opacity=".18"/>
-          <circle cx="120" cy="120" r="3" fill="#ffffff" opacity=".2"/>
-        </g>
-        <path d="M70 182h80l-6 30c-1 5-5 8-10 8H86c-5 0-9-3-10-8l-6-30Z" fill="#ffffff" opacity=".16"/>
-        <rect x="96" y="206" width="28" height="30" rx="6" fill="#ffffff" opacity=".22"/>
-        <path d="M150 70c0-16 13-29 29-29" stroke="#e2b25a" stroke-width="5" stroke-linecap="round"/>
-        <circle cx="179" cy="38" r="9" fill="#e2b25a"/>
-      </svg>
-    </div>
-  </div>
-</header>
-
-<!-- LEAD -->
-<section>
-  <div class="wrap narrow">
-    <p class="big">Você come um prato cheio… e meia hora depois a fome já voltou.</p>
-    <p class="lead-p">Parece que o seu estômago é um poço sem fundo. Você até tenta comer menos, mas a fome aperta, a cabeça só pensa em comida, e no fim você belisca o dia inteiro, e ainda dorme com a culpa.</p>
-    <p>Quem fez a cirurgia bariátrica conta sempre a mesma coisa: <em>“o que mudou foi que eu paro de comer, encho rápido e a fome some”.</em> O resultado nunca veio de força de vontade. Veio de um estômago que <strong>sacia mais rápido</strong>.</p>
-    <p>O problema? Bariátrica é cara, é cirurgia, tem risco e não é pra todo mundo.</p>
-    <p class="big">E se você pudesse provocar essa mesma saciedade, sem cortar a barriga?</p>
-  </div>
-</section>
-
-<!-- DOR -->
-<section style="background:var(--surface-2)">
-  <div class="wrap narrow">
-    <h2>O problema nunca foi a comida. Foi a fome que não passa.</h2>
-    <div class="pains">
-      <div class="pain"><span class="ic">✕</span><p>Come um prato cheio e <b>logo já está com fome de novo</b>.</p></div>
-      <div class="pain"><span class="ic">✕</span><p>A vontade de beliscar não passa nunca, principalmente à tarde e à noite.</p></div>
-      <div class="pain"><span class="ic">✕</span><p>Já pensou na bariátrica, mas o <b>preço, o medo e a cirurgia</b> te travam.</p></div>
-      <div class="pain"><span class="ic">✕</span><p>Toda dieta te deixa com fome, e por isso você sempre desiste na primeira semana.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- VIRADA + COMPARATIVO -->
-<section>
-  <div class="wrap narrow">
-    <h2>O segredo da bariátrica não é o corte. É a <span class="hl">saciedade</span>.</h2>
-    <p class="lead-p">A cirurgia funciona porque o estômago passa a encher rápido: você come pouco, sacia logo e a fome cai. O resultado vem da <strong>sensação de saciedade</strong>, não de sofrer com força de vontade.</p>
-    <p class="big">E dá pra acionar essa mesma sensação de forma natural, antes das refeições.</p>
-    <p>Uma gelatina específica, rica em proteína de colágeno e fibra, ocupa espaço no estômago e ajuda a disparar o sinal de “estou satisfeita”. Você senta pra comer já meio saciada e se serve menos, sem nem perceber, sem passar fome.</p>
-    <div class="compare">
-      <div class="ccard cold">
-        <h4>🔪 Cirurgia bariátrica</h4>
-        <ul>
-          <li><span class="m">✕</span> Procedimento cirúrgico, com risco</li>
-          <li><span class="m">✕</span> Custa de R$ 25 mil a R$ 40 mil</li>
-          <li><span class="m">✕</span> Recuperação longa e irreversível</li>
-        </ul>
-      </div>
-      <div class="ccard win">
-        <h4>🥄 Gelatina Que Seca</h4>
-        <ul>
-          <li><span class="m">✓</span> Alimento comum, 30 segundos por dia</li>
-          <li><span class="m">✓</span> Menos que um lanche por mês</li>
-          <li><span class="m">✓</span> Natural, em casa, sem sentir fome</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MECANISMO -->
-<section style="background:var(--surface-2)">
-  <div class="wrap center">
-    <h2>O Efeito Saciedade, em 3 passos</h2>
-    <div class="steps">
-      <div class="step"><div class="n">1</div><div><b>Tome 20 minutos antes das refeições</b><span>A gelatina certa leva 30 segundos pra preparar, com ingredientes de qualquer mercado. Quase sem caloria, rica em proteína de colágeno e fibra.</span></div></div>
-      <div class="step"><div class="n">2</div><div><b>Ela ocupa espaço e aciona a saciedade</b><span>Você senta pra comer já meio satisfeita, se serve menos e para antes, naturalmente, sem precisar “segurar”.</span></div></div>
-      <div class="step"><div class="n">3</div><div><b>Menos comida no fim do dia, sem fome</b><span>Come menos sem cortar o que ama, desincha e acorda mais leve. Repita por 21 dias e sinta a diferença.</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJEÇÃO -->
-<section>
-  <div class="wrap narrow">
-    <h2>Imagina sentar pra comer e parar na metade, sem esforço</h2>
-    <p class="lead-p">Sem aquela briga interna de “para de comer”. Você simplesmente enche antes, larga o garfo satisfeita, e a vontade de beliscar à tarde some. No espelho: a barriga desinchando, a roupa fechando, o “nossa, você tá diferente”.</p>
-    <div class="quote">
-      <p>Eu comia e meia hora depois já tava cutucando a geladeira. Com a gelatina antes do almoço eu enchia rápido e parava sozinha. Em duas semanas a calça que não fechava voltou.</p>
-      <span class="by">Relato de aluna em fase de validação</span>
-    </div>
-  </div>
-</section>
-
-<!-- CONFIANÇA -->
-<section style="background:var(--surface-2)">
-  <div class="wrap narrow">
-    <h2>Não é mágica. É saciedade. E o risco é todo meu.</h2>
-    <div class="goods">
-      <div class="good"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p style="margin:0">Proteína de colágeno e fibra ajudam a <b>aumentar a sensação de saciedade</b>.</p></div>
-      <div class="good"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p style="margin:0">Você come menos porque enche antes, não porque está se torturando.</p></div>
-      <div class="good"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p style="margin:0">Sem cortar grupos de alimento, sem remédio, sem cirurgia.</p></div>
-      <div class="good"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p style="margin:0">30 segundos por dia. Por isso você <b>consegue manter</b>.</p></div>
-    </div>
-    <div class="statbar">
-      <div class="stat"><b>30s</b><span>por dia, antes de comer</span></div>
-      <div class="stat"><b>21</b><span>dias de protocolo</span></div>
-      <div class="stat"><b>7</b><span>dias de garantia</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- OFERTA -->
-<section class="offer-sec" id="oferta">
-  <div class="wrap">
-    <h2 class="center" style="margin-bottom:24px">Garanta o seu <span class="hl">Gelatina Que Seca</span> hoje</h2>
-    <div class="offer">
-      <div class="offer-top">
-        <span class="kb">Oferta de lançamento</span>
-        <h3>Tudo o que você recebe agora</h3>
-      </div>
-      <div class="offer-body">
-        <ul class="stack">
-          <li><span>Protocolo Gelatina Que Seca (21 dias)</span><span class="v">R$ 97</span></li>
-          <li><span>Guia: qual gelatina usar + horários antes das refeições</span><span class="v">incluso</span></li>
-          <li><span>Combinações que aumentam a saciedade</span><span class="v">incluso</span></li>
-          <li class="free"><span>Cardápio Anti-Inchaço de 7 Dias <span class="tag">GRÁTIS</span></span><span class="v">R$ 47</span></li>
-          <li><span>Acesso imediato no celular, pra sempre</span><span class="v">incluso</span></li>
-        </ul>
-        <div class="pricebox">
-          <div class="old">Tudo isso valeria R$ 144</div>
-          <div class="now"><sup>R$</sup>19<span style="font-size:1.5rem;font-weight:700">,90</span></div>
-          <div class="pay">à vista no Pix ou em até 12x no cartão</div>
-          <span class="save">Você economiza R$ 124 hoje</span>
+<!-- fim do garantia-->
+         <div class="mt-lg-1 mt-sm-1"></div>
+        <div
+          class="hide-before d-none esconder  mt-lg-2 d-block center"
+        >
+          <br /> 
+          
+          <a
+            href="https://pay.kiwify.com.br/s0ghGIa"
+            class="btn pulse max-w-lg-50 mx-auto"
+          >
+            SIM! QUERO COMEÇAR AGORA >>
+          </a>
         </div>
-        <a class="cta solo" href="https://pay.kiwify.com.br/s0ghGIa"><span class="shine"></span>Quero meu protocolo agora<small>Pagamento único · acesso na hora</small></a>
-        <div class="secrow">
-          <span class="s"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Ambiente seguro</span>
-          <span class="s"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6z"/></svg> Garantia 7 dias</span>
-          <span class="s"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Acesso imediato</span>
-        </div>
+      <center class="c-segura">
+        <img
+          class="hide-before d-none esconder  mx-auto d-"
+          height="42px"
+          src="assets/img/secure.webp"
+          alt="compra segura privacidade protegida"
+        />
+      </center>
+       </div> 
+  
+    <section class="footer">
+    <footer class="center px-lg-20 py-lg-1 py-sm-1 px-sm-2 white">
+    <p>
+      <strong>Copyright 2026 – Gelatina Que Seca</strong><br />Todos os
+      Direitos Reservados.
+    </p>
+    <div class="flex" style="justify-content: center">
+      <a id="termos" href="#"> Termos de Uso </a>&nbsp;|&nbsp;
+      <a id="privacidade" href="#"> Políticas de Privacidade </a>
+    </div>
+  </footer>
+</section>
+<div class="esconder">
+  <div id="popup">
+        <img src="https://cdn-icons-png.flaticon.com/512/7595/7595571.png" alt="Ícone" style="width: 30px; height: 30px; margin-right: -2px;">
+        <strong></strong>
       </div>
     </div>
-  </div>
-</section>
+    <script>
+      // d alto de proposito: neutraliza o timer wall-clock legado (bloco ofuscado do e.js).
+      // O reveal real e sincronizado com o player via window.VSL.revealAt + e.js.
+      const d = 99999
+      //scripts
+    </script>
+    <script src="js/e.js" charset="utf-8"></script>
+    <script>
+      let kaka = randomIntFromInterval(400, 700)
 
-<!-- GARANTIA -->
-<section>
-  <div class="wrap narrow">
-    <div class="guar">
-      <div class="seal"><b>7</b><span>DIAS</span></div>
-      <div><h3>O risco é todo meu</h3>
-        <p>Teste o protocolo por 7 dias. Se você não sentir a diferença na saciedade logo na primeira semana, é só pedir: devolvo 100% do seu dinheiro, sem perguntas.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section style="background:var(--surface-2)">
-  <div class="wrap narrow">
-    <h2 class="center" style="margin-bottom:10px">Perguntas frequentes</h2>
-    <details><summary>É a mesma coisa que a cirurgia bariátrica? <span class="pl"></span></summary><p>Não. A bariátrica é um procedimento médico permanente. Aqui o objetivo é te ajudar a sentir mais saciedade e comer menos de forma natural, com alimentação, sem cirurgia. Não substitui acompanhamento médico.</p></details>
-    <details><summary>Vou passar fome? <span class="pl"></span></summary><p>Não. A ideia é o contrário: você enche antes da refeição e come menos sem sentir aquela fome que faz desistir da dieta.</p></details>
-    <details><summary>Qualquer gelatina serve? <span class="pl"></span></summary><p>Não. O protocolo mostra exatamente qual usar, a quantidade e o horário certo antes das refeições pra dar saciedade.</p></details>
-    <details><summary>Como eu recebo? <span class="pl"></span></summary><p>Na hora. Assim que o pagamento é aprovado, o acesso chega no seu e-mail e celular.</p></details>
-    <details><summary>É seguro? <span class="pl"></span></summary><p>São alimentos comuns. Não é remédio e não substitui orientação médica ou nutricional. Em caso de condição de saúde, consulte seu médico.</p></details>
-  </div>
-</section>
-
-<!-- FINAL -->
-<section class="final">
-  <div class="wrap narrow">
-    <h2>Você não precisa operar pra comer menos</h2>
-    <p>Pode continuar brigando com a fome todo dia, ou começar hoje a sentir a saciedade trabalhar a seu favor, com risco zero por 7 dias.</p>
-    <a class="cta solo" href="https://pay.kiwify.com.br/s0ghGIa"><span class="shine"></span>Quero comer menos sem sofrer<small>R$ 19,90 · garantia de 7 dias</small></a>
-    <p class="sig">Um abraço, e te vejo do outro lado.</p>
-  </div>
-</section>
-
-<footer>
-  <p><b>Gelatina Que Seca</b> · O Protocolo da Saciedade Natural</p>
-  <p>Este produto é um protocolo alimentar e <b>não é um procedimento médico, não substitui a cirurgia bariátrica</b> nem acompanhamento médico ou nutricional. Os termos “bariátrica” e “saciedade” são usados de forma comparativa e ilustrativa. Resultados variam de pessoa para pessoa. Este site não é afiliado ao Facebook/Meta nem ao Google.</p>
-  <p>© 2026 — Todos os direitos reservados.</p>
-</footer>
-
-<div class="sticky"><a class="cta" href="https://pay.kiwify.com.br/s0ghGIa">Quero meu protocolo · R$ 19,90</a></div>
-
-<script>
-(function(){
-  var KEY='gqs_bar_deadline', now=Date.now(), dl=+localStorage.getItem(KEY);
-  if(!dl || dl<now){ dl=now+15*60*1000; localStorage.setItem(KEY,dl); }
-  var el=document.getElementById('clock');
-  function tick(){var s=Math.max(0,Math.floor((dl-Date.now())/1000));el.textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
-  tick(); setInterval(tick,1000);
-})();
-window.addEventListener('load',function(){
-  var q=location.search; if(!q) return; q=q.replace('?','');
-  document.querySelectorAll('a[href*="pay.kiwify"]').forEach(function(a){
-    a.href += (a.href.indexOf('?')>0?'&':'?') + q;
-  });
-});
+      document.addEventListener('DOMContentLoaded', function (e) {
+        setInterval(() => {
+          let e = randomIntFromInterval(-1, 2)
+          kaka += e
+          document.getElementById('watching-counter').innerText = kaka
+        }, 1e3)
+      })
+    </script>
+    <script>
+    window.onload = function () {
+        var links = document.getElementsByTagName("a");
+        for (var i = 0, n = links.length; i < n; i++) {
+            var href = links[i].href.trim() +
+                    (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                    document.location.search.replace('?', '').toString();
+            links[i].href = href;
+        }
+    }
 </script>
+
+<!-- Player VSL proprio (mesmo da pagina viva: video glt-tst, autoplay mudo + ativar som + tracking) -->
+<script>window.VSL={video:"glt-2",api:"https://vsl-player-8d6.pages.dev/api/track",revealAt:165};</script>
+<script src="https://vsl-player-8d6.pages.dev/js/player.js"></script>
+<!-- O delay/reveal sincronizado com o player vive no js/e.js (substituiu o meucodigo.js antigo). -->
+<!-- Ponto de liberacao: window.VSL.revealAt (acima). -->
+
 </body>
 </html>
+
 <script
   async
   src="https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y"
@@ -473,6 +215,14 @@ window.addEventListener('load',function(){
   }
   gtag('js', new Date())
 
-  gtag('config', 'G-1DFMKE452Y')
+  gtag('config', 'G-1DFMKE452')
 
 </script>
+
+
+
+
+
+
+
+
