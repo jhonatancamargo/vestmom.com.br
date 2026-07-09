@@ -5,22 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lisinha — Sérum Redutor de Pelos com Telocapil</title>
 <meta name="description" content="Chega de depilar toda semana. O Sérum Lisinha com Telocapil reduz até 91% do crescimento dos pelos em 30 dias. Pele lisa por muito mais tempo.">
-<!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '385902050609326');
-  fbq('track', 'PageView');
-  fbq('track', 'ViewContent', {content_name:'Lisinha - Sérum Redutor de Pelos', content_category:'Beleza', currency:'BRL', value:147.00});
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=385902050609326&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel Code -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TXVTF3JV');</script>
+<!-- End Google Tag Manager -->
 <style>
   :root{
     --vinho:#8a1538;
@@ -250,6 +241,10 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXVTF3JV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- BARRA TOPO -->
 <div class="topbar">🔥 PROMOÇÃO DE LANÇAMENTO — <b>FRETE GRÁTIS</b> para todo o Brasil por tempo limitado</div>
@@ -548,22 +543,8 @@
   let i = 0;
   const el = document.getElementById('kicker');
   setInterval(() => { i = (i+1) % frases.length; el.textContent = frases[i]; }, 2500);
-
-  // Meta Pixel — dispara InitiateCheckout ao clicar num kit (antes de ir pro checkout Yampi)
-  const precosKit = { '1':147.00, '2':197.00, '4':247.00, '6':327.00 };
-  document.querySelectorAll('.kbtn').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      const kit = btn.getAttribute('data-kit');
-      if (window.fbq) {
-        fbq('track', 'InitiateCheckout', {
-          value: precosKit[kit] || 0,
-          currency: 'BRL',
-          content_name: 'Lisinha - Kit ' + kit + ' frasco(s)',
-          num_items: parseInt(kit, 10)
-        });
-      }
-    });
-  });
+  // Eventos do Meta Pixel (PageView, ViewContent, InitiateCheckout no kit, Contact no WhatsApp)
+  // agora são disparados pelo Google Tag Manager (GTM-TXVTF3JV) — não repetir aqui.
 </script>
 
 </body>
