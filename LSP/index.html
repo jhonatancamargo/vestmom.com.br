@@ -238,6 +238,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .bignum{font-size:3.6rem}
     body{font-size:16px}
   }
+
+  /* ---------- BOTÃO FIXO DE COMPRA (mobile) ---------- */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:999;display:none;
+    align-items:center;gap:12px;background:rgba(95,15,39,.97);padding:10px 14px;
+    box-shadow:0 -6px 20px rgba(0,0,0,.28)}
+  .sticky-cta .sc-txt{color:#fff;font-size:.78rem;line-height:1.1;flex:1}
+  .sticky-cta .sc-txt b{display:block;color:var(--dourado-claro);font-size:1.1rem;font-weight:900}
+  .sticky-cta a{background:linear-gradient(180deg,var(--rosa),var(--vinho));color:#fff;
+    font-weight:800;text-transform:uppercase;text-decoration:none;padding:13px 20px;
+    border-radius:50px;font-size:.85rem;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+  .sticky-cta.show{display:flex}
+  body.has-sticky{padding-bottom:74px}
+  @media(min-width:769px){.sticky-cta{display:none !important}body.has-sticky{padding-bottom:0}}
 </style>
 </head>
 <body>
@@ -545,7 +558,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   setInterval(() => { i = (i+1) % frases.length; el.textContent = frases[i]; }, 2500);
   // Eventos do Meta Pixel (PageView, ViewContent, InitiateCheckout no kit, Contact no WhatsApp)
   // agora são disparados pelo Google Tag Manager (GTM-TXVTF3JV) — não repetir aqui.
+
+  // Botão fixo de compra no mobile — aparece ao rolar o topo
+  (function(){
+    var sc = document.getElementById('stickyCta');
+    if(!sc) return;
+    function onScroll(){
+      if(window.innerWidth <= 768 && window.scrollY > 640){
+        sc.classList.add('show'); document.body.classList.add('has-sticky');
+      } else {
+        sc.classList.remove('show'); document.body.classList.remove('has-sticky');
+      }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    onScroll();
+  })();
 </script>
+
+<!-- Botão fixo de compra (mobile) -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sc-txt">✅ Frete grátis • Garantia 30 dias<b>a partir de R$ 147</b></div>
+  <a href="#kits">Quero o meu</a>
+</div>
 
 </body>
 </html>
