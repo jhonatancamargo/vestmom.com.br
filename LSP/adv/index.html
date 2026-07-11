@@ -173,5 +173,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
   Beleza &amp; Bem-Estar — conteúdo informativo sobre cuidados com a pele.
 </footer>
+<!-- UTM/rastreamento: propaga parametros (UTM, fbclid, gclid) ate o checkout Yampi -->
+<script>
+(function(){var T=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','sck','xcod'],K='vm_track',s={};try{s=JSON.parse(sessionStorage.getItem(K))||{};}catch(e){}var p=new URLSearchParams(location.search);T.forEach(function(k){var v=p.get(k);if(v)s[k]=v;});try{sessionStorage.setItem(K,JSON.stringify(s));}catch(e){}var q=Object.keys(s).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(s[k]);}).join('&');function d(){if(!q)return;var a=document.querySelectorAll('a[href]');for(var i=0;i<a.length;i++){var h=a[i].getAttribute('href');if(!h)continue;if(/vestmom\.com\.br\/LSP/i.test(h)||/seguro\.vestmom\.com\.br/i.test(h)||/\.yampi\./i.test(h)){if(h.indexOf('utm_source=')>=0)continue;a[i].setAttribute('href',h+(h.indexOf('?')>=0?'&':'?')+q);}}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',d);}else{d();}})();
+</script>
 </body>
 </html>
