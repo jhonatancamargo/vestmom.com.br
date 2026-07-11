@@ -199,6 +199,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .kit .each{font-size:.82rem;color:var(--verde);font-weight:700;margin:4px 0 16px}
   .kit .kbtn{margin-top:auto;display:block;background:linear-gradient(180deg,var(--rosa),var(--vinho));color:#fff;font-weight:800;text-transform:uppercase;text-decoration:none;padding:14px;border-radius:12px;font-size:1rem}
   .kit.best .kbtn{background:linear-gradient(180deg,var(--dourado-claro),var(--dourado));border:3px solid var(--vinho);animation:bestPulse 1.4s ease-in-out infinite}
+  /* Mobile: ordem dos kits = 4, 6, 2, 1 (empurra o kit de 4 pro topo) */
+  @media(max-width:768px){
+    .kits .kit:nth-child(1){order:4}
+    .kits .kit:nth-child(2){order:3}
+    .kits .kit:nth-child(3){order:1}
+    .kits .kit:nth-child(4){order:2}
+  }
   @keyframes bestPulse{
     0%{box-shadow:0 0 0 0 rgba(138,21,56,.55);border-color:var(--vinho)}
     70%{box-shadow:0 0 0 10px rgba(138,21,56,0);border-color:var(--rosa)}
@@ -512,7 +519,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="st">Perguntas <em>frequentes</em></h2>
     <div style="margin-top:26px">
       <details class="q"><summary>Como devo usar o Lisinha?</summary><div class="a">Após a depilação e o banho, aplique uma pequena quantidade sobre a pele limpa e seca, massageando até absorver. Use diariamente na área desejada para melhores resultados.</div></details>
-      <details class="q"><summary>Qual o kit mais vendido?</summary><div class="a">O kit de 2 frascos é o mais escolhido — rende o tratamento completo e sai bem mais barato por frasco. Para resultado máximo, o kit de 3 frascos é o melhor custo-benefício.</div></details>
+      <details class="q"><summary>Qual o kit mais vendido?</summary><div class="a">O kit de 4 frascos é o mais escolhido — é o tratamento completo e sai bem mais barato por frasco (só R$ 61,75 cada). Para resultado máximo e o melhor custo-benefício, muitas clientes levam o kit de 6 frascos.</div></details>
       <details class="q"><summary>Em quanto tempo vejo resultado?</summary><div class="a">A sensação de alívio e maciez é imediata. A redução do crescimento dos pelos aparece de forma progressiva com o uso contínuo, com resultados significativos em torno de 30 dias.</div></details>
       <details class="q"><summary>Pode usar em qualquer parte do corpo?</summary><div class="a">Sim! Virilha e região íntima externa, axilas, pernas, braços, rosto e buço, glúteos, barriga e nuca. Evite contato com os olhos e aplicação muito próxima ao couro cabeludo.</div></details>
       <details class="q"><summary>Serve para todos os tipos de pele?</summary><div class="a">Sim. A fórmula é leve e conta com ativos calmantes como Camomila e D-Pantenol. Em peles muito sensíveis, recomendamos testar em uma pequena área antes.</div></details>
