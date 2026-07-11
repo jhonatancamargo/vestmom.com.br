@@ -560,7 +560,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // agora são disparados pelo Google Tag Manager (GTM-TXVTF3JV) — não repetir aqui.
 
   // Botão fixo de compra no mobile — aparece ao rolar o topo
-  (function(){
+  function initStickyCta(){
     var sc = document.getElementById('stickyCta');
     if(!sc) return;
     function onScroll(){
@@ -573,7 +573,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.addEventListener('scroll', onScroll, {passive:true});
     window.addEventListener('resize', onScroll);
     onScroll();
-  })();
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initStickyCta);
+  } else {
+    initStickyCta();
+  }
 </script>
 
 <!-- Botão fixo de compra (mobile) -->
