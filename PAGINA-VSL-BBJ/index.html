@@ -264,8 +264,17 @@ src="https://www.facebook.com/tr?id=1464290317747669&ev=PageView&noscript=1"
     s.src = 'https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y'
     document.head.appendChild(s)
   }
-  if (document.readyState === 'complete') setTimeout(carregaGA, 1200)
-  else window.addEventListener('load', function () { setTimeout(carregaGA, 1200) })
+  // Carrega na PRIMEIRA INTERACAO (toque, rolagem, clique ou tecla). Assim o gtag sai
+  // por completo da janela critica de carregamento — ele so entra quando a pessoa ja
+  // esta na pagina de verdade. Os eventos ficam na fila do dataLayer e sobem depois.
+  // Rede de seguranca: se ninguem interagir, carrega aos 8s (pra nao perder a sessao).
+  var _gaEvts = ['touchstart', 'scroll', 'click', 'keydown', 'mousemove']
+  function _gaGo() {
+    _gaEvts.forEach(function (e) { window.removeEventListener(e, _gaGo, { passive: true }) })
+    carregaGA()
+  }
+  _gaEvts.forEach(function (e) { window.addEventListener(e, _gaGo, { passive: true, once: true }) })
+  setTimeout(carregaGA, 8000)
 </script>
 
 
