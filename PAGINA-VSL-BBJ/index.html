@@ -24,6 +24,23 @@
    
     <!-- preconnect: player.js, config, URL assinada e o VIDEO vem todos deste dominio -->
     <link rel="preconnect" href="https://vsl-player-8d6.pages.dev" crossorigin />
+    <!-- ARRANQUE RAPIDO DO VIDEO: dispara o pedido da URL assinada JA, no inicio do <head>,
+         em paralelo com o resto. Sem isto o pedido so sairia depois de baixar o player.js
+         e depois do /api/config — tres idas e voltas em fila antes do video comecar. -->
+    <script>
+      window.__vslPlayUrl = fetch('https://vsl-player-8d6.pages.dev/api/playurl?v=vsl-bbj.mp4')
+        .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+      // Config COMPLETA embutida (a mesma salva no painel) -> player pula o /api/config.
+      // Se mudar a config no painel, atualizar aqui tambem (ou remover "completo:true").
+      window.VSL = {
+        video: "vsl-bbj", api: "https://vsl-player-8d6.pages.dev/api/track", revealAt: 708,
+        completo: true,
+        media: "vsl-bbj.mp4", ratio: "16/9", start: "smart-autoplay", fullscreen: true,
+        tapPause: true, pauseBanner: false, pauseBannerStyle: "limpo", pauseBannerColor: "#1dd1a1",
+        soundColor: "#15c2e5", progress: "ficticia", fakeDuration: 0, resume: true, speed: false,
+        liveBadge: false, viewersBase: 120, controls: false, cta: { at: 0, color: "#1dd1a1" }
+      };
+    </script>
      <link rel="stylesheet" href="css/s.css" />
     <!-- Poster do video = elemento LCP. Pre-carrega pra pintar o quanto antes. -->
     <link rel="preload" as="image" href="assets/poster.jpg" fetchpriority="high" />
@@ -223,7 +240,8 @@ src="https://www.facebook.com/tr?id=1464290317747669&ev=PageView&noscript=1"
 
 <!-- Player VSL proprio (video vsl-bbj no R2: autoplay mudo + ativar som + tracking) -->
 <!-- revealAt=708s (11:48) = momento do pitch na VSL ("12x de R$5,50 ou R$67 a vista") -->
-<script>window.VSL={video:"vsl-bbj",api:"https://vsl-player-8d6.pages.dev/api/track",revealAt:708};</script>
+<!-- window.VSL agora e declarado la no <head> (com a config completa embutida + o
+     pedido da URL do video ja disparado). NAO redeclarar aqui: sobrescreveria tudo. -->
 <script src="https://vsl-player-8d6.pages.dev/js/player.js"></script>
 <!-- O delay/reveal sincronizado com o player vive no js/e.js (substituiu o meucodigo.js antigo). -->
 <!-- Ponto de liberacao: window.VSL.revealAt (acima). -->
